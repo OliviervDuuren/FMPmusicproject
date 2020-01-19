@@ -252,20 +252,6 @@
   <script src="js/demo/chart-area-demo.js"></script>
   <script src="js/demo/chart-pie-demo.js"></script>
 
-  <script type="text/javascript">
-    $(".button").click(function(){
-      var level = 0;
-      if(localStorage.level != null) {
-        level = parseInt( localStorage.level );
-        if (level < 3) {
-        level += 1;
-        }
-      }
-      localStorage.setItem('level', level);
-
-    });
-  </script>
-
 </body>
 
 </html>
