@@ -17,7 +17,7 @@ if (!isset($_SESSION['username'])) {
   <meta name="description" content="">
   <meta name="author" content="">
 
-  <title>Dashboard</title>
+  <title>Blok 1</title>
 
   <!-- Custom fonts for this template-->
   <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
@@ -101,7 +101,7 @@ if (!isset($_SESSION['username'])) {
 
           <!-- Page Heading -->
           <div class="d-sm-flex align-items-center justify-content-center mb-4">
-            <h1 class="h3 mb-0 text-gray-800">Dashboard</h1>
+            <h1 class="h3 mb-0 text-gray-800">Project blok 1</h1>
           </div>
 
           <!-- Content Row -->
@@ -185,154 +185,90 @@ if (!isset($_SESSION['username'])) {
             </div>
           </div> -->
             <div class="col-sm-2 text-center">
-              <a href="schoolyears.php">
-                <div class="card bg-success d-sm-flex justify-content-center align-items-center shadow mb-4">
+              <a href="song-puzzles.html">
+                <div class="card bg-secondary d-sm-flex justify-content-center align-items-center shadow mb-4">
                   <div class="card-body">
-                    <i class="fas fa-folder folder"></i>
+                    <i class="fas fa-suitcase suitcase"></i>
                   </div>
                 </div>
-                <p>Schooljaar 19/20 Groep 4</p>
+                <p>Project 1</p>
               </a>
             </div>
-
-            <div class="col-sm-2 text-center">
-              <div class="card bg-secondary d-sm-flex justify-content-center align-items-center shadow mb-4">
-                <div class="card-body">
-                  <i class="fas fa-folder folder"></i>
+            <div class="text-center">
+              
+                <div class="d-sm-flex justify-content-center align-items-center shadow mb-4">
+                  <p>"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum." </p>
                 </div>
-              </div>
-              <p>Schooljaar 18/19 Groep 2</p>
-            </div>
-
-            <div class="col-sm-2 text-center">
-              <div class="card bg-secondary d-sm-flex justify-content-center align-items-center shadow mb-4">
-                <div class="card-body">
-                  <i class="fas fa-folder folder"></i>
-                </div>
-              </div>
-              <p>Schooljaar 17/18 Groep 7</p>
+                
+              
             </div>
 
           </div>
           <!-- /.container-fluid -->
 
-          <!-- <div class="row justify-content-center">
-          <div class="col-sm-2 text-center">
-          <div class="card bg-secondary d-sm-flex justify-content-center align-items-center shadow mb-4">
-            <div class="card-body">
-              <i class="fas fa-lock locked"></i>
+          
+        <!-- End of Main Content -->
+
+        <!-- Footer -->
+        <footer class="sticky-footer bg-white">
+          <div class="container my-auto">
+            <div class="copyright text-center my-auto">
+              <span>Copyright &copy; Your Website 2019</span>
             </div>
           </div>
-          <p>Song variations</p>
-        </div>
-        <div class="col-sm-2 text-center">
-        <div class="card bg-secondary d-sm-flex justify-content-center align-items-center shadow mb-4">
-          <div class="card-body">
-            <i class="fas fa-lock locked"></i>
-          </div>
-        </div>
-        <p>Song variations</p>
+        </footer>
+        <!-- End of Footer -->
+
       </div>
-      <div class="col-sm-2 text-center">
-      <div class="card bg-secondary d-sm-flex justify-content-center align-items-center shadow mb-4">
-        <div class="card-body">
-          <i class="fas fa-lock locked"></i>
-        </div>
-      </div>
-      <p>Song variations</p>
+      <!-- End of Content Wrapper -->
+
     </div>
-        </div>
+    <!-- End of Page Wrapper -->
 
-        <div class="row justify-content-center">
-          <div class="col-sm-2 text-center">
-          <div class="card bg-secondary d-sm-flex justify-content-center align-items-center shadow mb-4">
-            <div class="card-body">
-              <i class="fas fa-lock locked"></i>
-            </div>
+    <!-- Scroll to Top Button-->
+    <a class="scroll-to-top rounded" href="#page-top">
+      <i class="fas fa-angle-up"></i>
+    </a>
+
+    <!-- Logout Modal-->
+    <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">Ready to Leave?</h5>
+            <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">×</span>
+            </button>
           </div>
-          <p>Song variations</p>
-        </div>
-        <div class="col-sm-2 text-center">
-        <div class="card bg-secondary d-sm-flex justify-content-center align-items-center shadow mb-4">
-          <div class="card-body">
-            <i class="fas fa-lock locked"></i>
-          </div>
-        </div>
-        <p>Song variations</p>
-      </div>
-      <div class="col-sm-2 text-center">
-      <div class="card bg-secondary d-sm-flex justify-content-center align-items-center shadow mb-4">
-        <div class="card-body">
-          <i class="fas fa-lock locked"></i>
-        </div>
-      </div>
-      <p>Song variations</p>
-      </div>
-        </div>
-
-      </div> -->
-          <!-- End of Main Content -->
-
-          <!-- Footer -->
-          <footer class="sticky-footer bg-white">
-            <div class="container my-auto">
-              <div class="copyright text-center my-auto">
-                <span>Copyright &copy; Your Website 2019</span>
-              </div>
-            </div>
-          </footer>
-          <!-- End of Footer -->
-
-        </div>
-        <!-- End of Content Wrapper -->
-
-      </div>
-      <!-- End of Page Wrapper -->
-
-      <!-- Scroll to Top Button-->
-      <a class="scroll-to-top rounded" href="#page-top">
-        <i class="fas fa-angle-up"></i>
-      </a>
-
-      <!-- Logout Modal-->
-      <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-        <div class="modal-dialog" role="document">
-          <div class="modal-content">
-            <div class="modal-header">
-              <h5 class="modal-title" id="exampleModalLabel">Ready to Leave?</h5>
-              <button class="close" type="button" data-dismiss="modal" aria-label="Close">
-                <span aria-hidden="true">×</span>
-              </button>
-            </div>
-            <div class="modal-body">Select "Logout" below if you are ready to end your current session.</div>
-            <div class="modal-footer">
-              <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
-              <a class="btn btn-primary" href="login.php">Logout</a>
-            </div>
+          <div class="modal-body">Select "Logout" below if you are ready to end your current session.</div>
+          <div class="modal-footer">
+            <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
+            <a class="btn btn-primary" href="login.php">Logout</a>
           </div>
         </div>
       </div>
+    </div>
 
-      <!-- Bootstrap core JavaScript-->
-      <script src="vendor/jquery/jquery.min.js"></script>
-      <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <!-- Bootstrap core JavaScript-->
+    <script src="vendor/jquery/jquery.min.js"></script>
+    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 
-      <!-- Core plugin JavaScript-->
-      <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
+    <!-- Core plugin JavaScript-->
+    <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
 
-      <!-- Custom scripts for all pages-->
-      <script src="js/sb-admin-2.min.js"></script>
+    <!-- Custom scripts for all pages-->
+    <script src="js/sb-admin-2.min.js"></script>
 
-      <!-- Page level plugins -->
-      <script src="vendor/chart.js/Chart.min.js"></script>
+    <!-- Page level plugins -->
+    <script src="vendor/chart.js/Chart.min.js"></script>
 
-      <!-- Page level custom scripts -->
-      <script src="js/demo/chart-area-demo.js"></script>
-      <script src="js/demo/chart-pie-demo.js"></script>
+    <!-- Page level custom scripts -->
+    <script src="js/demo/chart-area-demo.js"></script>
+    <script src="js/demo/chart-pie-demo.js"></script>
 
-      <script type="text/javascript">
+    <script type="text/javascript">
 
-      </script>
+    </script>
 </body>
 
 </html>

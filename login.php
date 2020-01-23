@@ -2,28 +2,28 @@
 include("php/connect.php");
 session_start();
 
-   if($_SERVER["REQUEST_METHOD"] == "POST") {
-      // username and password sent from form
-      $myusername = mysqli_real_escape_string($mysqli,$_POST['username']);
-      $mypassword = mysqli_real_escape_string($mysqli,$_POST['password']);
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+  // username and password sent from form
+  $myusername = mysqli_real_escape_string($mysqli, $_POST['username']);
+  $mypassword = mysqli_real_escape_string($mysqli, $_POST['password']);
 
-      $sql = "SELECT * FROM users WHERE username = '$myusername' and password = '$mypassword'";
-      $result = mysqli_query($mysqli,$sql);
-      $row = mysqli_fetch_array($result,MYSQLI_ASSOC);
-      $count = mysqli_num_rows($result);
-      // If result matched $myusername and $mypassword, table row must be 1 row
+  $sql = "SELECT * FROM users WHERE username = '$myusername' and password = '$mypassword'";
+  $result = mysqli_query($mysqli, $sql);
+  $row = mysqli_fetch_array($result, MYSQLI_ASSOC);
+  $count = mysqli_num_rows($result);
+  // If result matched $myusername and $mypassword, table row must be 1 row
 
-      if($count == 1) {
-         // session_register("myusername");
-         $_SESSION['username']  = $myusername;
-         $_SESSION['role']      = $row["role"];
-         $_SESSION['surname']   = $row["surname"];
-         $_SESSION['lastname']  = $row["lastname"];
-         header("location: index.php");
-      }else {
-         $error = "Your Login Name or Password is invalid";
-      }
-   }
+  if ($count == 1) {
+    // session_register("myusername");
+    $_SESSION['username']  = $myusername;
+    $_SESSION['role']      = $row["role"];
+    $_SESSION['surname']   = $row["surname"];
+    $_SESSION['lastname']  = $row["lastname"];
+    header("location: index.php");
+  } else {
+    $error = "Your Login Name or Password is invalid";
+  }
+}
 
 
 ?>
@@ -38,7 +38,7 @@ session_start();
   <meta name="description" content="">
   <meta name="author" content="">
 
-  <title>SB Admin 2 - Login</title>
+  <title>Login</title>
 
   <!-- Custom fonts for this template-->
   <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
@@ -62,35 +62,35 @@ session_start();
           <div class="card-body p-0">
             <!-- Nested Row within Card Body -->
             <div class="row">
-              <div class="col-lg-6 d-none d-lg-block bg-login-image"></div>
+
               <div class="col-lg-6">
                 <div class="p-5">
                   <div class="text-center">
-                    <h1 class="h4 text-gray-900 mb-4">Welcome Back!</h1>
+                    <h1 class="h4 text-gray-900 mb-4">Welkom!</h1>
                   </div>
-                  <form class="user" method="POST" action="login.php" >
+                  <form class="user" method="POST" action="login.php">
                     <div class="form-group">
-                      <input name="username" class="form-control form-control-user" id="exampleInputEmail" placeholder="Enter Email Address...">
+                      <input name="username" class="form-control form-control-user" id="exampleInputEmail" placeholder="Vul gebruikersnaam in...">
                     </div>
                     <div class="form-group">
-                      <input name="password" type="password" class="form-control form-control-user" id="exampleInputPassword" placeholder="Password">
+                      <input name="password" type="password" class="form-control form-control-user" id="exampleInputPassword" placeholder="Wachtwoord">
                     </div>
                     <div class="form-group">
                       <div class="custom-control custom-checkbox small">
                         <input type="checkbox" class="custom-control-input" id="customCheck">
-                        <label class="custom-control-label" for="customCheck">Remember Me</label>
+                        <label class="custom-control-label" for="customCheck">Onthoud mij</label>
                       </div>
                     </div>
                     <button class="btn btn-primary btn-user login btn-block">
-                      Login
+                      Log in
                     </button>
                   </form>
                   <hr>
                   <div class="text-center">
-                    <a class="small" href="forgot-password.html">Forgot Password?</a>
+                    <a class="small" href="forgot-password.html">Wachtwoord vergeten?</a>
                   </div>
                   <div class="text-center">
-                    <a class="small" href="register.html">Create an Account!</a>
+                    <a class="small" href="register.html">Maak account aan!</a>
                   </div>
                 </div>
               </div>

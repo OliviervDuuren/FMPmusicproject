@@ -185,7 +185,7 @@ if (!isset($_SESSION['username'])) {
             </div>
           </div> -->
             <div class="col-sm-2 text-center">
-              <a href="schoolyears.php">
+              <a href="projectblocks.php">
                 <div class="card bg-success d-sm-flex justify-content-center align-items-center shadow mb-4">
                   <div class="card-body">
                     <i class="fas fa-folder folder"></i>
@@ -196,21 +196,25 @@ if (!isset($_SESSION['username'])) {
             </div>
 
             <div class="col-sm-2 text-center">
-              <div class="card bg-secondary d-sm-flex justify-content-center align-items-center shadow mb-4">
-                <div class="card-body">
-                  <i class="fas fa-folder folder"></i>
+              <a href="#">
+                <div class="card bg-secondary d-sm-flex justify-content-center align-items-center shadow mb-4">
+                  <div class="card-body">
+                    <i class="fas fa-folder folder"></i>
+                  </div>
                 </div>
-              </div>
-              <p>Schooljaar 18/19 Groep 2</p>
+                <p>Schooljaar 18/19 Groep 2</p>
+              </a>
             </div>
 
             <div class="col-sm-2 text-center">
-              <div class="card bg-secondary d-sm-flex justify-content-center align-items-center shadow mb-4">
-                <div class="card-body">
-                  <i class="fas fa-folder folder"></i>
+              <a href="#">
+                <div class="card bg-secondary d-sm-flex justify-content-center align-items-center shadow mb-4">
+                  <div class="card-body">
+                    <i class="fas fa-folder folder"></i>
+                  </div>
                 </div>
-              </div>
-              <p>Schooljaar 17/18 Groep 7</p>
+                <p>Schooljaar 17/18 Groep 7</p>
+              </a>
             </div>
 
           </div>
