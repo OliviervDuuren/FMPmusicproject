@@ -48,7 +48,7 @@ $schoolyear = $_GET['schoolyear'];
         <!-- End of Topbar -->
 
         <!-- Begin Page Content -->
-        <div class="container-fluid">
+        <div class="container">
           <nav aria-label="breadcrumb">
             <ol class="breadcrumb">
               <li class="breadcrumb-item"><a href="schoolyears.php">Schooljaar <?php echo $schoolyear;?></a></li>

@@ -184,7 +184,7 @@ if (!isset($_SESSION['username'])) {
               </div>
             </div>
           </div> -->
-            <div class="col-sm-2 text-center">
+            <div class="col-sm-2 text-center block-card">
               <a href="song-puzzles.html">
                 <div class="card bg-secondary d-sm-flex justify-content-center align-items-center shadow mb-4">
                   <div class="card-body">
@@ -210,13 +210,13 @@ if (!isset($_SESSION['username'])) {
         <!-- End of Main Content -->
 
         <!-- Footer -->
-        <footer class="sticky-footer bg-white">
+        <!-- <footer class="sticky-footer bg-white">
           <div class="container my-auto">
             <div class="copyright text-center my-auto">
               <span>Copyright &copy; Your Website 2019</span>
             </div>
           </div>
-        </footer>
+        </footer> -->
         <!-- End of Footer -->
 
       </div>

@@ -46,42 +46,11 @@ if (!isset($_SESSION['username'])) {
         <div class="container-fluid">
 
           <!-- Page Heading -->
-          <div class="d-sm-flex align-items-center justify-content-center mb-4">
+          <div class="d-sm-flex align-items-center justify-content-baseline mb-4">
             <h1 class="h3 mb-0 text-gray-800">Dashboard</h1>
           </div>
+          <h4>Misschien cool om hier lijpe grafieken te laten zien? Dit thema heeft al chart.js ingebouwd</h4>
 
-          <!-- Content Row -->
-          <div class="row justify-content-center">
-            <div class="col-sm-2 text-center">
-              <a href="schoolyears.php">
-                <div class="card bg-success d-sm-flex justify-content-center align-items-center shadow mb-4">
-                  <div class="card-body">
-                    <i class="fas fa-folder folder"></i>
-                  </div>
-                </div>
-                <p>Schooljaar 19/20 Groep 4</p>
-              </a>
-            </div>
-
-            <div class="col-sm-2 text-center">
-              <div class="card bg-secondary d-sm-flex justify-content-center align-items-center shadow mb-4">
-                <div class="card-body">
-                  <i class="fas fa-folder folder"></i>
-                </div>
-              </div>
-              <p>Schooljaar 18/19 Groep 2</p>
-            </div>
-
-            <div class="col-sm-2 text-center">
-              <div class="card bg-secondary d-sm-flex justify-content-center align-items-center shadow mb-4">
-                <div class="card-body">
-                  <i class="fas fa-folder folder"></i>
-                </div>
-              </div>
-              <p>Schooljaar 17/18 Groep 7</p>
-            </div>
-
-          </div>
           <!-- End of Main Content -->
 
           <!-- Footer -->
