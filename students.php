@@ -1,10 +1,44 @@
 <?php
 include("php/connect.php");
 session_start();
+
 //login path protection
 if (!isset($_SESSION['username'])) {
   header("location: login.php");
 }
+
+// TODO path protection for teachers. If not teacher then redirect to previous page.
+if(strtolower($_SESSION['role']) != "teacher") {
+
+}
+
+if(isset($_POST['add-student'])) {
+
+  $sql = "INSERT INTO users (surname, lastname, role, level, parent_id, username, password)
+      VALUES ('".$_POST["surname"]."','".$_POST["lastname"]."', 'child','".$_POST["level"]."','".$_SESSION["user_id"]."', '".$_POST["username"]."', '".$_POST["password"]."')";
+  $result = mysqli_query($mysqli,$sql);
+
+}
+
+if(isset($_POST['edit-student'])) {
+  $sql = "UPDATE users
+          SET surname   = '".$_POST["surname"]."',
+              lastname  = '".$_POST["lastname"]."',
+              level     = '".$_POST["level"]."',
+              username  = '".$_POST["username"]."',
+              password  = '".$_POST["password"]."'
+          WHERE id = ".$_POST['id']."";
+
+  error_log( print_r($sql, TRUE) );
+
+  $result = mysqli_query($mysqli,$sql);
+
+}
+
+$sql = "SELECT * FROM users WHERE role like '%Child%'AND parent_id = ".$_SESSION['user_id']."";
+
+$result = $mysqli->query($sql);
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -30,6 +64,13 @@ if (!isset($_SESSION['username'])) {
 
 <body id="page-top">
 
+  <!-- Prevent Form resubmit -->
+  <script>
+    if ( window.history.replaceState ) {
+        window.history.replaceState( null, null, window.location.href );
+    }
+</script>
+
   <!-- Page Wrapper -->
   <div id="wrapper">
 
@@ -41,160 +82,60 @@ if (!isset($_SESSION['username'])) {
       <!-- Main Content -->
       <div id="content">
 
-        <!-- Topbar -->
-        <nav class="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow">
+        <?php include("partials/topbar.php"); ?>
 
-          <!-- Sidebar Toggle (Topbar) -->
-          <button id="sidebarToggleTop" class="btn btn-link d-md-none rounded-circle mr-3">
-            <i class="fa fa-bars"></i>
-          </button>
-
-          <!-- Topbar Search -->
-          <!-- <form class="d-none d-sm-inline-block form-inline mr-auto ml-md-3 my-2 my-md-0 mw-100 navbar-search">
-            <div class="input-group">
-              <input type="text" class="form-control bg-light border-0 small" placeholder="Search for..." aria-label="Search" aria-describedby="basic-addon2">
-              <div class="input-group-append">
-                <button class="btn btn-primary" type="button">
-                  <i class="fas fa-search fa-sm"></i>
-                </button>
-              </div>
-            </div>
-          </form> -->
-
-          <!-- Topbar Navbar -->
-          <ul class="navbar-nav ml-auto">
-            <!-- Nav Item - User Information -->
-            <li class="nav-item dropdown no-arrow">
-              <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                <span class="mr-2 d-none d-lg-inline text-gray-600 small">ingelogd als: <?php echo $_SESSION['role'] . "  " ?><b><?php echo $_SESSION['surname'] . " " . $_SESSION['lastname'] ?></b></span>
-                <img class="img-profile rounded-circle" src="https://source.unsplash.com/QAB-WJcbgJk/60x60">
-              </a>
-              <!-- Dropdown - User Information -->
-              <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="userDropdown">
-                <a class="dropdown-item" href="#">
-                  <i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i>
-                  Profiel
-                </a>
-                <a class="dropdown-item" href="#">
-                  <i class="fas fa-cogs fa-sm fa-fw mr-2 text-gray-400"></i>
-                  Instellingen
-                </a>
-                <a class="dropdown-item" href="#">
-                  <i class="fas fa-list fa-sm fa-fw mr-2 text-gray-400"></i>
-                  Activiteiten log
-                </a>
-                <div class="dropdown-divider"></div>
-                <a class="dropdown-item" href="#" data-toggle="modal" data-target="#logoutModal">
-                  <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
-                  Log uit
-                </a>
-              </div>
-            </li>
-
-          </ul>
-
-        </nav>
         <!-- End of Topbar -->
 
         <!-- Begin Page Content -->
-        <div class="container-fluid">
+        <div class="container">
 
           <!-- Page Heading -->
-          <div class="d-sm-flex align-items-center justify-content-center mb-4">
+          <div class="d-sm-flex align-items-center justify-content-baseline mb-4">
             <h1 class="h3 mb-0 text-gray-800">Leerlingen</h1>
           </div>
 
-          <!-- Content Row -->
-
-
-
-
-          <ul class="navbar-nav ml-auto">
-            <?php
-            $sql = "SELECT surname, level, lastname,  role FROM users WHERE role like '%Child%'";
-            $result = $mysqli->query($sql);
-
-            if ($result->num_rows > 0) {
-              // output data of each row
-              while ($row = $result->fetch_assoc()) {
-                echo "<div class='row justify-content-center'><li>" . $row["surname"] . " " . $row["lastname"] . "</li><li><p></p></li>";
-            ?>
-
-                <!-- Nav Item - User Information -->
-                <li class="nav-item dropdown arrow">
-                  <?php
-                  echo "<a class='dropdown-toggle' href='#' id='levelDropdown' role='button' data-toggle='dropdown' aria-haspopup='true' aria-expanded='false'> " . " level: " .  $row["level"] . "</a></p>";
-                  ?>
-
-
-                  <!-- Dropdown - User Information -->
-                  <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="levelDropdown">
-                    <button class="btn btn-primary" data-toggle="modal" data-target="#editStudentLevelModal">Level 1</button>
-                    
-                    <!-- Incorrect Modal -->
-                    <div class="modal fade" id="editStudentLevelModal" tabindex="-1" role="dialog" aria-labelledby="addStudentModalLabel" aria-hidden="true">
-                      <div class="modal-dialog" role="document">
-                        <div class="modal-content">
-                          <div class="modal-header">
-                            <h5 class="modal-title" id="addStudentModalLabel">Voeg leerling toe</h5>
-                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                              <span aria-hidden="true">&times;</span>
-                            </button>
-                          </div>
-                          <div class="modal-body">
-                            <form action="add_student.php" method="post">
-                              Voornaam:<br>
-                              <input type="text" name="surname"><br>
-                              Achternaam:<br>
-                              <input type="text" name="lastname"><br>
-                              Level:<br>
-                              <input type="number" name="level" min="1" max="3"><br>
-
-
-                              <div class="modal-footer">
-                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Annuleer</button>
-                                <button type="submit" class="btn btn-primary" name="submit">Opslaan</button>
-                              </div>
-                            </form>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                    
-                    <button class="btn btn-primary" data-toggle="modal" data-target="#editStudentLevelModal">Level 2</button>
-                    <button class="btn btn-primary" data-toggle="modal" data-target="#editStudentLevelModal">Level 3</button>
-
-
-
-                    <div class="dropdown-divider"></div>
-
-                    <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="levelDropdown">
-                      <form action="changelevel.php" method="post">
-                        <a class="dropdown-item btn btn-primary" href="#">
-                          <!--<input type="submit" name="1"/>-->Level 1 </a>
-                        <a class="dropdown-item btn btn-primary" href="#">
-                          <!--<input type="submit" name="2"/>-->Level 2 </a>
-                        <a class="dropdown-item btn btn-primary" href="#">
-                          <!--<input type="submit" name="3"/>-->Level 3 </a>
-                      </form>
-                      <div class="dropdown-divider"></div>
-
-                    </div>
-                </li>
-            <?php
-                echo "</p></div>";
+          <table class="table">
+            <thead>
+              <tr>
+                <th scope="col">#</th>
+                <th scope="col">Voornaam</th>
+                <th scope="col">Achternaam</th>
+                <th scope="col">Gebruikersnaam</th>
+                <th scope="col">level</th>
+                <th scope="col">Acties</th>
+              </tr>
+            </thead>
+            <tbody>
+              <?php
+              if (!empty($result) && $result->num_rows > 0) {
+                // output data of each row
+                $count = 1;
+                while ($row = $result->fetch_assoc()) {
+                    echo
+                    "<tr data-id='".$row["id"]."'>".
+                      "<th scope='row'>".$count."</th>".
+                      "<td>".$row["surname"]."</td>".
+                      "<td>".$row["lastname"]."</td>".
+                      "<td>".$row["username"]."</td>".
+                      "<td>".$row["level"]."</td>".
+                      "<td>".
+                        "<a class='edit btn btn-primary btn-circle btn-sm' data-toggle='modal' data-target='#editStudentModal'><i class='fas fa-edit'></i></a>".
+                        "<a class='remove btn btn-danger btn-circle btn-sm ml-2' data-toggle='modal' data-target='#removeStudentModal'><i class='fas fa-trash'></i></a>".
+                        "</td>".
+                    "</tr>";
+                    $count ++;
+                }
               }
-            } else {
-              echo "0 results";
-            }
-            ?>
+              ?>
+            </tbody>
+          </table>
 
-          </ul>
           <div class="row justify-content-center">
-            <button class="btn btn-primary" data-toggle="modal" data-target="#addStudentModal">
-              Voeg leerling toe
+            <button class="btn btn-success" data-toggle="modal" data-target="#addStudentModal">
+              <i class='fas fa-plus mr-2'></i>Voeg leerling toe
             </button>
-            <!-- Modal -->
+
+            <!-- Add student Modal -->
             <div class="modal fade" id="addStudentModal" tabindex="-1" role="dialog" aria-labelledby="addStudentModalLabel" aria-hidden="true">
               <div class="modal-dialog" role="document">
                 <div class="modal-content">
@@ -205,20 +146,103 @@ if (!isset($_SESSION['username'])) {
                     </button>
                   </div>
                   <div class="modal-body">
-                    <form action="add_student.php" method="post">
-                      Voornaam:<br>
-                      <input type="text" name="surname"><br>
-                      Achternaam:<br>
-                      <input type="text" name="lastname"><br>
-                      Level:<br>
-                      <input type="number" name="level" min="1" max="3"><br>
+                    <form action="students.php" method="post">
+                      <div class="form-group">
+                        <label for="surname">Voornaam</label>
+                        <input id="surname" class="form-control form-control-user" type="text" name="surname" required>
+                      </div>
+                      <div class="form-group">
+                        <label for="lastname">Achternaam</label>
+                        <input id="lastname" class="form-control form-control-user" type="text" name="lastname" required>
+                      </div>
+                      <div class="form-group">
 
+                        <label for="username">Gebruikersnaam</label>
+                        <input id="username" class="form-control form-control-user" type="text" name="username" required>
+                      </div>
+                      <div class="form-group">
+
+                        <label for="password">Wachtwoord</label>
+                        <input id="password" class="form-control form-control-user" type="password" name="password" required>
+                      </div>
+                      <div class="form-group">
+
+                        <label for="level">level</label>
+                        <input id="level" class="form-control form-control-user" value="1" type="number" name="level" min="1" max="3" required>
+                      </div>
+                      <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Annuleer</button>
+                        <button type="submit" class="btn btn-primary" name="add-student">Opslaan</button>
+                      </div>
+                    </form>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+
+            <!-- edit student Modal -->
+            <div class="modal fade" id="editStudentModal" tabindex="-1" role="dialog" aria-labelledby="editStudentModalLabel" aria-hidden="true">
+              <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h5 class="modal-title" id="editStudentModalLabel">Bewerk deze student</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                      <span aria-hidden="true">&times;</span>
+                    </button>
+                  </div>
+                  <div class="modal-body">
+                    <form action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']);?>" method="post">
+                      <div class="form-group">
+                        <label for="edit-surname">Voornaam</label>
+                        <input id="edit-surname" class="form-control form-control-user" type="text" name="surname" required>
+                      </div>
+                      <div class="form-group">
+                        <label for="edit-lastname">Achternaam</label>
+                        <input id="edit-lastname" class="form-control form-control-user" type="text" name="lastname" required>
+                      </div>
+                      <div class="form-group">
+
+                        <label for="edit-username">Gebruikersnaam</label>
+                        <input id="edit-username" class="form-control form-control-user" type="text" name="username" required>
+                      </div>
+                      <div class="form-group">
+
+                        <label for="edit-password">Wachtwoord</label>
+                        <input id="edit-password" class="form-control form-control-user" type="password" name="password" required>
+                      </div>
+                      <div class="form-group">
+
+                        <label for="edit-level">level</label>
+                        <input id="edit-level" class="form-control form-control-user" value="1" type="number" name="level" min="1" max="3" required>
+                      </div>
+                      <input id="edit-id" name= 'id' type="hidden">
 
                       <div class="modal-footer">
                         <button type="button" class="btn btn-secondary" data-dismiss="modal">Annuleer</button>
-                        <button type="submit" class="btn btn-primary" name="submit">Opslaan</button>
+                        <button type="submit" class="btn btn-primary" name="edit-student">Opslaan</button>
                       </div>
                     </form>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+
+            <!-- Logout Modal-->
+            <div class="modal fade" id="removeStudentModal" tabindex="-1" role="dialog" aria-labelledby="removeStudentModalLabel" aria-hidden="true">
+              <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h5 class="modal-title" id="removeStudentModalLabel">Weet je zeker dat je deze student wilt verwijderen?</h5>
+                    <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+                      <span aria-hidden="true">×</span>
+                    </button>
+                  </div>
+                  <!-- <div class="modal-body"></div> -->
+                  <div class="modal-footer">
+                    <button class="btn btn-secondary" type="button" data-dismiss="modal">Annuleer</button>
+                    <button type="submit" class="btn btn-danger" data-dismiss="modal" id="removeStudentComfirm">Verwijder</button>
                   </div>
                 </div>
               </div>
@@ -237,24 +261,6 @@ if (!isset($_SESSION['username'])) {
           <i class="fas fa-angle-up"></i>
         </a>
 
-        <!-- Logout Modal-->
-        <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-          <div class="modal-dialog" role="document">
-            <div class="modal-content">
-              <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLabel">Ready to Leave?</h5>
-                <button class="close" type="button" data-dismiss="modal" aria-label="Close">
-                  <span aria-hidden="true">×</span>
-                </button>
-              </div>
-              <div class="modal-body">Select "Logout" below if you are ready to end your current session.</div>
-              <div class="modal-footer">
-                <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
-                <a class="btn btn-primary" href="login.php">Logout</a>
-              </div>
-            </div>
-          </div>
-        </div>
 
         <!-- Bootstrap core JavaScript-->
         <script src="vendor/jquery/jquery.min.js"></script>
@@ -264,18 +270,8 @@ if (!isset($_SESSION['username'])) {
         <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
 
         <!-- Custom scripts for all pages-->
-        <script src="js/sb-admin-2.min.js"></script>
+        <script src="js/sb-admin-2.js"></script>
 
-        <!-- Page level plugins -->
-        <script src="vendor/chart.js/Chart.min.js"></script>
-
-        <!-- Page level custom scripts -->
-        <script src="js/demo/chart-area-demo.js"></script>
-        <script src="js/demo/chart-pie-demo.js"></script>
-
-        <script type="text/javascript">
-
-        </script>
 </body>
 
 </html>

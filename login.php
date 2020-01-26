@@ -19,6 +19,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $_SESSION['role']      = $row["role"];
     $_SESSION['surname']   = $row["surname"];
     $_SESSION['lastname']  = $row["lastname"];
+    $_SESSION['user_id']   = $row['id'];
     header("location: index.php");
   } else {
     $error = "Your Login Name or Password is invalid";
