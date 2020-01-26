@@ -5,6 +5,10 @@ session_start();
 if (!isset($_SESSION['username'])) {
   header("location: login.php");
 }
+
+$schoolyear = $_GET['schoolyear'];
+$block = $_GET['block'];
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -47,10 +51,18 @@ if (!isset($_SESSION['username'])) {
 
         <!-- Begin Page Content -->
         <div class="container-fluid">
+          <nav aria-label="breadcrumb">
+            <ol class="breadcrumb">
+              <li class="breadcrumb-item"><a href="schoolyears.php">Schooljaar <?php echo $schoolyear;?></a></li>
+              <li class="breadcrumb-item "><a href= "projectblocks.php?schoolyear=<?php echo $schoolyear;?>">Projectblok <?php echo $block;?></a></a></li>
+              <li class="breadcrumb-item active"><a>Projecten</a></li>
+
+            </ol>
+          </nav>
 
           <!-- Page Heading -->
           <div class="d-sm-flex align-items-center justify-content-center mb-4">
-            <h1 class="h3 mb-0 text-gray-800">Project 1</h1>
+            <h1 class="h3 mb-0 text-gray-800">Projecten</h1>
           </div>
 
           <!-- Content Row -->
@@ -133,8 +145,8 @@ if (!isset($_SESSION['username'])) {
               </div>
             </div>
           </div> -->
-            <div class="col-sm-2 text-center">
-              <a href="project1.php">
+            <div class="col-sm-2 text-center block-card">
+              <a href="project.php?<?php echo $schoolyear;?>&block=<?php echo $block;?>&project=1">
                 <div class="card bg-secondary d-sm-flex justify-content-center align-items-center shadow mb-4">
                   <div class="card-body">
                     <i class="fas fa-suitcase suitcase"></i>
@@ -144,8 +156,8 @@ if (!isset($_SESSION['username'])) {
               </a>
             </div>
 
-            <div class="col-sm-2 text-center">
-              <a href="song-puzzles.html">
+            <div class="col-sm-2 text-center block-card">
+              <a href="project.php?<?php echo $schoolyear;?>&block=<?php echo $block;?>&project=2">
                 <div class="card bg-secondary d-sm-flex justify-content-center align-items-center shadow mb-4">
                   <div class="card-body">
                     <i class="fas fa-suitcase suitcase"></i>
@@ -155,8 +167,8 @@ if (!isset($_SESSION['username'])) {
               </a>
             </div>
 
-            <div class="col-sm-2 text-center">
-              <a href="song-puzzles.html">
+            <div class="col-sm-2 text-center block-card">
+              <a href="project.php?<?php echo $schoolyear;?>&block=<?php echo $block;?>&project=3">
                 <div class="card bg-secondary d-sm-flex justify-content-center align-items-center shadow mb-4">
                   <div class="card-body">
                     <i class="fas fa-suitcase suitcase"></i>
@@ -171,8 +183,8 @@ if (!isset($_SESSION['username'])) {
           <!-- /.container-fluid -->
 
           <div class="row justify-content-center">
-            <div class="col-sm-2 text-center">
-              <a href="song-puzzles.html">
+            <div class="col-sm-2 text-center block-card">
+              <a href="project.php?<?php echo $schoolyear;?>&block=<?php echo $block;?>&project=4">
                 <div class="card bg-secondary d-sm-flex justify-content-center align-items-center shadow mb-4">
                   <div class="card-body">
                     <i class="fas fa-suitcase suitcase"></i>
@@ -181,8 +193,8 @@ if (!isset($_SESSION['username'])) {
                 <p>Project 4</p>
               </a>
             </div>
-            <div class="col-sm-2 text-center">
-              <a href="song-puzzles.html">
+            <div class="col-sm-2 text-center block-card">
+              <a href="project.php?<?php echo $schoolyear;?>&block=<?php echo $block;?>&project=5">
                 <div class="card bg-secondary d-sm-flex justify-content-center align-items-center shadow mb-4">
                   <div class="card-body">
                     <i class="fas fa-suitcase suitcase"></i>
@@ -191,8 +203,8 @@ if (!isset($_SESSION['username'])) {
                 <p>Project 5</p>
               </a>
             </div>
-            <div class="col-sm-2 text-center">
-              <a href="song-puzzles.html">
+            <div class="col-sm-2 text-center block-card">
+              <a href="project.php?<?php echo $schoolyear;?>&block=<?php echo $block;?>&project=6">
                 <div class="card bg-secondary d-sm-flex justify-content-center align-items-center shadow mb-4">
                   <div class="card-body">
                     <i class="fas fa-suitcase suitcase"></i>
@@ -204,8 +216,8 @@ if (!isset($_SESSION['username'])) {
           </div>
 
           <div class="row justify-content-center">
-            <div class="col-sm-2 text-center">
-              <a href="song-puzzles.html">
+            <div class="col-sm-2 text-center block-card">
+              <a href="project.php?<?php echo $schoolyear;?>&block=<?php echo $block;?>&project=7">
                 <div class="card bg-secondary d-sm-flex justify-content-center align-items-center shadow mb-4">
                   <div class="card-body">
                     <i class="fas fa-suitcase suitcase"></i>
@@ -214,8 +226,8 @@ if (!isset($_SESSION['username'])) {
                 <p>Project 7</p>
               </a>
             </div>
-            <div class="col-sm-2 text-center">
-              <a href="song-puzzles.html">
+            <div class="col-sm-2 text-center block-card">
+              <a href="project.php?<?php echo $schoolyear;?>&block=<?php echo $block;?>&project=8">
                 <div class="card bg-secondary d-sm-flex justify-content-center align-items-center shadow mb-4">
                   <div class="card-body">
                     <i class="fas fa-suitcase suitcase"></i>
@@ -224,8 +236,8 @@ if (!isset($_SESSION['username'])) {
                 <p>Project 8</p>
               </a>
             </div>
-            <div class="col-sm-2 text-center">
-              <a href="song-puzzles.html">
+            <div class="col-sm-2 text-center block-card">
+              <a href="project.php?<?php echo $schoolyear;?>&block=<?php echo $block;?>&project=9">
                 <div class="card bg-secondary d-sm-flex justify-content-center align-items-center shadow mb-4">
                   <div class="card-body">
                     <i class="fas fa-suitcase suitcase"></i>

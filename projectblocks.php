@@ -5,6 +5,8 @@ session_start();
 if (!isset($_SESSION['username'])) {
   header("location: login.php");
 }
+
+$schoolyear = $_GET['schoolyear'];
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -47,6 +49,12 @@ if (!isset($_SESSION['username'])) {
 
         <!-- Begin Page Content -->
         <div class="container-fluid">
+          <nav aria-label="breadcrumb">
+            <ol class="breadcrumb">
+              <li class="breadcrumb-item"><a href="schoolyears.php">Schooljaar <?php echo $schoolyear;?></a></li>
+              <li class="breadcrumb-item active"><a>Projectblokken</a></li>
+            </ol>
+          </nav>
 
           <!-- Page Heading -->
           <div class="d-sm-flex align-items-center justify-content-center mb-4">
@@ -55,86 +63,8 @@ if (!isset($_SESSION['username'])) {
 
           <!-- Content Row -->
           <div class="row justify-content-center">
-
-            <!-- Earnings (Monthly) Card Example -->
-            <!-- <div class="col-xl-3 col-md-6 mb-4">
-              <div class="card border-left-primary shadow h-100 py-2">
-                <div class="card-body">
-                  <div class="row no-gutters align-items-center">
-                    <div class="col mr-2">
-                      <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">Earnings (Monthly)</div>
-                      <div class="h5 mb-0 font-weight-bold text-gray-800">$40,000</div>
-                    </div>
-                    <div class="col-auto">
-                      <i class="fas fa-calendar fa-2x text-gray-300"></i>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div> -->
-
-            <!-- Earnings (Monthly) Card Example -->
-            <!-- <div class="col-xl-3 col-md-6 mb-4">
-              <div class="card border-left-success shadow h-100 py-2">
-                <div class="card-body">
-                  <div class="row no-gutters align-items-center">
-                    <div class="col mr-2">
-                      <div class="text-xs font-weight-bold text-success text-uppercase mb-1">Earnings (Annual)</div>
-                      <div class="h5 mb-0 font-weight-bold text-gray-800">$215,000</div>
-                    </div>
-                    <div class="col-auto">
-                      <i class="fas fa-dollar-sign fa-2x text-gray-300"></i>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div> -->
-
-            <!-- Earnings (Monthly) Card Example -->
-            <!-- <div class="col-xl-3 col-md-6 mb-4">
-              <div class="card border-left-info shadow h-100 py-2">
-                <div class="card-body">
-                  <div class="row no-gutters align-items-center">
-                    <div class="col mr-2">
-                      <div class="text-xs font-weight-bold text-info text-uppercase mb-1">Tasks</div>
-                      <div class="row no-gutters align-items-center">
-                        <div class="col-auto">
-                          <div class="h5 mb-0 mr-3 font-weight-bold text-gray-800">50%</div>
-                        </div>
-                        <div class="col">
-                          <div class="progress progress-sm mr-2">
-                            <div class="progress-bar bg-info" role="progressbar" style="width: 50%" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="col-auto">
-                      <i class="fas fa-clipboard-list fa-2x text-gray-300"></i>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div> -->
-
-            <!-- Pending Requests Card Example -->
-            <!-- <div class="col-xl-3 col-md-6 mb-4">
-              <div class="card border-left-warning shadow h-100 py-2">
-                <div class="card-body">
-                  <div class="row no-gutters align-items-center">
-                    <div class="col mr-2">
-                      <div class="text-xs font-weight-bold text-warning text-uppercase mb-1">Pending Requests</div>
-                      <div class="h5 mb-0 font-weight-bold text-gray-800">18</div>
-                    </div>
-                    <div class="col-auto">
-                      <i class="fas fa-comments fa-2x text-gray-300"></i>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div> -->
-            <div class="col-sm-2 text-center">
-              <a href="block1.php">
+            <div class="col-sm-2 text-center block-card">
+              <a href="block.php?schoolyear=<?php echo $schoolyear;?>&block=1">
                 <div class="card bg-secondary d-sm-flex justify-content-center align-items-center shadow mb-4">
                   <div class="card-body">
                     <i class="fas fa-cube cube"></i>
@@ -144,8 +74,8 @@ if (!isset($_SESSION['username'])) {
               </a>
             </div>
 
-            <div class="col-sm-2 text-center">
-              <a href="#">
+            <div class="col-sm-2 text-center block-card">
+              <a href="block.php?schoolyear=<?php echo $schoolyear;?>&block=2">
                 <div class="card bg-secondary d-sm-flex justify-content-center align-items-center shadow mb-4">
                   <div class="card-body">
                     <i class="fas fa-cube cube"></i>
@@ -155,8 +85,8 @@ if (!isset($_SESSION['username'])) {
               </a>
             </div>
 
-            <div class="col-sm-2 text-center">
-              <a href="#">
+            <div class="col-sm-2 text-center block-card">
+              <a href="block.php?schoolyear=<?php echo $schoolyear;?>&block=3">
                 <div class="card bg-secondary d-sm-flex justify-content-center align-items-center shadow mb-4">
                   <div class="card-body">
                     <i class="fas fa-cube cube"></i>
@@ -171,8 +101,8 @@ if (!isset($_SESSION['username'])) {
           <!-- /.container-fluid -->
 
           <div class="row justify-content-center">
-            <div class="col-sm-2 text-center">
-              <a href="#">
+            <div class="col-sm-2 text-center block-card">
+              <a href="block.php?schoolyear=<?php echo $schoolyear;?>&block=4">
                 <div class="card bg-secondary d-sm-flex justify-content-center align-items-center shadow mb-4">
                   <div class="card-body">
                     <i class="fas fa-cube cube"></i>
@@ -181,8 +111,8 @@ if (!isset($_SESSION['username'])) {
                 <p>Blok 4</p>
               </a>
             </div>
-            <div class="col-sm-2 text-center">
-              <a href="#">
+            <div class="col-sm-2 text-center block-card">
+              <a href="block.php?schoolyear=<?php echo $schoolyear;?>&block=5">
                 <div class="card bg-secondary d-sm-flex justify-content-center align-items-center shadow mb-4">
                   <div class="card-body">
                     <i class="fas fa-cube cube"></i>
@@ -191,8 +121,8 @@ if (!isset($_SESSION['username'])) {
                 <p>Blok 5</p>
               </a>
             </div>
-            <div class="col-sm-2 text-center">
-              <a href="#">
+            <div class="col-sm-2 text-center block-card">
+              <a href="block.php?schoolyear=<?php echo $schoolyear;?>&block=6">
                 <div class="card bg-secondary d-sm-flex justify-content-center align-items-center shadow mb-4">
                   <div class="card-body">
                     <i class="fas fa-cube cube"></i>
@@ -204,8 +134,8 @@ if (!isset($_SESSION['username'])) {
           </div>
 
           <div class="row justify-content-center">
-            <div class="col-sm-2 text-center">
-              <a href="#">
+            <div class="col-sm-2 text-center block-card">
+              <a href="block.php?schoolyear=<?php echo $schoolyear;?>&block=7">
                 <div class="card bg-secondary d-sm-flex justify-content-center align-items-center shadow mb-4">
                   <div class="card-body">
                     <i class="fas fa-cube cube"></i>
@@ -214,8 +144,8 @@ if (!isset($_SESSION['username'])) {
                 <p>Blok 7</p>
               </a>
             </div>
-            <div class="col-sm-2 text-center">
-              <a href="#">
+            <div class="col-sm-2 text-center block-card">
+              <a href="block.php?schoolyear=<?php echo $schoolyear;?>&block=8">
                 <div class="card bg-secondary d-sm-flex justify-content-center align-items-center shadow mb-4">
                   <div class="card-body">
                     <i class="fas fa-cube cube"></i>
@@ -224,8 +154,8 @@ if (!isset($_SESSION['username'])) {
                 <p>Blok 8</p>
               </a>
             </div>
-            <div class="col-sm-2 text-center">
-              <a href="#">
+            <div class="col-sm-2 text-center block-card">
+              <a href="block.php?schoolyear=<?php echo $schoolyear;?>&block=9">
                 <div class="card bg-secondary d-sm-flex justify-content-center align-items-center shadow mb-4">
                   <div class="card-body">
                     <i class="fas fa-cube cube"></i>

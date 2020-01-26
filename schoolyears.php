@@ -133,8 +133,8 @@ if (!isset($_SESSION['username'])) {
               </div>
             </div>
           </div> -->
-            <div class="col-sm-2 text-center">
-              <a href="projectblocks.php">
+            <div class="col-sm-2 text-center block-card">
+              <a href="projectblocks.php?schoolyear=groep-4">
                 <div class="card bg-success d-sm-flex justify-content-center align-items-center shadow mb-4">
                   <div class="card-body">
                     <i class="fas fa-folder folder"></i>
@@ -144,8 +144,8 @@ if (!isset($_SESSION['username'])) {
               </a>
             </div>
 
-            <div class="col-sm-2 text-center">
-              <a href="#">
+            <div class="col-sm-2 text-center block-card">
+              <a href="projectblocks.php?schoolyear=groep-2">
                 <div class="card bg-secondary d-sm-flex justify-content-center align-items-center shadow mb-4">
                   <div class="card-body">
                     <i class="fas fa-folder folder"></i>
@@ -155,8 +155,8 @@ if (!isset($_SESSION['username'])) {
               </a>
             </div>
 
-            <div class="col-sm-2 text-center">
-              <a href="#">
+            <div class="col-sm-2 text-center block-card">
+              <a href="projectblocks.php?schoolyear=groep-7">
                 <div class="card bg-secondary d-sm-flex justify-content-center align-items-center shadow mb-4">
                   <div class="card-body">
                     <i class="fas fa-folder folder"></i>
