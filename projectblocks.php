@@ -276,7 +276,7 @@ if (!isset($_SESSION['username'])) {
               </a>
             </div>
             <div class="col-sm-2 text-center">
-              <a href="#">
+              <a href="block9.php">
                 <div class="card bg-secondary d-sm-flex justify-content-center align-items-center shadow mb-4">
                   <div class="card-body">
                     <i class="fas fa-cube cube"></i>

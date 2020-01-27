@@ -17,7 +17,7 @@ if (!isset($_SESSION['username'])) {
   <meta name="description" content="">
   <meta name="author" content="">
 
-  <title>Blok 1</title>
+  <title>Blok 9</title>
 
   <!-- Custom fonts for this template-->
   <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
@@ -101,7 +101,7 @@ if (!isset($_SESSION['username'])) {
 
           <!-- Page Heading -->
           <div class="d-sm-flex align-items-center justify-content-center mb-4">
-            <h1 class="h3 mb-0 text-gray-800">Blok 1</h1>
+            <h1 class="h3 mb-0 text-gray-800">Blok 9</h1>
           </div>
 
           <!-- Content Row -->
@@ -185,7 +185,7 @@ if (!isset($_SESSION['username'])) {
             </div>
           </div> -->
             <div class="col-sm-2 text-center">
-              <a href="project1.php">
+              <a href="#">
                 <div class="card bg-secondary d-sm-flex justify-content-center align-items-center shadow mb-4">
                   <div class="card-body">
                     <i class="fas fa-suitcase suitcase"></i>
@@ -196,7 +196,7 @@ if (!isset($_SESSION['username'])) {
             </div>
 
             <div class="col-sm-2 text-center">
-              <a href="song-puzzles.html">
+              <a href="#">
                 <div class="card bg-secondary d-sm-flex justify-content-center align-items-center shadow mb-4">
                   <div class="card-body">
                     <i class="fas fa-suitcase suitcase"></i>
@@ -207,7 +207,7 @@ if (!isset($_SESSION['username'])) {
             </div>
 
             <div class="col-sm-2 text-center">
-              <a href="song-puzzles.html">
+              <a href="#">
                 <div class="card bg-secondary d-sm-flex justify-content-center align-items-center shadow mb-4">
                   <div class="card-body">
                     <i class="fas fa-suitcase suitcase"></i>
@@ -223,7 +223,7 @@ if (!isset($_SESSION['username'])) {
 
           <div class="row justify-content-center">
             <div class="col-sm-2 text-center">
-              <a href="song-puzzles.html">
+              <a href="#">
                 <div class="card bg-secondary d-sm-flex justify-content-center align-items-center shadow mb-4">
                   <div class="card-body">
                     <i class="fas fa-suitcase suitcase"></i>
@@ -233,7 +233,7 @@ if (!isset($_SESSION['username'])) {
               </a>
             </div>
             <div class="col-sm-2 text-center">
-              <a href="song-puzzles.html">
+              <a href="#">
                 <div class="card bg-secondary d-sm-flex justify-content-center align-items-center shadow mb-4">
                   <div class="card-body">
                     <i class="fas fa-suitcase suitcase"></i>
@@ -243,7 +243,7 @@ if (!isset($_SESSION['username'])) {
               </a>
             </div>
             <div class="col-sm-2 text-center">
-              <a href="song-puzzles.html">
+              <a href="#">
                 <div class="card bg-secondary d-sm-flex justify-content-center align-items-center shadow mb-4">
                   <div class="card-body">
                     <i class="fas fa-suitcase suitcase"></i>
@@ -256,7 +256,7 @@ if (!isset($_SESSION['username'])) {
 
           <div class="row justify-content-center">
             <div class="col-sm-2 text-center">
-              <a href="song-puzzles.html">
+              <a href="#">
                 <div class="card bg-secondary d-sm-flex justify-content-center align-items-center shadow mb-4">
                   <div class="card-body">
                     <i class="fas fa-suitcase suitcase"></i>
@@ -266,7 +266,7 @@ if (!isset($_SESSION['username'])) {
               </a>
             </div>
             <div class="col-sm-2 text-center">
-              <a href="song-puzzles.html">
+              <a href="#">
                 <div class="card bg-secondary d-sm-flex justify-content-center align-items-center shadow mb-4">
                   <div class="card-body">
                     <i class="fas fa-suitcase suitcase"></i>
@@ -276,7 +276,7 @@ if (!isset($_SESSION['username'])) {
               </a>
             </div>
             <div class="col-sm-2 text-center">
-              <a href="song-puzzles.html">
+              <a href="project9.php">
                 <div class="card bg-secondary d-sm-flex justify-content-center align-items-center shadow mb-4">
                   <div class="card-body">
                     <i class="fas fa-suitcase suitcase"></i>
