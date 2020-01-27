@@ -101,7 +101,7 @@ if (!isset($_SESSION['username'])) {
 
           <!-- Page Heading -->
           <div class="d-sm-flex align-items-center justify-content-center mb-4">
-            <h1 class="h3 mb-0 text-gray-800">Blok 1</h1>
+            <h1 class="h3 mb-0 text-gray-800">Project blok 1</h1>
           </div>
 
           <!-- Content Row -->
@@ -184,8 +184,8 @@ if (!isset($_SESSION['username'])) {
               </div>
             </div>
           </div> -->
-            <div class="col-sm-2 text-center">
-              <a href="project1.php">
+            <div class="col-sm-2 text-center block-card">
+              <a href="song-puzzles.html">
                 <div class="card bg-secondary d-sm-flex justify-content-center align-items-center shadow mb-4">
                   <div class="card-body">
                     <i class="fas fa-suitcase suitcase"></i>
@@ -194,110 +194,29 @@ if (!isset($_SESSION['username'])) {
                 <p>Project 1</p>
               </a>
             </div>
+            <div class="text-center">
 
-            <div class="col-sm-2 text-center">
-              <a href="song-puzzles.html">
-                <div class="card bg-secondary d-sm-flex justify-content-center align-items-center shadow mb-4">
-                  <div class="card-body">
-                    <i class="fas fa-suitcase suitcase"></i>
-                  </div>
+                <div class="d-sm-flex justify-content-center align-items-center shadow mb-4">
+                  <p>"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum." </p>
                 </div>
-                <p>Project 2</p>
-              </a>
-            </div>
 
-            <div class="col-sm-2 text-center">
-              <a href="song-puzzles.html">
-                <div class="card bg-secondary d-sm-flex justify-content-center align-items-center shadow mb-4">
-                  <div class="card-body">
-                    <i class="fas fa-suitcase suitcase"></i>
-                  </div>
-                </div>
-                <p>Project 3</p>
-              </a>
-            </div>
 
+            </div>
 
           </div>
           <!-- /.container-fluid -->
 
-          <div class="row justify-content-center">
-            <div class="col-sm-2 text-center">
-              <a href="song-puzzles.html">
-                <div class="card bg-secondary d-sm-flex justify-content-center align-items-center shadow mb-4">
-                  <div class="card-body">
-                    <i class="fas fa-suitcase suitcase"></i>
-                  </div>
-                </div>
-                <p>Project 4</p>
-              </a>
-            </div>
-            <div class="col-sm-2 text-center">
-              <a href="song-puzzles.html">
-                <div class="card bg-secondary d-sm-flex justify-content-center align-items-center shadow mb-4">
-                  <div class="card-body">
-                    <i class="fas fa-suitcase suitcase"></i>
-                  </div>
-                </div>
-                <p>Project 5</p>
-              </a>
-            </div>
-            <div class="col-sm-2 text-center">
-              <a href="song-puzzles.html">
-                <div class="card bg-secondary d-sm-flex justify-content-center align-items-center shadow mb-4">
-                  <div class="card-body">
-                    <i class="fas fa-suitcase suitcase"></i>
-                  </div>
-                </div>
-                <p>Project 6</p>
-              </a>
-            </div>
-          </div>
 
-          <div class="row justify-content-center">
-            <div class="col-sm-2 text-center">
-              <a href="song-puzzles.html">
-                <div class="card bg-secondary d-sm-flex justify-content-center align-items-center shadow mb-4">
-                  <div class="card-body">
-                    <i class="fas fa-suitcase suitcase"></i>
-                  </div>
-                </div>
-                <p>Project 7</p>
-              </a>
-            </div>
-            <div class="col-sm-2 text-center">
-              <a href="song-puzzles.html">
-                <div class="card bg-secondary d-sm-flex justify-content-center align-items-center shadow mb-4">
-                  <div class="card-body">
-                    <i class="fas fa-suitcase suitcase"></i>
-                  </div>
-                </div>
-                <p>Project 8</p>
-              </a>
-            </div>
-            <div class="col-sm-2 text-center">
-              <a href="song-puzzles.html">
-                <div class="card bg-secondary d-sm-flex justify-content-center align-items-center shadow mb-4">
-                  <div class="card-body">
-                    <i class="fas fa-suitcase suitcase"></i>
-                  </div>
-                </div>
-                <p>Project 9</p>
-              </a>
-            </div>
-          </div>
-
-        </div>
         <!-- End of Main Content -->
 
         <!-- Footer -->
-        <footer class="sticky-footer bg-white">
+        <!-- <footer class="sticky-footer bg-white">
           <div class="container my-auto">
             <div class="copyright text-center my-auto">
               <span>Copyright &copy; Your Website 2019</span>
             </div>
           </div>
-        </footer>
+        </footer> -->
         <!-- End of Footer -->
 
       </div>
@@ -311,25 +230,6 @@ if (!isset($_SESSION['username'])) {
       <i class="fas fa-angle-up"></i>
     </a>
 
-    <!-- Logout Modal-->
-    <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-      <div class="modal-dialog" role="document">
-        <div class="modal-content">
-          <div class="modal-header">
-            <h5 class="modal-title" id="exampleModalLabel">Ready to Leave?</h5>
-            <button class="close" type="button" data-dismiss="modal" aria-label="Close">
-              <span aria-hidden="true">×</span>
-            </button>
-          </div>
-          <div class="modal-body">Select "Logout" below if you are ready to end your current session.</div>
-          <div class="modal-footer">
-            <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
-            <a class="btn btn-primary" href="login.php">Logout</a>
-          </div>
-        </div>
-      </div>
-    </div>
-
     <!-- Bootstrap core JavaScript-->
     <script src="vendor/jquery/jquery.min.js"></script>
     <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
@@ -339,13 +239,6 @@ if (!isset($_SESSION['username'])) {
 
     <!-- Custom scripts for all pages-->
     <script src="js/sb-admin-2.min.js"></script>
-
-    <!-- Page level plugins -->
-    <script src="vendor/chart.js/Chart.min.js"></script>
-
-    <!-- Page level custom scripts -->
-    <script src="js/demo/chart-area-demo.js"></script>
-    <script src="js/demo/chart-pie-demo.js"></script>
 
     <script type="text/javascript">
 

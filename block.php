@@ -5,6 +5,10 @@ session_start();
 if (!isset($_SESSION['username'])) {
   header("location: login.php");
 }
+
+$schoolyear = $_GET['schoolyear'];
+$block = $_GET['block'];
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -41,67 +45,24 @@ if (!isset($_SESSION['username'])) {
       <!-- Main Content -->
       <div id="content">
 
-        <!-- Topbar -->
-        <nav class="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow">
+        <?php include("partials/topbar.php"); ?>
 
-          <!-- Sidebar Toggle (Topbar) -->
-          <button id="sidebarToggleTop" class="btn btn-link d-md-none rounded-circle mr-3">
-            <i class="fa fa-bars"></i>
-          </button>
-
-          <!-- Topbar Search -->
-          <!-- <form class="d-none d-sm-inline-block form-inline mr-auto ml-md-3 my-2 my-md-0 mw-100 navbar-search">
-            <div class="input-group">
-              <input type="text" class="form-control bg-light border-0 small" placeholder="Search for..." aria-label="Search" aria-describedby="basic-addon2">
-              <div class="input-group-append">
-                <button class="btn btn-primary" type="button">
-                  <i class="fas fa-search fa-sm"></i>
-                </button>
-              </div>
-            </div>
-          </form> -->
-
-          <!-- Topbar Navbar -->
-          <ul class="navbar-nav ml-auto">
-            <!-- Nav Item - User Information -->
-            <li class="nav-item dropdown no-arrow">
-              <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                <span class="mr-2 d-none d-lg-inline text-gray-600 small">ingelogd als: <?php echo $_SESSION['role'] . "  " ?><b><?php echo $_SESSION['surname'] . " " . $_SESSION['lastname'] ?></b></span>
-                <img class="img-profile rounded-circle" src="https://source.unsplash.com/QAB-WJcbgJk/60x60">
-              </a>
-              <!-- Dropdown - User Information -->
-              <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="userDropdown">
-                <a class="dropdown-item" href="#">
-                  <i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i>
-                  Profiel
-                </a>
-                <a class="dropdown-item" href="#">
-                  <i class="fas fa-cogs fa-sm fa-fw mr-2 text-gray-400"></i>
-                  Instellingen
-                </a>
-                <a class="dropdown-item" href="#">
-                  <i class="fas fa-list fa-sm fa-fw mr-2 text-gray-400"></i>
-                  Activiteiten log
-                </a>
-                <div class="dropdown-divider"></div>
-                <a class="dropdown-item" href="#" data-toggle="modal" data-target="#logoutModal">
-                  <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
-                  Log uit
-                </a>
-              </div>
-            </li>
-
-          </ul>
-
-        </nav>
         <!-- End of Topbar -->
 
         <!-- Begin Page Content -->
-        <div class="container-fluid">
+        <div class="container">
+          <nav aria-label="breadcrumb">
+            <ol class="breadcrumb">
+              <li class="breadcrumb-item"><a href="schoolyears.php">Schooljaar <?php echo $schoolyear;?></a></li>
+              <li class="breadcrumb-item "><a href= "projectblocks.php?schoolyear=<?php echo $schoolyear;?>">Projectblok <?php echo $block;?></a></a></li>
+              <li class="breadcrumb-item active"><a>Projecten</a></li>
+
+            </ol>
+          </nav>
 
           <!-- Page Heading -->
           <div class="d-sm-flex align-items-center justify-content-center mb-4">
-            <h1 class="h3 mb-0 text-gray-800">Project blok 1</h1>
+            <h1 class="h3 mb-0 text-gray-800">Blok 1</h1>
           </div>
 
           <!-- Content Row -->
@@ -184,8 +145,8 @@ if (!isset($_SESSION['username'])) {
               </div>
             </div>
           </div> -->
-            <div class="col-sm-2 text-center">
-              <a href="song-puzzles.html">
+            <div class="col-sm-2 text-center block-card">
+              <a href="project.php?<?php echo $schoolyear;?>&block=<?php echo $block;?>&project=1">
                 <div class="card bg-secondary d-sm-flex justify-content-center align-items-center shadow mb-4">
                   <div class="card-body">
                     <i class="fas fa-suitcase suitcase"></i>
@@ -194,19 +155,100 @@ if (!isset($_SESSION['username'])) {
                 <p>Project 1</p>
               </a>
             </div>
-            <div class="text-center">
-              
-                <div class="d-sm-flex justify-content-center align-items-center shadow mb-4">
-                  <p>"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum." </p>
+
+            <div class="col-sm-2 text-center block-card">
+              <a href="project.php?<?php echo $schoolyear;?>&block=<?php echo $block;?>&project=2">
+                <div class="card bg-secondary d-sm-flex justify-content-center align-items-center shadow mb-4">
+                  <div class="card-body">
+                    <i class="fas fa-suitcase suitcase"></i>
+                  </div>
                 </div>
-                
-              
+                <p>Project 2</p>
+              </a>
             </div>
+
+            <div class="col-sm-2 text-center block-card">
+              <a href="project.php?<?php echo $schoolyear;?>&block=<?php echo $block;?>&project=3">
+                <div class="card bg-secondary d-sm-flex justify-content-center align-items-center shadow mb-4">
+                  <div class="card-body">
+                    <i class="fas fa-suitcase suitcase"></i>
+                  </div>
+                </div>
+                <p>Project 3</p>
+              </a>
+            </div>
+
 
           </div>
           <!-- /.container-fluid -->
 
-          
+          <div class="row justify-content-center">
+            <div class="col-sm-2 text-center block-card">
+              <a href="project.php?<?php echo $schoolyear;?>&block=<?php echo $block;?>&project=4">
+                <div class="card bg-secondary d-sm-flex justify-content-center align-items-center shadow mb-4">
+                  <div class="card-body">
+                    <i class="fas fa-suitcase suitcase"></i>
+                  </div>
+                </div>
+                <p>Project 4</p>
+              </a>
+            </div>
+            <div class="col-sm-2 text-center block-card">
+              <a href="project.php?<?php echo $schoolyear;?>&block=<?php echo $block;?>&project=5">
+                <div class="card bg-secondary d-sm-flex justify-content-center align-items-center shadow mb-4">
+                  <div class="card-body">
+                    <i class="fas fa-suitcase suitcase"></i>
+                  </div>
+                </div>
+                <p>Project 5</p>
+              </a>
+            </div>
+            <div class="col-sm-2 text-center block-card">
+              <a href="project.php?<?php echo $schoolyear;?>&block=<?php echo $block;?>&project=6">
+                <div class="card bg-secondary d-sm-flex justify-content-center align-items-center shadow mb-4">
+                  <div class="card-body">
+                    <i class="fas fa-suitcase suitcase"></i>
+                  </div>
+                </div>
+                <p>Project 6</p>
+              </a>
+            </div>
+          </div>
+
+          <div class="row justify-content-center">
+            <div class="col-sm-2 text-center block-card">
+              <a href="project.php?<?php echo $schoolyear;?>&block=<?php echo $block;?>&project=7">
+                <div class="card bg-secondary d-sm-flex justify-content-center align-items-center shadow mb-4">
+                  <div class="card-body">
+                    <i class="fas fa-suitcase suitcase"></i>
+                  </div>
+                </div>
+                <p>Project 7</p>
+              </a>
+            </div>
+            <div class="col-sm-2 text-center block-card">
+              <a href="project.php?<?php echo $schoolyear;?>&block=<?php echo $block;?>&project=8">
+                <div class="card bg-secondary d-sm-flex justify-content-center align-items-center shadow mb-4">
+                  <div class="card-body">
+                    <i class="fas fa-suitcase suitcase"></i>
+                  </div>
+                </div>
+                <p>Project 8</p>
+              </a>
+            </div>
+            <div class="col-sm-2 text-center block-card">
+              <a href="project.php?<?php echo $schoolyear;?>&block=<?php echo $block;?>&project=9">
+                <div class="card bg-secondary d-sm-flex justify-content-center align-items-center shadow mb-4">
+                  <div class="card-body">
+                    <i class="fas fa-suitcase suitcase"></i>
+                  </div>
+                </div>
+                <p>Project 9</p>
+              </a>
+            </div>
+          </div>
+
+        </div>
         <!-- End of Main Content -->
 
         <!-- Footer -->

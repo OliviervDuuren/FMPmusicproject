@@ -47,5 +47,48 @@
     e.preventDefault();
   });
 
+  $('.table').on('click', 'tbody .edit', function() {
+    var id = $(this).closest('tr').data("id");
+    $.ajax({
+      url: "php/getChildById.php",
+      method: "POST",
+      data: {
+        id: id
+      },
+      success: function(result) {
+        console.log(result);
+        var data = JSON.parse(result);
+
+        $('#editStudentModal').find($("#edit-surname").val(data.surname));
+        $('#editStudentModal').find($("#edit-lastname").val(data.lastname));
+        $('#editStudentModal').find($("#edit-username").val(data.username));
+        $('#editStudentModal').find($("#edit-password").val(data.password));
+        $('#editStudentModal').find($("#edit-level").val(data.level));
+        $('#editStudentModal').find($("#edit-id").val(data.id));
+      }
+    });
+
+  });
+
+  $('.table').on('click', 'tbody .remove', function() {
+    var id = $(this).closest('tr').data("id");
+    $('#removeStudentComfirm').data("id", id);
+  });
+
+  $('#removeStudentComfirm').click(function() {
+    var id = $(this).data("id");
+    console.log(id);
+    $.ajax({
+      url: "php/removeStudentById.php",
+      method: "POST",
+      data: {
+        id: id
+      },
+      success: function(result) {
+        console.log(result);
+        location.reload();
+      }
+    });
+  });
 
 })(jQuery); // End of use strict
