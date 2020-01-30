@@ -6,7 +6,11 @@ if (!isset($_SESSION['username'])) {
   header("location: login.php");
 }
 
-$schoolyear = $_GET['schoolyear'];
+
+if (!isset($_SESSION['level'])) {
+  $level = $_GET['level'];
+}
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -18,8 +22,9 @@ $schoolyear = $_GET['schoolyear'];
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <meta name="description" content="">
   <meta name="author" content="">
+  <link rel="icon" href="img\Icon.png" type="image/x-icon">
 
-  <title>Dashboard</title>
+  <title>Projectblokken</title>
 
   <!-- Custom fonts for this template-->
   <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
@@ -49,23 +54,18 @@ $schoolyear = $_GET['schoolyear'];
 
         <!-- Begin Page Content -->
         <div class="container">
-          <nav aria-label="breadcrumb">
-            <ol class="breadcrumb">
-              <li class="breadcrumb-item"><a href="schoolyears.php">Schooljaar <?php echo $schoolyear;?></a></li>
-              <li class="breadcrumb-item active"><a>Projectblokken</a></li>
-            </ol>
-          </nav>
+
 
           <!-- Page Heading -->
           <div class="d-sm-flex align-items-center justify-content-center mb-4">
-            <h1 class="h3 mb-0 text-gray-800">Projectblokken</h1>
+            <h1 class="h3 text-gray-800">Projectblokken</h1>
           </div>
 
           <!-- Content Row -->
           <div class="row justify-content-center">
-            <div class="col-sm-2 text-center block-card">
-              <a href="block.php?schoolyear=<?php echo $schoolyear;?>&block=1">
-                <div class="card bg-secondary d-sm-flex justify-content-center align-items-center shadow mb-4">
+            <div class="col-sm-2 text-center block-card ">
+              <a class="disabled" href="block.php?block=1">
+                <div class="card bg-primary d-sm-flex justify-content-center align-items-center shadow mb-4">
                   <div class="card-body">
                     <i class="fas fa-cube cube"></i>
                   </div>
@@ -75,7 +75,7 @@ $schoolyear = $_GET['schoolyear'];
             </div>
 
             <div class="col-sm-2 text-center block-card">
-              <a href="block.php?schoolyear=<?php echo $schoolyear;?>&block=2">
+              <a class="disabled" href="">
                 <div class="card bg-secondary d-sm-flex justify-content-center align-items-center shadow mb-4">
                   <div class="card-body">
                     <i class="fas fa-cube cube"></i>
@@ -86,7 +86,7 @@ $schoolyear = $_GET['schoolyear'];
             </div>
 
             <div class="col-sm-2 text-center block-card">
-              <a href="block.php?schoolyear=<?php echo $schoolyear;?>&block=3">
+              <a class="disabled" href="">
                 <div class="card bg-secondary d-sm-flex justify-content-center align-items-center shadow mb-4">
                   <div class="card-body">
                     <i class="fas fa-cube cube"></i>
@@ -102,7 +102,7 @@ $schoolyear = $_GET['schoolyear'];
 
           <div class="row justify-content-center">
             <div class="col-sm-2 text-center block-card">
-              <a href="block.php?schoolyear=<?php echo $schoolyear;?>&block=4">
+              <a class="disabled" href="">
                 <div class="card bg-secondary d-sm-flex justify-content-center align-items-center shadow mb-4">
                   <div class="card-body">
                     <i class="fas fa-cube cube"></i>
@@ -112,7 +112,7 @@ $schoolyear = $_GET['schoolyear'];
               </a>
             </div>
             <div class="col-sm-2 text-center block-card">
-              <a href="block.php?schoolyear=<?php echo $schoolyear;?>&block=5">
+              <a class="disabled" href="">
                 <div class="card bg-secondary d-sm-flex justify-content-center align-items-center shadow mb-4">
                   <div class="card-body">
                     <i class="fas fa-cube cube"></i>
@@ -122,7 +122,7 @@ $schoolyear = $_GET['schoolyear'];
               </a>
             </div>
             <div class="col-sm-2 text-center block-card">
-              <a href="block.php?schoolyear=<?php echo $schoolyear;?>&block=6">
+              <a class="disabled" href="">
                 <div class="card bg-secondary d-sm-flex justify-content-center align-items-center shadow mb-4">
                   <div class="card-body">
                     <i class="fas fa-cube cube"></i>
@@ -135,7 +135,7 @@ $schoolyear = $_GET['schoolyear'];
 
           <div class="row justify-content-center">
             <div class="col-sm-2 text-center block-card">
-              <a href="block.php?schoolyear=<?php echo $schoolyear;?>&block=7">
+              <a class="disabled" href="">
                 <div class="card bg-secondary d-sm-flex justify-content-center align-items-center shadow mb-4">
                   <div class="card-body">
                     <i class="fas fa-cube cube"></i>
@@ -145,7 +145,7 @@ $schoolyear = $_GET['schoolyear'];
               </a>
             </div>
             <div class="col-sm-2 text-center block-card">
-              <a href="block.php?schoolyear=<?php echo $schoolyear;?>&block=8">
+              <a class="disabled" href="">
                 <div class="card bg-secondary d-sm-flex justify-content-center align-items-center shadow mb-4">
                   <div class="card-body">
                     <i class="fas fa-cube cube"></i>
@@ -154,9 +154,9 @@ $schoolyear = $_GET['schoolyear'];
                 <p>Blok 8</p>
               </a>
             </div>
-            <div class="col-sm-2 text-center">
-              <a href="block9.php">
-                <div class="card bg-secondary d-sm-flex justify-content-center align-items-center shadow mb-4">
+            <div class="col-sm-2 text-center block-card">
+              <a href="block.php?block=9">
+                <div class="card bg-primary d-sm-flex justify-content-center align-items-center shadow mb-4">
                   <div class="card-body">
                     <i class="fas fa-cube cube"></i>
                   </div>
@@ -169,21 +169,25 @@ $schoolyear = $_GET['schoolyear'];
         </div>
         <!-- End of Main Content -->
 
-        <!-- Footer -->
-        <!-- <footer class="sticky-footer bg-white">
-          <div class="container my-auto">
-            <div class="copyright text-center my-auto">
-              <span>Copyright &copy; Your Website 2019</span>
-            </div>
-          </div>
-        </footer> -->
-        <!-- End of Footer -->
+
 
       </div>
       <!-- End of Content Wrapper -->
 
+      <!-- Footer -->
+      <footer class="sticky-footer bg-white">
+        <div class="container my-auto">
+          <div class="copyright text-center my-auto">
+            <span>Copyright &copy; Your Website 2020</span>
+          </div>
+        </div>
+      </footer>
+      <!-- End of Footer -->
+
     </div>
     <!-- End of Page Wrapper -->
+
+
 
     <!-- Scroll to Top Button-->
     <a class="scroll-to-top rounded" href="#page-top">
@@ -202,7 +206,10 @@ $schoolyear = $_GET['schoolyear'];
 
 
     <script type="text/javascript">
-
+      $(".hBack").on("click", function(e) {
+        e.preventDefault();
+        window.history.back();
+      });
     </script>
 </body>
 

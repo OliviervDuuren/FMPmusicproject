@@ -16,6 +16,7 @@ if (!isset($_SESSION['username'])) {
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <meta name="description" content="">
   <meta name="author" content="">
+  <link rel = "icon" href ="img\Icon.png"  type = "image/x-icon"> 
 
   <title>Dashboard</title>
 
@@ -134,7 +135,7 @@ if (!isset($_SESSION['username'])) {
             </div>
           </div> -->
             <div class="col-sm-2 text-center block-card">
-              <a href="projectblocks.php?schoolyear=groep-4">
+              <a href="projectblocks.php">
                 <div class="card bg-success d-sm-flex justify-content-center align-items-center shadow mb-4">
                   <div class="card-body">
                     <i class="fas fa-folder folder"></i>
@@ -145,7 +146,7 @@ if (!isset($_SESSION['username'])) {
             </div>
 
             <div class="col-sm-2 text-center block-card">
-              <a href="projectblocks.php?schoolyear=groep-2">
+              <a href="#">
                 <div class="card bg-secondary d-sm-flex justify-content-center align-items-center shadow mb-4">
                   <div class="card-body">
                     <i class="fas fa-folder folder"></i>
@@ -156,7 +157,7 @@ if (!isset($_SESSION['username'])) {
             </div>
 
             <div class="col-sm-2 text-center block-card">
-              <a href="projectblocks.php?schoolyear=groep-7">
+              <a href="#">
                 <div class="card bg-secondary d-sm-flex justify-content-center align-items-center shadow mb-4">
                   <div class="card-body">
                     <i class="fas fa-folder folder"></i>
@@ -226,21 +227,23 @@ if (!isset($_SESSION['username'])) {
       </div> -->
           <!-- End of Main Content -->
 
-          <!-- Footer -->
-          <!-- <footer class="sticky-footer bg-white">
-            <div class="container my-auto">
-              <div class="copyright text-center my-auto">
-                <span>Copyright &copy; Your Website 2019</span>
-              </div>
-            </div>
-          </footer> -->
-          <!-- End of Footer -->
+
 
         </div>
         <!-- End of Content Wrapper -->
 
       </div>
       <!-- End of Page Wrapper -->
+
+      <!-- Footer -->
+      <footer class="sticky-footer bg-white">
+        <div class="container my-auto">
+          <div class="copyright text-center my-auto">
+            <span>Copyright &copy; Your Website 2020</span>
+          </div>
+        </div>
+      </footer>
+      <!-- End of Footer -->
 
       <!-- Scroll to Top Button-->
       <a class="scroll-to-top rounded" href="#page-top">

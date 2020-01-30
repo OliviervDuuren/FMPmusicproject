@@ -25,9 +25,9 @@
 
     <!-- Nav Item - Dashboard -->
     <li class="nav-item ">
-      <a class="nav-link" href="schoolyears.php">
-        <i class="fas fa-fw fa-folder"></i>
-        <span>Schooljaren</span></a>
+      <a class="nav-link" href="students.php">
+        <i class="fas fa-fw fa-child"></i>
+        <span>Leerlingen</span></a>
     </li>
 
     <!-- Divider -->
@@ -36,8 +36,8 @@
     <!-- Nav Item - Dashboard -->
     <li class="nav-item ">
       <a class="nav-link" href="projectblocks.php">
-        <i class="fas fa-fw fa-suitcase"></i>
-        <span>Projecten</span></a>
+        <i class="fas fa-fw fa-cube"></i>
+        <span>Projectblokken</span></a>
     </li>
 
     <!-- Divider -->
@@ -45,10 +45,11 @@
 
     <!-- Nav Item - Dashboard -->
     <li class="nav-item ">
-      <a class="nav-link" href="students.php">
-        <i class="fas fa-fw fa-child"></i>
-        <span>Leerlingen</span></a>
+      <a class="nav-link" href="block.php?block=1">
+        <i class="fas fa-fw fa-suitcase"></i>
+        <span>Projecten</span></a>
     </li>
+
 
     <!-- Divider -->
     <hr class="sidebar-divider">
@@ -60,7 +61,7 @@
 
     <!-- Nav Item - Pages Collapse Menu -->
     <li class="nav-item">
-      <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
+      <a class="nav-link collapsed disabled" href="#" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
         <i class="fas fa-fw fa-cog"></i>
         <span>Instellingen</span>
       </a>
@@ -75,7 +76,7 @@
 
     <!-- Nav Item - Utilities Collapse Menu -->
     <li class="nav-item">
-      <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseUtilities" aria-expanded="true" aria-controls="collapseUtilities">
+      <a class="nav-link collapsed disabled" href="#" data-toggle="collapse" data-target="#collapseUtilities" aria-expanded="true" aria-controls="collapseUtilities">
         <i class="fas fa-fw fa-video"></i>
         <span>Tutorials</span>
       </a>

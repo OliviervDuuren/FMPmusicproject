@@ -8,34 +8,31 @@ if (!isset($_SESSION['username'])) {
 }
 
 // TODO path protection for teachers. If not teacher then redirect to previous page.
-if(strtolower($_SESSION['role']) != "teacher") {
-
+if (strtolower($_SESSION['role']) != "teacher") {
 }
 
-if(isset($_POST['add-student'])) {
+if (isset($_POST['add-student'])) {
 
   $sql = "INSERT INTO users (surname, lastname, role, level, parent_id, username, password)
-      VALUES ('".$_POST["surname"]."','".$_POST["lastname"]."', 'child','".$_POST["level"]."','".$_SESSION["user_id"]."', '".$_POST["username"]."', '".$_POST["password"]."')";
-  $result = mysqli_query($mysqli,$sql);
-
+      VALUES ('" . $_POST["surname"] . "','" . $_POST["lastname"] . "', 'child','" . $_POST["level"] . "','" . $_SESSION["user_id"] . "', '" . $_POST["username"] . "', '" . $_POST["password"] . "')";
+  $result = mysqli_query($mysqli, $sql);
 }
 
-if(isset($_POST['edit-student'])) {
+if (isset($_POST['edit-student'])) {
   $sql = "UPDATE users
-          SET surname   = '".$_POST["surname"]."',
-              lastname  = '".$_POST["lastname"]."',
-              level     = '".$_POST["level"]."',
-              username  = '".$_POST["username"]."',
-              password  = '".$_POST["password"]."'
-          WHERE id = ".$_POST['id']."";
+          SET surname   = '" . $_POST["surname"] . "',
+              lastname  = '" . $_POST["lastname"] . "',
+              level     = '" . $_POST["level"] . "',
+              username  = '" . $_POST["username"] . "',
+              password  = '" . $_POST["password"] . "'
+          WHERE id = " . $_POST['id'] . "";
 
-  error_log( print_r($sql, TRUE) );
+  error_log(print_r($sql, TRUE));
 
-  $result = mysqli_query($mysqli,$sql);
-
+  $result = mysqli_query($mysqli, $sql);
 }
 
-$sql = "SELECT * FROM users WHERE role like '%Child%'AND parent_id = ".$_SESSION['user_id']."";
+$sql = "SELECT * FROM users WHERE role like '%Child%'AND parent_id = " . $_SESSION['user_id'] . "";
 
 $result = $mysqli->query($sql);
 
@@ -50,6 +47,7 @@ $result = $mysqli->query($sql);
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <meta name="description" content="">
   <meta name="author" content="">
+  <link rel = "icon" href ="img\Icon.png"  type = "image/x-icon"> 
 
   <title>Leerlingen</title>
 
@@ -66,10 +64,10 @@ $result = $mysqli->query($sql);
 
   <!-- Prevent Form resubmit -->
   <script>
-    if ( window.history.replaceState ) {
-        window.history.replaceState( null, null, window.location.href );
+    if (window.history.replaceState) {
+      window.history.replaceState(null, null, window.location.href);
     }
-</script>
+  </script>
 
   <!-- Page Wrapper -->
   <div id="wrapper">
@@ -111,19 +109,19 @@ $result = $mysqli->query($sql);
                 // output data of each row
                 $count = 1;
                 while ($row = $result->fetch_assoc()) {
-                    echo
-                    "<tr data-id='".$row["id"]."'>".
-                      "<th scope='row'>".$count."</th>".
-                      "<td>".$row["surname"]."</td>".
-                      "<td>".$row["lastname"]."</td>".
-                      "<td>".$row["username"]."</td>".
-                      "<td>".$row["level"]."</td>".
-                      "<td>".
-                        "<a class='edit btn btn-primary btn-circle btn-sm' data-toggle='modal' data-target='#editStudentModal'><i class='fas fa-edit'></i></a>".
-                        "<a class='remove btn btn-danger btn-circle btn-sm ml-2' data-toggle='modal' data-target='#removeStudentModal'><i class='fas fa-trash'></i></a>".
-                        "</td>".
-                    "</tr>";
-                    $count ++;
+                  echo
+                    "<tr data-id='" . $row["id"] . "'>" .
+                      "<th scope='row'>" . $count . "</th>" .
+                      "<td>" . $row["surname"] . "</td>" .
+                      "<td>" . $row["lastname"] . "</td>" .
+                      "<td>" . $row["username"] . "</td>" .
+                      "<td>" . $row["level"] . "</td>" .
+                      "<td>" .
+                      "<a class='edit btn btn-primary btn-circle btn-sm' data-toggle='modal' data-target='#editStudentModal'><i class='fas fa-edit'></i></a>" .
+                      "<a class='remove btn btn-danger btn-circle btn-sm ml-2' data-toggle='modal' data-target='#removeStudentModal'><i class='fas fa-trash'></i></a>" .
+                      "</td>" .
+                      "</tr>";
+                  $count++;
                 }
               }
               ?>
@@ -131,7 +129,7 @@ $result = $mysqli->query($sql);
           </table>
 
           <div class="row justify-content-center">
-            <button class="btn btn-success" data-toggle="modal" data-target="#addStudentModal">
+            <button class="btn btn-primary" data-toggle="modal" data-target="#addStudentModal">
               <i class='fas fa-plus mr-2'></i>Voeg leerling toe
             </button>
 
@@ -192,7 +190,7 @@ $result = $mysqli->query($sql);
                     </button>
                   </div>
                   <div class="modal-body">
-                    <form action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']);?>" method="post">
+                    <form action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>" method="post">
                       <div class="form-group">
                         <label for="edit-surname">Voornaam</label>
                         <input id="edit-surname" class="form-control form-control-user" type="text" name="surname" required>
@@ -216,7 +214,7 @@ $result = $mysqli->query($sql);
                         <label for="edit-level">level</label>
                         <input id="edit-level" class="form-control form-control-user" value="1" type="number" name="level" min="1" max="3" required>
                       </div>
-                      <input id="edit-id" name= 'id' type="hidden">
+                      <input id="edit-id" name='id' type="hidden">
 
                       <div class="modal-footer">
                         <button type="button" class="btn btn-secondary" data-dismiss="modal">Annuleer</button>
@@ -253,8 +251,20 @@ $result = $mysqli->query($sql);
 
           <!-- End of Content Wrapper -->
 
+
+
         </div>
         <!-- End of Page Wrapper -->
+
+        <!-- Footer -->
+        <footer class="sticky-footer bg-white">
+          <div class="container my-auto">
+            <div class="copyright text-center my-auto">
+              <span>Copyright &copy; Your Website 2020</span>
+            </div>
+          </div>
+        </footer>
+        <!-- End of Footer -->
 
         <!-- Scroll to Top Button-->
         <a class="scroll-to-top rounded" href="#page-top">

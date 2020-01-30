@@ -6,13 +6,20 @@
     <i class="fa fa-bars"></i>
   </button>
 
+  <!-- <?php if ($_SESSION['role'] == "child") : ?>
+    <button id="terug" class="btn-lg btn-primary hBack" type="button"><i class="fas fa-arrow-circle-left suitcase"></i>Terug</button>
+  <?php endif;  ?> -->
+
   <!-- Topbar Navbar -->
   <ul class="navbar-nav ml-auto">
     <!-- Nav Item - User Information -->
+
+
     <li class="nav-item dropdown no-arrow">
       <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-        <span class="mr-2 d-none d-lg-inline text-gray-600 small">ingelogd als: <?php echo $_SESSION['role'] . "  " ?><b><?php echo $_SESSION['surname'] . " " . $_SESSION['lastname'] ?></b></span>
-        <img class="img-profile rounded-circle" src="https://source.unsplash.com/QAB-WJcbgJk/60x60">
+        <span class="mr-2 d-none d-lg-inline text-gray-600 small">
+          <!--ingelogd als: <?php echo $_SESSION['role'] . "  " ?>--><b><?php echo $_SESSION['surname'] . " " . $_SESSION['lastname'] ?></b></span>
+        <img class="img-profile rounded-circle" src="img\<?php echo $_SESSION['role'] ?>_Icon.png">
       </a>
       <!-- Dropdown - User Information -->
       <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="userDropdown">
@@ -46,15 +53,15 @@
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">Ready to Leave?</h5>
+        <h5 class="modal-title" id="exampleModalLabel">Zeker weten?</h5>
         <button class="close" type="button" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">×</span>
         </button>
       </div>
-      <div class="modal-body">Select "Logout" below if you are ready to end your current session.</div>
+      <div class="modal-body">Selecteer "Log uit" hieronder als je je huidige sessie wilt beëindigen.</div>
       <div class="modal-footer">
-        <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
-        <a class="btn btn-primary" href="login.php">Logout</a>
+        <button class="btn btn-secondary" type="button" data-dismiss="modal">Annuleer</button>
+        <a class="btn btn-primary" href="login.php">Log uit</a>
       </div>
     </div>
   </div>

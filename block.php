@@ -6,9 +6,11 @@ if (!isset($_SESSION['username'])) {
   header("location: login.php");
 }
 
-$schoolyear = $_GET['schoolyear'];
 $block = $_GET['block'];
 
+if (!isset($_SESSION['level'])) {
+$level = $_GET['level'];
+}
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -20,8 +22,9 @@ $block = $_GET['block'];
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <meta name="description" content="">
   <meta name="author" content="">
+  <link rel="icon" href="img\Icon.png" type="image/x-icon">
 
-  <title>Blok 1</title>
+  <title>Blok <?php echo $block; ?></title>
 
   <!-- Custom fonts for this template-->
   <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
@@ -51,102 +54,33 @@ $block = $_GET['block'];
 
         <!-- Begin Page Content -->
         <div class="container">
-          <nav aria-label="breadcrumb">
-            <ol class="breadcrumb">
-              <li class="breadcrumb-item"><a href="schoolyears.php">Schooljaar <?php echo $schoolyear;?></a></li>
-              <li class="breadcrumb-item "><a href= "projectblocks.php?schoolyear=<?php echo $schoolyear;?>">Projectblok <?php echo $block;?></a></a></li>
-              <li class="breadcrumb-item active"><a>Projecten</a></li>
 
-            </ol>
-          </nav>
+          <?php if ($_SESSION['role'] == "teacher") : ?>
+            <nav aria-label="breadcrumb">
+              <ol class="breadcrumb">
+                <li class="breadcrumb-item "><a href="projectblocks.php">Projectblokken</a></a></li>
+                <li class="breadcrumb-item active"><a>Blok <?php echo $block; ?></a></li>
+
+              </ol>
+            </nav>
+
+          <?php endif; ?>
+
+          <?php if ($_SESSION['role'] == "child") : ?>
+            <button class="btn-lg btn-primary hBack" type="button"><i class="fas fa-arrow-circle-left suitcase"></i>Terug</button>
+          <?php endif; ?>
 
           <!-- Page Heading -->
           <div class="d-sm-flex align-items-center justify-content-center mb-4">
-            <h1 class="h3 mb-0 text-gray-800">Blok 1</h1>
+            <h1 class="h3 text-gray-800">Blok <?php echo $block; ?></h1>
           </div>
 
           <!-- Content Row -->
           <div class="row justify-content-center">
 
-            <!-- Earnings (Monthly) Card Example -->
-            <!-- <div class="col-xl-3 col-md-6 mb-4">
-              <div class="card border-left-primary shadow h-100 py-2">
-                <div class="card-body">
-                  <div class="row no-gutters align-items-center">
-                    <div class="col mr-2">
-                      <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">Earnings (Monthly)</div>
-                      <div class="h5 mb-0 font-weight-bold text-gray-800">$40,000</div>
-                    </div>
-                    <div class="col-auto">
-                      <i class="fas fa-calendar fa-2x text-gray-300"></i>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div> -->
 
-            <!-- Earnings (Monthly) Card Example -->
-            <!-- <div class="col-xl-3 col-md-6 mb-4">
-              <div class="card border-left-success shadow h-100 py-2">
-                <div class="card-body">
-                  <div class="row no-gutters align-items-center">
-                    <div class="col mr-2">
-                      <div class="text-xs font-weight-bold text-success text-uppercase mb-1">Earnings (Annual)</div>
-                      <div class="h5 mb-0 font-weight-bold text-gray-800">$215,000</div>
-                    </div>
-                    <div class="col-auto">
-                      <i class="fas fa-dollar-sign fa-2x text-gray-300"></i>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div> -->
-
-            <!-- Earnings (Monthly) Card Example -->
-            <!-- <div class="col-xl-3 col-md-6 mb-4">
-              <div class="card border-left-info shadow h-100 py-2">
-                <div class="card-body">
-                  <div class="row no-gutters align-items-center">
-                    <div class="col mr-2">
-                      <div class="text-xs font-weight-bold text-info text-uppercase mb-1">Tasks</div>
-                      <div class="row no-gutters align-items-center">
-                        <div class="col-auto">
-                          <div class="h5 mb-0 mr-3 font-weight-bold text-gray-800">50%</div>
-                        </div>
-                        <div class="col">
-                          <div class="progress progress-sm mr-2">
-                            <div class="progress-bar bg-info" role="progressbar" style="width: 50%" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="col-auto">
-                      <i class="fas fa-clipboard-list fa-2x text-gray-300"></i>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div> -->
-
-            <!-- Pending Requests Card Example -->
-            <!-- <div class="col-xl-3 col-md-6 mb-4">
-              <div class="card border-left-warning shadow h-100 py-2">
-                <div class="card-body">
-                  <div class="row no-gutters align-items-center">
-                    <div class="col mr-2">
-                      <div class="text-xs font-weight-bold text-warning text-uppercase mb-1">Pending Requests</div>
-                      <div class="h5 mb-0 font-weight-bold text-gray-800">18</div>
-                    </div>
-                    <div class="col-auto">
-                      <i class="fas fa-comments fa-2x text-gray-300"></i>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div> -->
             <div class="col-sm-2 text-center block-card">
-              <a href="project.php?<?php echo $schoolyear;?>&block=<?php echo $block;?>&project=1">
+              <a href="project.php?block=<?php echo $block;  ?>&project=1">
                 <div class="card bg-secondary d-sm-flex justify-content-center align-items-center shadow mb-4">
                   <div class="card-body">
                     <i class="fas fa-suitcase suitcase"></i>
@@ -157,7 +91,7 @@ $block = $_GET['block'];
             </div>
 
             <div class="col-sm-2 text-center block-card">
-              <a href="project.php?<?php echo $schoolyear;?>&block=<?php echo $block;?>&project=2">
+              <a href="project.php?block=<?php echo $block;  ?>&project=2">
                 <div class="card bg-secondary d-sm-flex justify-content-center align-items-center shadow mb-4">
                   <div class="card-body">
                     <i class="fas fa-suitcase suitcase"></i>
@@ -168,8 +102,8 @@ $block = $_GET['block'];
             </div>
 
             <div class="col-sm-2 text-center block-card">
-              <a href="project.php?<?php echo $schoolyear;?>&block=<?php echo $block;?>&project=3">
-                <div class="card bg-secondary d-sm-flex justify-content-center align-items-center shadow mb-4">
+              <a href="project.php?block=<?php echo $block;  ?>&project=3">
+                <div class="card bg-primary d-sm-flex justify-content-center align-items-center shadow mb-4">
                   <div class="card-body">
                     <i class="fas fa-suitcase suitcase"></i>
                   </div>
@@ -182,90 +116,101 @@ $block = $_GET['block'];
           </div>
           <!-- /.container-fluid -->
 
-          <div class="row justify-content-center">
-            <div class="col-sm-2 text-center block-card">
-              <a href="project.php?<?php echo $schoolyear;?>&block=<?php echo $block;?>&project=4">
-                <div class="card bg-secondary d-sm-flex justify-content-center align-items-center shadow mb-4">
-                  <div class="card-body">
-                    <i class="fas fa-suitcase suitcase"></i>
+          <?php if ($_SESSION['level'] == "2" || $_SESSION['level'] == "3" || $_SESSION['role'] == "teacher") : ?>
+            <div class="row justify-content-center">
+              <div class="col-sm-2 text-center block-card">
+                <a href="project.php?block=<?php echo $block;  ?>&project=4">
+                  <div class="card bg-secondary d-sm-flex justify-content-center align-items-center shadow mb-4">
+                    <div class="card-body">
+                      <i class="fas fa-suitcase suitcase"></i>
+                    </div>
                   </div>
-                </div>
-                <p>Project 4</p>
-              </a>
-            </div>
-            <div class="col-sm-2 text-center block-card">
-              <a href="project.php?<?php echo $schoolyear;?>&block=<?php echo $block;?>&project=5">
-                <div class="card bg-secondary d-sm-flex justify-content-center align-items-center shadow mb-4">
-                  <div class="card-body">
-                    <i class="fas fa-suitcase suitcase"></i>
+                  <p>Project 4</p>
+                </a>
+              </div>
+              <div class="col-sm-2 text-center block-card">
+                <a href="project.php?block=<?php echo $block;  ?>&project=5">
+                  <div class="card bg-secondary d-sm-flex justify-content-center align-items-center shadow mb-4">
+                    <div class="card-body">
+                      <i class="fas fa-suitcase suitcase"></i>
+                    </div>
                   </div>
-                </div>
-                <p>Project 5</p>
-              </a>
-            </div>
-            <div class="col-sm-2 text-center block-card">
-              <a href="project.php?<?php echo $schoolyear;?>&block=<?php echo $block;?>&project=6">
-                <div class="card bg-secondary d-sm-flex justify-content-center align-items-center shadow mb-4">
-                  <div class="card-body">
-                    <i class="fas fa-suitcase suitcase"></i>
+                  <p>Project 5</p>
+                </a>
+              </div>
+              <div class="col-sm-2 text-center block-card">
+                <a href="project.php?block=<?php echo $block;  ?>&project=6">
+                  <div class="card bg-secondary d-sm-flex justify-content-center align-items-center shadow mb-4">
+                    <div class="card-body">
+                      <i class="fas fa-suitcase suitcase"></i>
+                    </div>
                   </div>
-                </div>
-                <p>Project 6</p>
-              </a>
+                  <p>Project 6</p>
+                </a>
+              </div>
             </div>
-          </div>
 
-          <div class="row justify-content-center">
-            <div class="col-sm-2 text-center block-card">
-              <a href="project.php?<?php echo $schoolyear;?>&block=<?php echo $block;?>&project=7">
-                <div class="card bg-secondary d-sm-flex justify-content-center align-items-center shadow mb-4">
-                  <div class="card-body">
-                    <i class="fas fa-suitcase suitcase"></i>
+          <?php endif; ?>
+
+          <?php if ($_SESSION['level'] == "3" || $_SESSION['role'] == "teacher") : ?>
+
+            <div class="row justify-content-center">
+              <div class="col-sm-2 text-center block-card">
+                <a href="project.php?block=<?php echo $block;  ?>&project=7">
+                  <div class="card bg-secondary d-sm-flex justify-content-center align-items-center shadow mb-4">
+                    <div class="card-body">
+                      <i class="fas fa-suitcase suitcase"></i>
+                    </div>
                   </div>
-                </div>
-                <p>Project 7</p>
-              </a>
-            </div>
-            <div class="col-sm-2 text-center block-card">
-              <a href="project.php?<?php echo $schoolyear;?>&block=<?php echo $block;?>&project=8">
-                <div class="card bg-secondary d-sm-flex justify-content-center align-items-center shadow mb-4">
-                  <div class="card-body">
-                    <i class="fas fa-suitcase suitcase"></i>
+                  <p>Project 7</p>
+                </a>
+              </div>
+              <div class="col-sm-2 text-center block-card">
+                <a href="project.php?block=<?php echo $block;  ?>&project=8">
+                  <div class="card bg-secondary d-sm-flex justify-content-center align-items-center shadow mb-4">
+                    <div class="card-body">
+                      <i class="fas fa-suitcase suitcase"></i>
+                    </div>
                   </div>
-                </div>
-                <p>Project 8</p>
-              </a>
-            </div>
-            <div class="col-sm-2 text-center block-card">
-              <a href="project.php?<?php echo $schoolyear;?>&block=<?php echo $block;?>&project=9">
-                <div class="card bg-secondary d-sm-flex justify-content-center align-items-center shadow mb-4">
-                  <div class="card-body">
-                    <i class="fas fa-suitcase suitcase"></i>
+                  <p>Project 8</p>
+                </a>
+              </div>
+              <div class="col-sm-2 text-center block-card">
+                <a href="project.php?block=<?php echo $block;  ?>&project=9">
+                  <div class="card bg-secondary d-sm-flex justify-content-center align-items-center shadow mb-4">
+                    <div class="card-body">
+                      <i class="fas fa-suitcase suitcase"></i>
+                    </div>
                   </div>
-                </div>
-                <p>Project 9</p>
-              </a>
+                  <p>Project 9</p>
+                </a>
+              </div>
             </div>
-          </div>
+
+          <?php endif; ?>
 
         </div>
         <!-- End of Main Content -->
 
-        <!-- Footer -->
-        <footer class="sticky-footer bg-white">
-          <div class="container my-auto">
-            <div class="copyright text-center my-auto">
-              <span>Copyright &copy; Your Website 2019</span>
-            </div>
-          </div>
-        </footer>
-        <!-- End of Footer -->
+
 
       </div>
       <!-- End of Content Wrapper -->
 
+      <!-- Footer -->
+      <footer class="sticky-footer bg-white">
+        <div class="container my-auto">
+          <div class="copyright text-center my-auto">
+            <span>Copyright &copy; Your Website 2020</span>
+          </div>
+        </div>
+      </footer>
+      <!-- End of Footer -->
+
     </div>
     <!-- End of Page Wrapper -->
+
+
 
     <!-- Scroll to Top Button-->
     <a class="scroll-to-top rounded" href="#page-top">
@@ -309,7 +254,10 @@ $block = $_GET['block'];
     <script src="js/demo/chart-pie-demo.js"></script>
 
     <script type="text/javascript">
-
+      $(".hBack").on("click", function(e) {
+        e.preventDefault();
+        window.history.back();
+      });
     </script>
 </body>
 

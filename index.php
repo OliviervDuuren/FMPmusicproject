@@ -16,6 +16,7 @@ if (!isset($_SESSION['username'])) {
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <meta name="description" content="">
   <meta name="author" content="">
+  <link rel = "icon" href ="img\Icon.png"  type = "image/x-icon"> 
 
   <title>Dashboard</title>
 
@@ -25,6 +26,13 @@ if (!isset($_SESSION['username'])) {
 
   <!-- Custom styles for this template-->
   <link href="css/sb-admin-2.min.css" rel="stylesheet">
+  <!-- Colors
+green1: #6CBFA2
+green2: #6DB75C
+green3: #34A937
+green4: #155C2B
+
+-->
 
 </head>
 
@@ -47,27 +55,30 @@ if (!isset($_SESSION['username'])) {
 
           <!-- Page Heading -->
           <div class="d-sm-flex align-items-center justify-content-baseline mb-4">
-            <h1 class="h3 mb-0 text-gray-800">Dashboard</h1>
+            <h1 class="h3 text-gray-800">Dashboard</h1>
           </div>
           <h4>Misschien cool om hier lijpe grafieken te laten zien? Dit thema heeft al chart.js ingebouwd</h4>
-
+          
+          <?php include("partials/childdashboard.php"); ?>
           <!-- End of Main Content -->
 
-          <!-- Footer -->
-          <!-- <footer class="sticky-footer bg-white">
-            <div class="container my-auto">
-              <div class="copyright text-center my-auto">
-                <span>Copyright &copy; Your Website 2019</span>
-              </div>
-            </div>
-          </footer> -->
-          <!-- End of Footer -->
+
 
         </div>
         <!-- End of Content Wrapper -->
 
       </div>
       <!-- End of Page Wrapper -->
+
+      <!-- Footer -->
+      <footer class="sticky-footer bg-white">
+        <div class="container my-auto">
+          <div class="copyright text-center my-auto">
+            <span>Copyright &copy; Your Website 2020</span>
+          </div>
+        </div>
+      </footer>
+      <!-- End of Footer -->
 
       <!-- Scroll to Top Button-->
       <a class="scroll-to-top rounded" href="#page-top">

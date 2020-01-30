@@ -17,6 +17,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // session_register("myusername");
     $_SESSION['username']  = $myusername;
     $_SESSION['role']      = $row["role"];
+    $_SESSION['level']     = $row["level"];
     $_SESSION['surname']   = $row["surname"];
     $_SESSION['lastname']  = $row["lastname"];
     $_SESSION['user_id']   = $row['id'];
@@ -38,6 +39,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <meta name="description" content="">
   <meta name="author" content="">
+  <link rel = "icon" href ="img\Icon.png"  type = "image/x-icon"> 
 
   <title>Login</title>
 
