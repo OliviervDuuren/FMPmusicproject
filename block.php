@@ -7,11 +7,16 @@ if (!isset($_SESSION['username'])) {
 }
 
 $block = $_GET['block'];
+$active_page = "projectblokken";
 
 if (!isset($_SESSION['level'])) {
 $level = $_GET['level'];
 
 }
+
+$json_data = json_decode(file_get_contents("manifest.json"));
+$json_blockdata = $json_data->$block;
+error_log( print_r($json_blockdata, TRUE) );
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -60,7 +65,7 @@ $level = $_GET['level'];
             <nav aria-label="breadcrumb">
               <ol class="breadcrumb">
                 <li class="breadcrumb-item "><a href="projectblocks.php">Projectblokken</a></a></li>
-                <li class="breadcrumb-item active"><a>Blok <?php echo $block; ?></a></li>
+                <li class="breadcrumb-item active"><a><?php echo $block; ?></a></li>
 
               </ol>
             </nav>
@@ -73,14 +78,32 @@ $level = $_GET['level'];
 
           <!-- Page Heading -->
           <div class="d-sm-flex align-items-center justify-content-center mb-4">
-            <h1 class="h3 text-gray-800">Blok <?php echo $block; ?></h1>
+            <h1 class="h3 text-gray-800"><?php echo $block; ?></h1>
           </div>
 
           <!-- Content Row -->
           <div class="row justify-content-center">
+            <?php foreach ($json_blockdata as $key => $value) {
+              if(is_object($value)){
+                $href_link = "";
+                if (!$value->disabled) {
+                  $href_link = "href='project.php?block=".$block."&project=".$key."'";
+                }
+                echo "<div class='disabled col-sm-2 text-center block-card '>
+                  <a class='disabled' ".$href_link.">
+                    <div class='card ".(($value->disabled)?'bg-secondary':'bg-primary')." d-sm-flex justify-content-center align-items-center shadow mb-4'>
+                      <div class='card-body'>
+                      ".(($value->disabled)?"<i class='fas fa-lock'></i>":"<i class='fas fa-cube cube'></i>")."
+                      </div>
+                    </div>
+                    <p>".$key."</p>
+                  </a>
+                </div>";
+              }
+            }?>
 
 
-            <div class="col-sm-2 text-center block-card">
+            <!-- <div class="col-sm-2 text-center block-card">
               <a href="project.php?block=<?php echo $block;  ?>&project=1">
                 <div class="card bg-secondary d-sm-flex justify-content-center align-items-center shadow mb-4">
                   <div class="card-body">
@@ -111,14 +134,14 @@ $level = $_GET['level'];
                 </div>
                 <p>Project 3</p>
               </a>
-            </div>
+            </div> -->
 
 
           </div>
           <!-- /.container-fluid -->
 
           <?php if ($_SESSION['level'] == "2" || $_SESSION['level'] == "3" || $_SESSION['role'] == "teacher") : ?>
-            <div class="row justify-content-center">
+            <!-- <div class="row justify-content-center">
               <div class="col-sm-2 text-center block-card">
                 <a href="project.php?block=<?php echo $block;  ?>&project=4">
                   <div class="card bg-secondary d-sm-flex justify-content-center align-items-center shadow mb-4">
@@ -149,12 +172,12 @@ $level = $_GET['level'];
                   <p>Project 6</p>
                 </a>
               </div>
-            </div>
+            </div> -->
 
           <?php endif; ?>
 
           <?php if ($_SESSION['level'] == "3" || $_SESSION['role'] == "teacher") : ?>
-
+<!--
             <div class="row justify-content-center">
               <div class="col-sm-2 text-center block-card">
                 <a href="project.php?block=<?php echo $block;  ?>&project=7">
@@ -186,7 +209,7 @@ $level = $_GET['level'];
                   <p>Project 9</p>
                 </a>
               </div>
-            </div>
+            </div> -->
 
           <?php endif; ?>
 

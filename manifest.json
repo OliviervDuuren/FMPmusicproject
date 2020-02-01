@@ -1,18 +1,18 @@
 {
-	"blok1": {
-		"disabled": true,
+	"blok 1": {
+		"disabled": false,
 		"project1": {
-			"disabled": true,
+			"disabled": false,
 			"title": "Vader Jacob in 2",
 			"fragments": ["Geluid 2", "Geluid 3"],
 			"path_to_sound": ""
 		},
 		"project2": {
-			"disabled": true,
+			"disabled": false,
 			"title": "Vader Jacob in 3",
 			"fragments": ["Geluid 3", "Geluid 4", "Geluid 5"],
 			"path_to_sound": ""
-		}, 
+		},
 		"project3": {
 			"disabled": true,
 			"title": "Vader Jacob in 4",
@@ -61,10 +61,10 @@
 			"fragments": ["Geluid 6", "Geluid 7", "Geluid 8", "Geluid 9", "Geluid 10", "Geluid 11", "Geluid 12", "Geluid 13","Geluid 14", "Geluid 15", "Geluid 16", "Geluid 17", "Geluid 18", "Geluid 19", "Geluid 20", "Geluid 21"],
 			"path_to_sound": ""
 		}
-	
+
 	},
 	"blok2": {
-		"disabled": true,
+		"disabled": false,
 		"project1": {
 			"disabled": true,
 			"title": "Liedje Vader Jacob",
@@ -72,6 +72,7 @@
 			"path_to_sound": ""
 		},
 		"project2": {
+			"disabled": true,
 			"title": "Nog een liedje",
 			"fragments": ["Geluid 1", "Geluid 2", "Geluid 3", "Geluid 4"],
 			"path_to_sound": ""

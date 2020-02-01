@@ -8,6 +8,12 @@ if (!isset($_SESSION['username'])) {
 
 $block = $_GET['block'];
 $project = $_GET['project'];
+$active_page = "projectblokken";
+
+
+$json_data = json_decode(file_get_contents("manifest.json"));
+$json_project = $json_data->$block->$project;
+error_log( print_r($json_project, TRUE) );
 
 ?>
 <!DOCTYPE html>
@@ -59,8 +65,8 @@ $project = $_GET['project'];
               <ol class="breadcrumb">
 
                 <li class="breadcrumb-item "><a href="projectblocks.php">Projectblokken</a></a></li>
-                <li class="breadcrumb-item "><a href="block.php?block=<?php echo $block; ?>">Blok <?php echo $block; ?></a></a></li>
-                <li class="breadcrumb-item active"><a>Project <?php echo $project; ?></a></li>
+                <li class="breadcrumb-item "><a href="block.php?block=<?php echo $block; ?>"><?php echo $block; ?></a></a></li>
+                <li class="breadcrumb-item active"><a><?php echo $project; ?></a></li>
 
               </ol>
             </nav>
@@ -73,7 +79,7 @@ $project = $_GET['project'];
 
           <!-- Page Heading -->
           <div class="d-sm-flex align-items-center justify-content-center mb-4">
-            <h1 class="h3 text-gray-800">Project <?php echo $project; ?></h1>
+            <h1 class="h3 text-gray-800"><?php echo $project; ?></h1>
           </div>
 
           <!-- Content Row -->
@@ -86,7 +92,7 @@ $project = $_GET['project'];
                   <i class="fas fa-suitcase suitcase"></i>
                 </div>
               </div>
-              <h1 class="h5">Liedje Vader Jacob</h1>
+              <h1 class="h5"><?php echo $json_project->title;?></h1>
             </div>
 
 
@@ -98,55 +104,25 @@ $project = $_GET['project'];
           <div class="text-center">
 
             <div class="d-sm-flex justify-content-center align-items-center mb-4">
-              <p class="text-primary">Speel met onderstaande fragmenten en maak het liedje Vader Jacob! </p>
+              <p class="text-primary">Speel met onderstaande fragmenten en maak het liedje <b><?php echo $json_project->title;?></b> </p>
             </div>
 
             <div class="row justify-content-center">
 
+              <?php foreach ($json_project->fragments as $key => $value) {
 
-              <div class="col-sm-2 text-center block-card">
-              <a href="" data-toggle="modal" data-target="#gspeelModal">
-                <div class="card bg-secondary d-sm-flex justify-content-center align-items-center shadow mb-4">
-                  <div class="card-body">
-                    <i class="fas fa-music suitcase"></i>
-                  </div>
-                </div>
-                <p>Geluid 1</p>
-                </a>
-              </div>
+                  echo "<div class='col-sm-2 text-center block-card'>
+                  <a data-toggle='modal' data-target='#gspeelModal'>
+                    <div class='card bg-secondary d-sm-flex justify-content-center align-items-center shadow mb-4'>
+                      <div class='card-body'>
+                        <i class='fas fa-music suitcase'></i>
+                      </div>
+                    </div>
+                    <p>".$value."</p>
+                    </a>
+                  </div>";
 
-              <div class="col-sm-2 text-center block-card">
-              <a href="" data-toggle="modal" data-target="#gspeelModal">
-                <div class="card bg-secondary d-sm-flex justify-content-center align-items-center shadow mb-4">
-                  <div class="card-body">
-                    <i class="fas fa-music suitcase"></i>
-                  </div>
-                </div>
-                <p>Geluid 2</p>
-                </a>
-              </div>
-              <div class="col-sm-2 text-center block-card">
-              <a href="" data-toggle="modal" data-target="#gspeelModal">
-                <div class="card bg-secondary d-sm-flex justify-content-center align-items-center shadow mb-4">
-                  <div class="card-body">
-                    <i class="fas fa-music suitcase"></i>
-                  </div>
-                </div>
-                <p>Geluid 3</p>
-                </a>
-              </div>
-
-              <div class="col-sm-2 text-center block-card">
-                <a href="" data-toggle="modal" data-target="#gspeelModal">
-                <div class="card bg-secondary d-sm-flex justify-content-center align-items-center shadow mb-4 ">
-                  <div class="card-body">
-                    <i class="fas fa-music suitcase"></i>
-                  </div>
-                </div>
-                <p>Geluid 4</p>
-                </a>
-              </div>
-
+              }?>
               <!-- Modal -->
               <div class="modal fade" id="gspeelModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
               <div class="modal-dialog modal-dialog-centered" role="document">
