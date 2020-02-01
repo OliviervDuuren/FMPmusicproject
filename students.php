@@ -36,6 +36,9 @@ $sql = "SELECT * FROM users WHERE role like '%Child%'AND parent_id = " . $_SESSI
 
 $result = $mysqli->query($sql);
 
+$active_page = "leerlingen";
+
+
 ?>
 <!DOCTYPE html>
 <html lang="en">

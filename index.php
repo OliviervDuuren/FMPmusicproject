@@ -5,6 +5,7 @@ session_start();
 if (!isset($_SESSION['username'])) {
   header("location: login.php");
 }
+$active_page = "dashboard";
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -61,7 +62,7 @@ green4: #155C2B
 
           <?php include("partials/childdashboard.php"); ?>
           <!-- End of Main Content -->
-        
+
         </div>
         <!-- End of Content Wrapper -->
 

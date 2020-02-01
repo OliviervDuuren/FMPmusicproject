@@ -14,7 +14,7 @@
     <hr class="sidebar-divider my-0">
 
     <!-- Nav Item - Dashboard -->
-    <li class="nav-item <?php if($id == 'dashboard'){echo "active";}?>">
+    <li class="nav-item <?php if($active_page == 'dashboard'){echo "active";}?>">
       <a class="nav-link" href="index.php">
         <i class="fas fa-fw fa-tachometer-alt"></i>
         <span>Dashboard</span></a>
@@ -24,7 +24,7 @@
     <!-- <hr class="sidebar-divider my-0"> -->
 
     <!-- Nav Item - Dashboard -->
-    <li class="nav-item <?php if($id == 'leerlingen'){echo "active";}?>">
+    <li class="nav-item <?php if($active_page == 'leerlingen'){echo "active";}?>">
       <a class="nav-link" href="students.php">
         <i class="fas fa-fw fa-child"></i>
         <span>Leerlingen</span></a>
@@ -34,20 +34,10 @@
     <!-- <hr class="sidebar-divider my-0"> -->
 
     <!-- Nav Item - Dashboard -->
-    <li class="nav-item <?php if($id == 'projectblokken'){echo "active";}?>">
+    <li class="nav-item <?php if($active_page == 'projectblokken'){echo "active";}?>">
       <a class="nav-link" href="projectblocks.php">
         <i class="fas fa-fw fa-cube"></i>
-        <span>Projectblokken</span></a>
-    </li>
-
-    <!-- Divider -->
-    <!-- <hr class="sidebar-divider my-0"> -->
-
-    <!-- Nav Item - Dashboard -->
-    <li class="nav-item <?php if($id == 'projecten'){echo "active";}?>">
-      <a class="nav-link" href="block.php?block=1">
-        <i class="fas fa-fw fa-suitcase"></i>
-        <span>Projecten</span></a>
+        <span>Alle blokken</span></a>
     </li>
 
 
