@@ -26,7 +26,7 @@ $json_data = json_decode(file_get_contents("manifest.json"));
   <meta name="author" content="">
   <link rel="icon" href="img\Icon.png" type="image/x-icon">
 
-  <title>Projectblokken</title>
+  <title>Alle blokken</title>
 
   <!-- Custom fonts for this template-->
   <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
@@ -60,7 +60,7 @@ $json_data = json_decode(file_get_contents("manifest.json"));
 
           <!-- Page Heading -->
           <div class="d-sm-flex align-items-center justify-content-center mb-4">
-            <h1 class="h3 text-gray-800">Projectblokken</h1>
+            <h1 class="h3 text-gray-800">Alle blokken</h1>
           </div>
 
 

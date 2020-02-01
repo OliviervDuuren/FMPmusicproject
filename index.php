@@ -17,7 +17,7 @@ $active_page = "dashboard";
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <meta name="description" content="">
   <meta name="author" content="">
-  <link rel = "icon" href ="img\Icon.png"  type = "image/x-icon">
+  <link rel="icon" href="img\Icon.png" type="image/x-icon">
 
   <title>Dashboard</title>
 
@@ -60,7 +60,26 @@ green4: #155C2B
           </div>
           <h4>Misschien cool om hier lijpe grafieken te laten zien? Dit thema heeft al chart.js ingebouwd</h4>
 
+
           <?php include("partials/childdashboard.php"); ?>
+          <div class="d-sm-flex">
+            <div class="row justify-content-center progress">
+              <div class="progress-bar" role="progressbar" style="width: 25%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">25%</div>
+            </div>
+            <div class=" row justify-content-centerprogress">
+              <div class="progress-bar" role="progressbar" style="width: 25%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">25%</div>
+            </div>
+            <div class=" row justify-content-centerprogress">
+              <div class="progress-bar" role="progressbar" style="width: 25%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">25%</div>
+            </div>
+            <div class="row justify-content-center progress">
+              <div class="progress-bar" role="progressbar" style="width: 25%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">25%</div>
+            </div>
+            <div class="row justify-content-center progress">
+              <div class="progress-bar" role="progressbar" style="width: 25%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">25%</div>
+            </div>
+          </div>
+
           <!-- End of Main Content -->
 
         </div>
