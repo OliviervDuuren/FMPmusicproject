@@ -12,6 +12,7 @@ if (!isset($_SESSION['level'])) {
 }
 $active_page = "projectblokken";
 
+$json_data = json_decode(file_get_contents("manifest.json"));
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -62,110 +63,28 @@ $active_page = "projectblokken";
             <h1 class="h3 text-gray-800">Projectblokken</h1>
           </div>
 
+
           <!-- Content Row -->
           <div class="row justify-content-center">
-            <div class="col-sm-2 text-center block-card ">
-              <a class="disabled" href="block.php?block=1">
-                <div class="card bg-primary d-sm-flex justify-content-center align-items-center shadow mb-4">
-                  <div class="card-body">
-                    <i class="fas fa-cube cube"></i>
+            <?php foreach ($json_data as $key => $value) {
+              $href_link = "";
+              if (!$value->disabled) {
+                $href_link = "href='block.php?block=".$key."'";
+              }
+              echo "<div class='disabled col-sm-2 text-center block-card '>
+                <a class='disabled' ".$href_link.">
+                  <div class='card ".(($value->disabled)?'bg-secondary':'bg-primary')." d-sm-flex justify-content-center align-items-center shadow mb-4'>
+                    <div class='card-body'>
+                    ".(($value->disabled)?"<i class='fas fa-lock'></i>":"<i class='fas fa-cube cube'></i>")."
+                    </div>
                   </div>
-                </div>
-                <p>Blok 1</p>
-              </a>
-            </div>
-
-            <div class="col-sm-2 text-center block-card">
-              <a class="disabled" href="">
-                <div class="card bg-secondary d-sm-flex justify-content-center align-items-center shadow mb-4">
-                  <div class="card-body">
-                    <i class="fas fa-cube cube"></i>
-                  </div>
-                </div>
-                <p>Blok 2</p>
-              </a>
-            </div>
-
-            <div class="col-sm-2 text-center block-card">
-              <a class="disabled" href="">
-                <div class="card bg-secondary d-sm-flex justify-content-center align-items-center shadow mb-4">
-                  <div class="card-body">
-                    <i class="fas fa-cube cube"></i>
-                  </div>
-                </div>
-                <p>Blok 3</p>
-              </a>
-            </div>
-
+                  <p>".$key."</p>
+                </a>
+              </div>";
+            }?>
 
           </div>
-          <!-- /.container-fluid -->
 
-          <div class="row justify-content-center">
-            <div class="col-sm-2 text-center block-card">
-              <a class="disabled" href="">
-                <div class="card bg-secondary d-sm-flex justify-content-center align-items-center shadow mb-4">
-                  <div class="card-body">
-                    <i class="fas fa-cube cube"></i>
-                  </div>
-                </div>
-                <p>Blok 4</p>
-              </a>
-            </div>
-            <div class="col-sm-2 text-center block-card">
-              <a class="disabled" href="">
-                <div class="card bg-secondary d-sm-flex justify-content-center align-items-center shadow mb-4">
-                  <div class="card-body">
-                    <i class="fas fa-cube cube"></i>
-                  </div>
-                </div>
-                <p>Blok 5</p>
-              </a>
-            </div>
-            <div class="col-sm-2 text-center block-card">
-              <a class="disabled" href="">
-                <div class="card bg-secondary d-sm-flex justify-content-center align-items-center shadow mb-4">
-                  <div class="card-body">
-                    <i class="fas fa-cube cube"></i>
-                  </div>
-                </div>
-                <p>Blok 6</p>
-              </a>
-            </div>
-          </div>
-
-          <div class="row justify-content-center">
-            <div class="col-sm-2 text-center block-card">
-              <a class="disabled" href="">
-                <div class="card bg-secondary d-sm-flex justify-content-center align-items-center shadow mb-4">
-                  <div class="card-body">
-                    <i class="fas fa-cube cube"></i>
-                  </div>
-                </div>
-                <p>Blok 7</p>
-              </a>
-            </div>
-            <div class="col-sm-2 text-center block-card">
-              <a class="disabled" href="">
-                <div class="card bg-secondary d-sm-flex justify-content-center align-items-center shadow mb-4">
-                  <div class="card-body">
-                    <i class="fas fa-cube cube"></i>
-                  </div>
-                </div>
-                <p>Blok 8</p>
-              </a>
-            </div>
-            <div class="col-sm-2 text-center block-card">
-              <a href="block.php?block=9">
-                <div class="card bg-primary d-sm-flex justify-content-center align-items-center shadow mb-4">
-                  <div class="card-body">
-                    <i class="fas fa-cube cube"></i>
-                  </div>
-                </div>
-                <p>Blok 9</p>
-              </a>
-            </div>
-          </div>
 
         </div>
         <!-- End of Main Content -->
