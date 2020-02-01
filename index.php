@@ -16,7 +16,7 @@ if (!isset($_SESSION['username'])) {
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <meta name="description" content="">
   <meta name="author" content="">
-  <link rel = "icon" href ="img\Icon.png"  type = "image/x-icon"> 
+  <link rel = "icon" href ="img\Icon.png"  type = "image/x-icon">
 
   <title>Dashboard</title>
 
@@ -58,12 +58,10 @@ green4: #155C2B
             <h1 class="h3 text-gray-800">Dashboard</h1>
           </div>
           <h4>Misschien cool om hier lijpe grafieken te laten zien? Dit thema heeft al chart.js ingebouwd</h4>
-          
+
           <?php include("partials/childdashboard.php"); ?>
           <!-- End of Main Content -->
-
-
-
+        
         </div>
         <!-- End of Content Wrapper -->
 

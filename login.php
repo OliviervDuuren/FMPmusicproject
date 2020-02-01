@@ -39,7 +39,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <meta name="description" content="">
   <meta name="author" content="">
-  <link rel = "icon" href ="img\Icon.png"  type = "image/x-icon"> 
+  <link rel = "icon" href ="img\Icon.png"  type = "image/x-icon">
 
   <title>Login</title>
 
@@ -57,17 +57,13 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
   <div class="container">
 
     <!-- Outer Row -->
-    <div class="row justify-content-center">
+    <div class="row justify-content-center align-items-center">
 
-      <div class="col-xl-10 col-lg-12 col-md-9">
+      <div class="col-6">
 
-        <div class="card o-hidden border-0 shadow-lg my-5">
+        <div class="card o-hidden border-0 shadow-lg my-5 p-5">
           <div class="card-body p-0">
             <!-- Nested Row within Card Body -->
-            <div class="row">
-
-              <div class="col-lg-6">
-                <div class="p-5">
                   <div class="text-center">
                     <h1 class="h4 text-gray-900 mb-4">Welkom!</h1>
                   </div>
@@ -95,9 +91,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                   <div class="text-center">
                     <a class="small" href="register.html">Maak account aan!</a>
                   </div>
-                </div>
-              </div>
-            </div>
           </div>
         </div>
 

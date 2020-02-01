@@ -47,7 +47,7 @@ $result = $mysqli->query($sql);
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <meta name="description" content="">
   <meta name="author" content="">
-  <link rel = "icon" href ="img\Icon.png"  type = "image/x-icon"> 
+  <link rel = "icon" href ="img\Icon.png"  type = "image/x-icon">
 
   <title>Leerlingen</title>
 
@@ -78,13 +78,14 @@ $result = $mysqli->query($sql);
     <div id="content-wrapper" class="d-flex flex-column">
 
       <!-- Main Content -->
-      <div id="content">
+      <div id="content" class="d-flex flex-column">
 
         <?php include("partials/topbar.php"); ?>
 
         <!-- End of Topbar -->
 
         <!-- Begin Page Content -->
+
         <div class="container">
 
           <!-- Page Heading -->
