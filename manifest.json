@@ -1,22 +1,80 @@
 {
 	"blok1": {
+		"disabled": true,
 		"project1": {
+			"disabled": true,
+			"title": "Vader Jacob in 2",
+			"fragments": ["Geluid 2", "Geluid 3"],
+			"path_to_sound": ""
+		},
+		"project2": {
+			"disabled": true,
+			"title": "Vader Jacob in 3",
+			"fragments": ["Geluid 3", "Geluid 4", "Geluid 5"],
+			"path_to_sound": ""
+		}, 
+		"project3": {
+			"disabled": true,
+			"title": "Vader Jacob in 4",
+			"fragments": ["Geluid 6", "Geluid 7", "Geluid 8", "Geluid 9"],
+			"path_to_sound": ""
+		},
+		"project4": {
+			"disabled": true,
+			"title": "Vader Jacob met ritme",
+			"fragments": ["Geluid 6", "Geluid 7", "Geluid 8", "Geluid 9", "Geluid 14", "Geluid 15", "Geluid 16", "Geluid 17"],
+			"path_to_sound": ""
+		},
+		"project5": {
+			"disabled": true,
+			"title": "Vader Jacob met twee instrumenten",
+			"fragments": ["Geluid 6", "Geluid 7", "Geluid 8", "Geluid 9", "Geluid 18", "Geluid 19", "Geluid 20", "Geluid 21"],
+			"path_to_sound": ""
+		},
+		"project6": {
+			"disabled": true,
+			"title": "Vader Jacob tweestemming",
+			"fragments": ["Geluid 6", "Geluid 7", "Geluid 8", "Geluid 9", "Geluid 18", "Geluid 19", "Geluid 20", "Geluid 21"],
+			"path_to_sound": ""
+		},
+		"project7": {
+			"disabled": true,
+			"title": "Vader Jacob variatie met 8 tegels",
+			"fragments": ["Geluid 6", "Geluid 7", "Geluid 8", "Geluid 9", "Geluid 10", "Geluid 11", "Geluid 12", "Geluid 13"],
+			"path_to_sound": ""
+		},
+		"project8": {
+			"disabled": true,
+			"title": "Vader Jacob variatie met vier bordjes",
+			"fragments": ["Geluid 6", "Geluid 7", "Geluid 8", "Geluid 9", "Geluid 10", "Geluid 11", "Geluid 12", "Geluid 13","Geluid 14", "Geluid 15", "Geluid 16", "Geluid 17", "Geluid 18", "Geluid 19", "Geluid 20", "Geluid 21" ],
+			"path_to_sound": ""
+		},
+		"project9": {
+			"disabled": true,
+			"title": "Vader Jacob tweestemmige variatie met vier bordjes",
+			"fragments": ["Geluid 6", "Geluid 7", "Geluid 8", "Geluid 9", "Geluid 10", "Geluid 11", "Geluid 12", "Geluid 13","Geluid 14", "Geluid 15", "Geluid 16", "Geluid 17", "Geluid 18", "Geluid 19", "Geluid 20", "Geluid 21"],
+			"path_to_sound": ""
+		},
+		"project10": {
+			"disabled": true,
+			"title": "Vader Jacob remix met vier bordjes",
+			"fragments": ["Geluid 6", "Geluid 7", "Geluid 8", "Geluid 9", "Geluid 10", "Geluid 11", "Geluid 12", "Geluid 13","Geluid 14", "Geluid 15", "Geluid 16", "Geluid 17", "Geluid 18", "Geluid 19", "Geluid 20", "Geluid 21"],
+			"path_to_sound": ""
+		}
+	
+	},
+	"blok2": {
+		"disabled": true,
+		"project1": {
+			"disabled": true,
 			"title": "Liedje Vader Jacob",
-			"fragments": ["Geluid 1", "Geluid 2", "Geluid 3", "Geluid 4"]
+			"fragments": ["Geluid 1", "Geluid 2", "Geluid 3", "Geluid 4"],
+			"path_to_sound": ""
 		},
 		"project2": {
 			"title": "Nog een liedje",
-			"fragments": ["Geluid 1", "Geluid 2", "Geluid 3", "Geluid 4"]
-		},
-		"blok2": {
-			"project1": {
-				"title": "Liedje Vader Jacob",
-				"fragments": ["Geluid 1", "Geluid 2", "Geluid 3", "Geluid 4"]
-			},
-			"project2": {
-				"title": "Nog een liedje",
-				"fragments": ["Geluid 1", "Geluid 2", "Geluid 3", "Geluid 4"]
-			}
+			"fragments": ["Geluid 1", "Geluid 2", "Geluid 3", "Geluid 4"],
+			"path_to_sound": ""
 		}
 	}
 }
