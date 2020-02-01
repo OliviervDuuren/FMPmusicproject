@@ -10,6 +10,7 @@ if (!isset($_SESSION['username'])) {
 if (!isset($_SESSION['level'])) {
   $level = $_GET['level'];
 }
+$active_page = "projectblokken";
 
 ?>
 <!DOCTYPE html>

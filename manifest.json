@@ -1,0 +1,22 @@
+{
+	"blok1": {
+		"project1": {
+			"title": "Liedje Vader Jacob",
+			"fragments": ["Geluid 1", "Geluid 2", "Geluid 3", "Geluid 4"]
+		},
+		"project2": {
+			"title": "Nog een liedje",
+			"fragments": ["Geluid 1", "Geluid 2", "Geluid 3", "Geluid 4"]
+		},
+		"blok2": {
+			"project1": {
+				"title": "Liedje Vader Jacob",
+				"fragments": ["Geluid 1", "Geluid 2", "Geluid 3", "Geluid 4"]
+			},
+			"project2": {
+				"title": "Nog een liedje",
+				"fragments": ["Geluid 1", "Geluid 2", "Geluid 3", "Geluid 4"]
+			}
+		}
+	}
+}

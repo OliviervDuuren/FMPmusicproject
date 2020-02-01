@@ -5,6 +5,7 @@ session_start();
 if (!isset($_SESSION['username'])) {
   header("location: login.php");
 }
+$active_page = "dashboard";
 ?>
 <!DOCTYPE html>
 <html lang="en">

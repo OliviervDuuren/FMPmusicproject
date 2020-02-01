@@ -10,6 +10,7 @@ $block = $_GET['block'];
 
 if (!isset($_SESSION['level'])) {
 $level = $_GET['level'];
+
 }
 ?>
 <!DOCTYPE html>
