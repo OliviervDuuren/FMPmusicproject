@@ -30,7 +30,7 @@ error_log( print_r($json_blockdata, TRUE) );
   <meta name="author" content="">
   <link rel="icon" href="img\Icon.png" type="image/x-icon">
 
-  <title>Blok <?php echo $block; ?></title>
+  <title><?php echo $block; ?></title>
 
   <!-- Custom fonts for this template-->
   <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">

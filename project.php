@@ -28,7 +28,7 @@ error_log( print_r($json_project, TRUE) );
   <meta name="author" content="">
   <link rel="icon" href="img\Icon.png" type="image/x-icon">
 
-  <title>Project <?php echo $project ?></title>
+  <title><?php echo $project ?></title>
 
   <!-- Custom fonts for this template-->
   <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
@@ -92,7 +92,7 @@ error_log( print_r($json_project, TRUE) );
                   <i class="fas fa-suitcase suitcase"></i>
                 </div>
               </div>
-              <h1 class="h5"><?php echo $json_project->title;?></h1>
+              <h1 class="h4"><?php echo $json_project->title;?></h1>
             </div>
 
 
@@ -144,7 +144,7 @@ error_log( print_r($json_project, TRUE) );
             </div>
 
             </div>
-            <button class="btn btn-primary mb-0" type="button" data-toggle="modal" data-target="#guploadModal">
+            <button class="btn btn-primary mb-3" type="button" data-toggle="modal" data-target="#guploadModal">
               Geluiden uploaden
             </button>
 
