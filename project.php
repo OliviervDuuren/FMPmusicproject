@@ -144,7 +144,7 @@ error_log( print_r($json_project, TRUE) );
             </div>
 
             </div>
-            <button class="btn btn-primary mb-3" type="button" data-toggle="modal" data-target="#guploadModal">
+            <button class="btn btn-green1 mb-3" type="button" data-toggle="modal" data-target="#guploadModal">
               Geluiden uploaden
             </button>
 

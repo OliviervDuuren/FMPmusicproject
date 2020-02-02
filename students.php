@@ -103,7 +103,8 @@ $active_page = "leerlingen";
                 <th scope="col">Voornaam</th>
                 <th scope="col">Achternaam</th>
                 <th scope="col">Gebruikersnaam</th>
-                <th scope="col">level</th>
+                <th scope="col">Level</th>
+                <th scope="col">Vordering</th>
                 <th scope="col">Acties</th>
               </tr>
             </thead>
@@ -120,6 +121,7 @@ $active_page = "leerlingen";
                       "<td>" . $row["lastname"] . "</td>" .
                       "<td>" . $row["username"] . "</td>" .
                       "<td>" . $row["level"] . "</td>" .
+                      "<td>(" . $row["vordering"] . "/100)</td>" .
                       "<td>" .
                       "<a class='edit btn btn-primary btn-circle btn-sm' data-toggle='modal' data-target='#editStudentModal'><i class='fas fa-edit'></i></a>" .
                       "<a class='remove btn btn-danger btn-circle btn-sm ml-2' data-toggle='modal' data-target='#removeStudentModal'><i class='fas fa-trash'></i></a>" .

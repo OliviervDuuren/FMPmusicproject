@@ -1,11 +1,42 @@
 <?php
 include("php/connect.php");
 session_start();
+
 //login path protection
 if (!isset($_SESSION['username'])) {
   header("location: login.php");
 }
+
+if (!isset($_SESSION['surname'])) {
+  $surname = $_GET['surname'];
+}
+
 $active_page = "dashboard";
+
+if (isset($_POST['add-student'])) {
+
+  $sql = "INSERT INTO users (surname, lastname, role, level, parent_id, username, password)
+      VALUES ('" . $_POST["surname"] . "','" . $_POST["lastname"] . "', 'child','" . $_POST["level"] . "','" . $_SESSION["user_id"] . "', '" . $_POST["username"] . "', '" . $_POST["password"] . "')";
+  $result = mysqli_query($mysqli, $sql);
+}
+
+if (isset($_POST['edit-student'])) {
+  $sql = "UPDATE users
+          SET surname   = '" . $_POST["surname"] . "',
+              lastname  = '" . $_POST["lastname"] . "',
+              level     = '" . $_POST["level"] . "',
+              username  = '" . $_POST["username"] . "',
+              password  = '" . $_POST["password"] . "'
+          WHERE id = " . $_POST['id'] . "";
+
+  error_log(print_r($sql, TRUE));
+
+  $result = mysqli_query($mysqli, $sql);
+}
+
+$sql = "SELECT * FROM users WHERE role like '%Child%'AND parent_id = " . $_SESSION['user_id'] . "";
+
+$result = $mysqli->query($sql);
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -49,36 +80,67 @@ green4: #155C2B
 
       <!-- Main Content -->
       <div id="content">
-        <?php include("partials/topbar.php"); ?>
-
+        <?php if ($_SESSION['role'] == "teacher") : ?>
+          <?php include("partials/topbar.php"); ?>
+        <?php endif; ?>
         <!-- Begin Page Content -->
         <div class="container-fluid">
 
           <!-- Page Heading -->
-          <div class="d-sm-flex align-items-center justify-content-baseline mb-4">
-            <h1 class="h3 text-gray-800">Dashboard</h1>
-          </div>
-          <h4>Misschien cool om hier lijpe grafieken te laten zien? Dit thema heeft al chart.js ingebouwd</h4>
 
+          <?php if ($_SESSION['role'] == "teacher") : ?>
+            <div class="d-sm-flex align-items-center justify-content-baseline mb-4">
+              <h1 class="h3 text-gray-800">Dashboard</h1>
+            </div>
+          <?php endif; ?>
 
-          <?php include("partials/childdashboard.php"); ?>
-          <div class="d-sm-flex">
-            <div class="row justify-content-center progress">
-              <div class="progress-bar" role="progressbar" style="width: 25%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">25%</div>
+          <?php if ($_SESSION['role'] == "child") : ?>
+            <div class="modal fade" id="LaunchModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+              <div class="modal-dialog modal-dialog-centered" role="document">
+                <div class="modal-content">
+                  <div class="modal-header d-flex justify-content-center">
+                    <h5 class="modal-title" id="exampleModalCenterTitle">Hallo <?php echo $_SESSION['surname'] . " " . $_SESSION['lastname'] ?></h5>
+                  </div>
+                  <div class="modal-body">
+                    <a href="projectblocks.php" class="d-flex justify-content-center btn-lg btn-primary" role="button" aria-disabled="true">Start</a>
+                  </div>
+                </div>
+              </div>
             </div>
-            <div class=" row justify-content-centerprogress">
-              <div class="progress-bar" role="progressbar" style="width: 25%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">25%</div>
-            </div>
-            <div class=" row justify-content-centerprogress">
-              <div class="progress-bar" role="progressbar" style="width: 25%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">25%</div>
-            </div>
-            <div class="row justify-content-center progress">
-              <div class="progress-bar" role="progressbar" style="width: 25%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">25%</div>
-            </div>
-            <div class="row justify-content-center progress">
-              <div class="progress-bar" role="progressbar" style="width: 25%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">25%</div>
-            </div>
-          </div>
+
+          <?php endif; ?>
+
+          <?php if ($_SESSION['role'] == "teacher") : ?>
+
+            <table class="table">
+              <thead>
+                <tr>
+                  <th scope="col">#</th>
+                  <th scope="col">Voornaam</th>
+                  <th scope="col">Vordering</th>
+                </tr>
+              </thead>
+              <tbody>
+                <?php
+                if (!empty($result) && $result->num_rows > 0) {
+                  // output data of each row
+                  $count = 1;
+                  while ($row = $result->fetch_assoc()) {
+                    echo
+                      "<tr data-id='" . $row["id"] . "'>" .
+                        "<th scope='row'>" . $count . "</th>" .
+                        "<td>" . $row["surname"] . "</td>" .
+                        "<td>" . "<div class='progress'><div class='progress-bar' role='progressbar' style='width: " . $row["vordering"] . "%' aria-valuenow='" . $row["vordering"]. "' aria-valuemin='0' aria-valuemax='10'></div>
+                      </div>" . "</td>" .
+                        "</tr>";
+                    $count++;
+                  }
+                }
+                ?>
+              </tbody>
+            </table>
+
+          <?php endif; ?>
 
           <!-- End of Main Content -->
 
@@ -88,14 +150,16 @@ green4: #155C2B
       </div>
       <!-- End of Page Wrapper -->
 
-      <!-- Footer -->
-      <footer class="sticky-footer bg-white">
-        <div class="container my-auto">
-          <div class="copyright text-center my-auto">
-            <span>Copyright &copy; Your Website 2020</span>
+      <?php if ($_SESSION['role'] == "teacher") : ?>
+        <!-- Footer -->
+        <footer class="sticky-footer bg-white">
+          <div class="container my-auto">
+            <div class="copyright text-center my-auto">
+              <span>Copyright &copy; Your Website 2020</span>
+            </div>
           </div>
-        </div>
-      </footer>
+        </footer>
+      <?php endif; ?>
       <!-- End of Footer -->
 
       <!-- Scroll to Top Button-->
@@ -115,7 +179,9 @@ green4: #155C2B
       <script src="js/sb-admin-2.min.js"></script>
 
       <script type="text/javascript">
-
+        $(window).on('load', function() {
+          $('#LaunchModal').modal('show');
+        });
       </script>
 </body>
 
