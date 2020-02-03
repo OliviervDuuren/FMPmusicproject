@@ -64,7 +64,7 @@ error_log( print_r($json_blockdata, TRUE) );
           <?php if ($_SESSION['role'] == "teacher") : ?>
             <nav aria-label="breadcrumb">
               <ol class="breadcrumb">
-                <li class="breadcrumb-item "><a href="projectblocks.php">Projectblokken</a></a></li>
+                <li class="breadcrumb-item "><a href="projectblocks.php">Alle Blokken</a></a></li>
                 <li class="breadcrumb-item active"><a><?php echo $block; ?></a></li>
 
               </ol>

@@ -13,7 +13,7 @@ $active_page = "projectblokken";
 
 $json_data = json_decode(file_get_contents("manifest.json"));
 $json_project = $json_data->$block->$project;
-error_log( print_r($json_project, TRUE) );
+error_log(print_r($json_project, TRUE));
 
 ?>
 <!DOCTYPE html>
@@ -64,7 +64,7 @@ error_log( print_r($json_project, TRUE) );
             <nav aria-label="breadcrumb">
               <ol class="breadcrumb">
 
-                <li class="breadcrumb-item "><a href="projectblocks.php">Projectblokken</a></a></li>
+                <li class="breadcrumb-item "><a href="projectblocks.php">Alle blokken</a></a></li>
                 <li class="breadcrumb-item "><a href="block.php?block=<?php echo $block; ?>"><?php echo $block; ?></a></a></li>
                 <li class="breadcrumb-item active"><a><?php echo $project; ?></a></li>
 
@@ -92,10 +92,15 @@ error_log( print_r($json_project, TRUE) );
                   <i class="fas fa-suitcase suitcase"></i>
                 </div>
               </div>
-              <h1 class="h4"><?php echo $json_project->title;?></h1>
+              <!-- <h1 class="h4"><?php echo $json_project->title; ?></h1> -->
             </div>
 
+          </div>
+          <div class="row justify-content-center">
 
+
+
+            <h1 class="h4"><?php echo $json_project->title; ?></h1>
 
 
           </div>
@@ -104,44 +109,43 @@ error_log( print_r($json_project, TRUE) );
           <div class="text-center">
 
             <div class="d-sm-flex justify-content-center align-items-center mb-4">
-              <p class="text-primary">Speel met onderstaande fragmenten en maak het liedje <b><?php echo $json_project->title;?></b> </p>
+              <p class="text-primary">Speel met onderstaande fragmenten en maak het liedje <b><?php echo $json_project->title; ?></b> </p>
             </div>
 
             <div class="row justify-content-center">
 
               <?php foreach ($json_project->fragments as $key => $value) {
 
-                  echo "<div class='col-sm-2 text-center block-card'>
+                echo "<div class='col-sm-2 text-center block-card'>
                   <a data-toggle='modal' data-target='#gspeelModal'>
                     <div class='card bg-secondary d-sm-flex justify-content-center align-items-center shadow mb-4'>
                       <div class='card-body'>
                         <i class='fas fa-music suitcase'></i>
                       </div>
                     </div>
-                    <p>".$value."</p>
+                    <p>" . $value . "</p>
                     </a>
                   </div>";
-
-              }?>
+              } ?>
               <!-- Modal -->
               <div class="modal fade" id="gspeelModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-              <div class="modal-dialog modal-dialog-centered" role="document">
-                <div class="modal-content">
-                  <div class="modal-header ">
-                    <h5 class="modal-title justify-content-center" id="exampleModalLongTitle">Speel geluid</h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                      <span aria-hidden="true">&times;</span>
-                    </button>
-                  </div>
-                  <div class="modal-body">
-                    Op dit moment werkt deze functie nog niet. Hier zouden de geluiden hoorbaar moeten zijn. Dank u!
-                  </div>
-                  <div class="modal-footer justify-content-center">
-                    <button type="button" class="btn btn-primary" data-dismiss="modal">Oke</button>
+                <div class="modal-dialog modal-dialog-centered" role="document">
+                  <div class="modal-content">
+                    <div class="modal-header ">
+                      <h5 class="modal-title justify-content-center" id="exampleModalLongTitle">Speel geluid</h5>
+                      <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                      </button>
+                    </div>
+                    <div class="modal-body">
+                      Op dit moment werkt deze functie nog niet. Hier zouden de geluiden hoorbaar moeten zijn. Dank u!
+                    </div>
+                    <div class="modal-footer justify-content-center">
+                      <button type="button" class="btn btn-primary" data-dismiss="modal">Oke</button>
+                    </div>
                   </div>
                 </div>
               </div>
-            </div>
 
             </div>
             <button class="btn btn-green1 mb-3" type="button" data-toggle="modal" data-target="#guploadModal">
