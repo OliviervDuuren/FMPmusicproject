@@ -109,7 +109,7 @@ error_log(print_r($json_project, TRUE));
           <div class="text-center">
 
             <div class="d-sm-flex justify-content-center align-items-center mb-4">
-              <p class="text-primary">Speel met onderstaande fragmenten en maak het liedje <b><?php echo $json_project->title; ?></b> </p>
+              <p class="text-primary">Speel met onderstaande fragmenten en maak <b><?php echo $json_project->title; ?></b> </p>
             </div>
 
             <div class="row justify-content-center">
@@ -148,7 +148,7 @@ error_log(print_r($json_project, TRUE));
               </div>
 
             </div>
-            <button class="btn btn-green1 mb-3" type="button" data-toggle="modal" data-target="#guploadModal">
+            <button class="btn btn-primary mb-3" type="button" data-toggle="modal" data-target="#guploadModal">
               Geluiden uploaden
             </button>
 

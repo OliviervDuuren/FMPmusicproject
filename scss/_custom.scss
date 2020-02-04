@@ -10,16 +10,37 @@
   height: 100vh;
 }
 
+.bg-green1 {
+  color: #fff;
+  background-color: #6DB75C;
+  border-color: #6DB75C;
+}
+
+.bg-green1:hover {
+  color: #fff;
+  background-color: #6DB75C;
+  border-color: #6DB75C;
+}
+
+.text-green1 {
+  color: #6DB75C;
+}
+
+.text-green1:hover {
+  color: #6DB75C;
+
+}
+
 .btn-green1 {
   color: #fff;
-  background-color: #6CBFA2;
-  border-color: #6CBFA2;
+  background-color: #6DB75C;
+  border-color: #6DB75C;
 }
 
 .btn-green1:hover {
   color: #fff;
-  background-color: #6CBFA2;
-  border-color: #6CBFA2;
+  background-color: #6DB75C;
+  border-color: #6DB75C;
 }
 
 .btn-green1.focus,

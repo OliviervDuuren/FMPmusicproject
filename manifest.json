@@ -520,7 +520,7 @@
 		},
 		"Project 3": {
 			"disabled": false,
-			"title": "Nog een liedje",
+			"title": "Eigen liedje met vier",
 			"fragments": ["Geluid 1", "Geluid 2", "Geluid 3", "Geluid 4"],
 			"path_to_sound": ""
 		},
