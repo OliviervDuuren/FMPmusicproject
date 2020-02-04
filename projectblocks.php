@@ -78,8 +78,9 @@ $json_data = json_decode(file_get_contents("manifest.json"));
                     <div class='card-body'>
                     ".(($value->disabled)?"<i class='fas fa-lock'></i>":"<i class='fas fa-cube cube'></i>")."
                     </div>
-                    <p>".$key."</p>
                     </div>
+                    <p>".$key."</p>
+
                 </a>
               </div>";
             }?>
