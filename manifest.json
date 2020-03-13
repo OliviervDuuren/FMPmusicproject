@@ -1,6 +1,6 @@
 {
 	"Blok 1": {
-		"disabled": false,
+		"disabled": true,
 		"Project 1": {
 			"disabled": true,
 			"title": "Vader Jacob met 2",
@@ -507,9 +507,9 @@
 	"Blok 9": {
 		"disabled": false,
 		"Project 1": {
-			"disabled": true,
-			"title": "Liedje Vader Jacob",
-			"fragments": ["Geluid 1", "Geluid 2", "Geluid 3", "Geluid 4"],
+			"disabled": false,
+			"title": "Eigen liedje maken!",
+			"fragments": ["Geluid1", "Geluid2", "Geluid3", "Geluid4", "Geluid5", "Geluid6", "Geluid7", "Geluid8"],
 			"path_to_sound": ""
 		},
 		"Project 2": {
@@ -519,7 +519,7 @@
 			"path_to_sound": ""
 		},
 		"Project 3": {
-			"disabled": false,
+			"disabled": true,
 			"title": "Eigen liedje met vier",
 			"fragments": ["Geluid 1", "Geluid 2", "Geluid 3", "Geluid 4"],
 			"path_to_sound": ""

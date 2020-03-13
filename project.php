@@ -117,14 +117,28 @@ error_log(print_r($json_project, TRUE));
               <?php foreach ($json_project->fragments as $key => $value) {
 
                 echo "<div class='col-sm-2 text-center block-card'>
-                  <a data-toggle='modal' data-target='#gspeelModal'>
-                    <div class='card bg-secondary d-sm-flex justify-content-center align-items-center shadow mb-4'>
+                  <a data-toggle='modal' data-target=''>
+                    <div class='card bg-secondary d-sm-flex justify-content-center align-items-center shadow mb-4 dropdown show'>
                       <div class='card-body'>
                         <i class='fas fa-music suitcase'></i>
                       </div>
                     </div>
-                    <p>" . $value . "</p>
-                    </a>
+                    <form method='post' id='my_form_". $value ."' action='soundupdate.php'>
+                    <select name='soundvalue". $value ."' class='btn btn-secondary mdb-select md-form colorful-select dropdown-primary' onfocus='soundvalue'>
+                      <option value='' disabled selected>Kies geluid</option>
+                      <option value='1'>Geluid 1</option>
+                      <option value='2'>Geluid 2</option>
+                      <option value='3'>Geluid 3</option>
+                      <option value='4'>Geluid 4</option>
+                      <option value='5'>Geluid 5</option>
+                      <option value='6'>Geluid 6</option>
+                      <option value='7'>Geluid 7</option>
+                      <option value='8'>Geluid 8</option>
+                    </select>
+                    
+                    </form>
+                    
+                  </a>
                   </div>";
               } ?>
               <!-- Modal -->
@@ -148,9 +162,14 @@ error_log(print_r($json_project, TRUE));
               </div>
 
             </div>
-            <button class="btn btn-primary mb-3" type="button" data-toggle="modal" data-target="#guploadModal">
+            <button class="btn btn-primary mb-3" data-toggle="modal" data-target="" type="submit" onclick="submitForms()">
               Geluiden uploaden
             </button>
+            <?php
+             
+            ?>
+           
+
 
             <!-- Modal -->
 
@@ -215,6 +234,14 @@ error_log(print_r($json_project, TRUE));
           e.preventDefault();
           window.history.back();
         });
+
+        submitForms = function(){
+          
+          document.getElementById("my_form_Geluid1").submit();
+          document.getElementById("my_form_Geluid8").submit();
+          
+}
+
       </script>
 </body>
 
