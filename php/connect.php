@@ -1,5 +1,5 @@
 <?php
-$mysqli = new mysqli("localhost","root","","fmpmusicproject");
+$mysqli = new mysqli("localhost","root","root","fmpmusicproject");
 
 // Check connection
 if ($mysqli -> connect_errno) {

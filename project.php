@@ -13,7 +13,16 @@ $active_page = "projectblokken";
 
 $json_data = json_decode(file_get_contents("manifest.json"));
 $json_project = $json_data->$block->$project;
-error_log(print_r($json_project, TRUE));
+
+
+if( isset($_POST['submitSounds'])) {
+  $fp = fopen('data.txt', 'wb');
+  foreach ($_POST["soundvalue"] as $key => $value) {
+      fwrite($fp, $value);
+      echo $value;
+  }
+  fclose($fp);
+}
 
 ?>
 <!DOCTYPE html>
@@ -112,20 +121,21 @@ error_log(print_r($json_project, TRUE));
               <p class="text-primary">Speel met onderstaande fragmenten en maak <b><?php echo $json_project->title; ?></b> </p>
             </div>
 
-            <div class="row justify-content-center">
 
+              <form name="soundvalue" class="sounds-form" action="" method="post">
+                <div class="row justify-content-center">
               <?php foreach ($json_project->fragments as $key => $value) {
 
-                echo "<div class='col-sm-2 text-center block-card'>
+                echo "<div class='col-sm-2 text-center block-card mb-5'>
                   <a data-toggle='modal' data-target=''>
                     <div class='card bg-secondary d-sm-flex justify-content-center align-items-center shadow mb-4 dropdown show'>
                       <div class='card-body'>
                         <i class='fas fa-music suitcase'></i>
                       </div>
                     </div>
-                    <form method='post' id='my_form_". $value ."' action='soundupdate.php'>
-                    <select name='soundvalue". $value ."' class='btn btn-secondary mdb-select md-form colorful-select dropdown-primary' onfocus='soundvalue'>
-                      <option value='' disabled selected>Kies geluid</option>
+                    </a>
+                    <select name='soundvalue[]' class='btn btn-secondary mdb-select md-form colorful-select dropdown-primary' onfocus='soundvalue'>
+                      <option value='0' selected>Kies geluid</option>
                       <option value='1'>Geluid 1</option>
                       <option value='2'>Geluid 2</option>
                       <option value='3'>Geluid 3</option>
@@ -135,12 +145,16 @@ error_log(print_r($json_project, TRUE));
                       <option value='7'>Geluid 7</option>
                       <option value='8'>Geluid 8</option>
                     </select>
-                    
-                    </form>
-                    
-                  </a>
+
                   </div>";
               } ?>
+            </div>
+
+            <div class="row justify-content-center">
+              <button class="btn btn-primary" type="submit" name="submitSounds"> Geluiden uploaden</button>
+            </div>
+
+            </form>
               <!-- Modal -->
               <div class="modal fade" id="gspeelModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
                 <div class="modal-dialog modal-dialog-centered" role="document">
@@ -162,14 +176,9 @@ error_log(print_r($json_project, TRUE));
               </div>
 
             </div>
-            <button class="btn btn-primary mb-3" data-toggle="modal" data-target="" type="submit" onclick="submitForms()">
+            <!-- <button class="btn btn-primary mb-3" data-toggle="modal" data-target="" type="submit" onclick="submitForms()">
               Geluiden uploaden
-            </button>
-            <?php
-             
-            ?>
-           
-
+            </button> -->
 
             <!-- Modal -->
 
@@ -203,6 +212,7 @@ error_log(print_r($json_project, TRUE));
 
       </div>
       <!-- End of Page Wrapper -->
+    </div>
 
       <!-- Footer -->
       <footer class="sticky-footer bg-white">
@@ -235,12 +245,12 @@ error_log(print_r($json_project, TRUE));
           window.history.back();
         });
 
-        submitForms = function(){
-          
-          document.getElementById("my_form_Geluid1").submit();
-          document.getElementById("my_form_Geluid8").submit();
-          
-}
+//         submitForms = function(){
+//
+//           document.getElementById("my_form_Geluid1").submit();
+//           document.getElementById("my_form_Geluid8").submit();
+//
+// }
 
       </script>
 </body>
