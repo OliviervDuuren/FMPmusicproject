@@ -19,7 +19,7 @@ if( isset($_POST['submitSounds'])) {
   $fp = fopen('data.txt', 'wb');
   foreach ($_POST["soundvalue"] as $key => $value) {
       fwrite($fp, $value);
-      echo $value;
+      //echo $value;
   }
   fclose($fp);
 }
@@ -135,15 +135,8 @@ if( isset($_POST['submitSounds'])) {
                     </div>
                     </a>
                     <select name='soundvalue[]' class='btn btn-secondary mdb-select md-form colorful-select dropdown-primary' onfocus='soundvalue'>
-                      <option value='0' selected>Kies geluid</option>
-                      <option value='1'>Geluid 1</option>
-                      <option value='2'>Geluid 2</option>
-                      <option value='3'>Geluid 3</option>
-                      <option value='4'>Geluid 4</option>
-                      <option value='5'>Geluid 5</option>
-                      <option value='6'>Geluid 6</option>
-                      <option value='7'>Geluid 7</option>
-                      <option value='8'>Geluid 8</option>
+                      <option value='" . $key . "' selected>Kies geluid</option>
+                      <option value='" . $key . "'>" . $value . "</option>
                     </select>
 
                   </div>";
