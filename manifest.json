@@ -3,98 +3,146 @@
 		"disabled": false,
 		"Project 1": {
 			"disabled": false,
+			"open": false,
+			"availableSlots": 4,
+			"background": "#858796",
 			"title": "Van zacht naar hard 1",
-			"fragments": ["Geluid 6", "Geluid 7", "Geluid 8", "Geluid 9"],
+			"fragments": [{"id":"1", "name":"Geluid 1"}, {"id":"2", "name":"Geluid 2"}, {"id":"3", "name":"Geluid 3"}, {"id":"4", "name":"Geluid 4"}],
 			"path_to_sound": ""
 		},
 		"Project 2": {
 			"disabled": false,
+			"open": false,
+			"availableSlots": 4,
+			"background": "#858796",
 			"title": "Van hard naar zacht 1",
-			"fragments": ["Geluid 6", "Geluid 7", "Geluid 8", "Geluid 9"],
+			"fragments": [{"id":"5", "name":"Geluid 5"}, {"id":"6", "name":"Geluid 6"}, {"id":"7", "name":"Geluid 7"}, {"id":"8", "name":"Geluid 8"}],
 			"path_to_sound": ""
 		},
 		"Project 3": {
 			"disabled": false,
+			"open": false,
+			"availableSlots": 4,
+			"background": "#858796",
 			"title": "Sirene nabootsen",
-			"fragments": ["Geluid 6", "Geluid 7", "Geluid 8", "Geluid 9"],
+			"fragments": [{"id":"9", "name":"Geluid 9"}, {"id":"10", "name":"Geluid 10"}, {"id":"11", "name":"Geluid 11"}, {"id":"12", "name":"Geluid 12"}],
 			"path_to_sound": ""
 		},
 		"Project 4": {
 			"disabled": false,
+			"open": false,
+			"availableSlots": 8,
+			"background": "#858796",
 			"title": "Leg noten gelijk 1",
-			"fragments": ["Geluid 6", "Geluid 7", "Geluid 8", "Geluid 9"],
+			"fragments": [{"id":"13", "name":"Geluid 13"}, {"id":"13", "name":"Geluid 13"}, {"id":"14", "name":"Geluid 14"}, {"id":"14", "name":"Geluid 14"},{"id":"15", "name":"Geluid 15"}, {"id":"15", "name":"Geluid 15"}, {"id":"16", "name":"Geluid 16"}, {"id":"16", "name":"Geluid 16"}],
 			"path_to_sound": ""
 		},
 		"Project 5": {
 			"disabled": false,
+			"open": false,
+			"availableSlots": 4,
+			"background": "#858796",
 			"title": "Van hoog naar laag 1",
-			"fragments": ["Geluid 6", "Geluid 7", "Geluid 8", "Geluid 9"],
+			"fragments": [{"id":"17", "name":"Geluid 17"}, {"id":"18", "name":"Geluid 18"}, {"id":"19", "name":"Geluid 19"}, {"id":"20", "name":"Geluid 20"}],
 			"path_to_sound": ""
 		},
 		"Project 6": {
 			"disabled": false,
+			"open": false,
+			"availableSlots": 4,
+			"background": "#858796",
 			"title": "Van laag naar hoog 1",
-			"fragments": ["Geluid 6", "Geluid 7", "Geluid 8", "Geluid 9"],
+			"fragments": [{"id":"21", "name":"Geluid 21"}, {"id":"22", "name":"Geluid 22"}, {"id":"23", "name":"Geluid 23"}, {"id":"24", "name":"Geluid 24"}],
 			"path_to_sound": ""
 		},
 		"Project 7": {
 			"disabled": false,
+			"open": false,
+			"availableSlots": 4,
+			"background": "#858796",
 			"title": "Maak toonladder C",
-			"fragments": ["Geluid 6", "Geluid 7", "Geluid 8", "Geluid 9"],
+			"fragments": [{"id":"25", "name":"Geluid 25"}, {"id":"26", "name":"Geluid 26"}, {"id":"27", "name":"Geluid 27"}, {"id":"28", "name":"Geluid 28"}],
 			"path_to_sound": ""
 		},
 		"Project 8": {
 			"disabled": false,
+			"open": false,
+			"availableSlots": 8,
+			"background": "#858796",
 			"title": "Leg maatsoort bij maatsoort 1",
-			"fragments": ["Geluid 6", "Geluid 7", "Geluid 8", "Geluid 9", "Geluid 10", "Geluid 11", "Geluid 12", "Geluid 13"],
+			"fragments": [{"id":"29", "name":"Geluid 29"}, {"id":"30", "name":"Geluid 30"}, {"id":"31", "name":"Geluid 31"}, {"id":"32", "name":"Geluid 32"},{"id":"33", "name":"Geluid 33"}, {"id":"34", "name":"Geluid 34"}, {"id":"35", "name":"Geluid 35"}, {"id":"36", "name":"Geluid 36"}],
 			"path_to_sound": ""
 		},
 		"Project 9": {
 			"disabled": false,
+			"open": false,
+			"availableSlots": 8,
+			"background": "#858796",
 			"title": "Leg ritme bij ritme 1",
-			"fragments": ["Geluid 6", "Geluid 7", "Geluid 8", "Geluid 9", "Geluid 10", "Geluid 11", "Geluid 12", "Geluid 13"],
+			"fragments": [{"id":"37", "name":"Geluid 37"}, {"id":"38", "name":"Geluid 38"}, {"id":"39", "name":"Geluid 39"}, {"id":"40", "name":"Geluid 40"},{"id":"41", "name":"Geluid 41"}, {"id":"42", "name":"Geluid 42"}, {"id":"43", "name":"Geluid 43"}, {"id":"44", "name":"Geluid 44"}],
 			"path_to_sound": ""
 		},
 		"Project 10": {
 			"disabled": false,
+			"open": false,
+			"availableSlots": 8,
+			"background": "#858796",
 			"title": "Leg melodie bij ritme 1",
-			"fragments": ["Geluid 6", "Geluid 7", "Geluid 8", "Geluid 9", "Geluid 10", "Geluid 11", "Geluid 12", "Geluid 13"],
+			"fragments": [{"id":"37", "name":"Geluid 37"}, {"id":"38", "name":"Geluid 38"}, {"id":"39", "name":"Geluid 39"}, {"id":"40", "name":"Geluid 40"},{"id":"45", "name":"Geluid 45"}, {"id":"46", "name":"Geluid 46"}, {"id":"47", "name":"Geluid 47"}, {"id":"48", "name":"Geluid 48"}],
 			"path_to_sound": ""
 		},
 		"Project 11": {
 			"disabled": false,
+			"open": false,
+			"availableSlots": 8,
+			"background": "#858796",
 			"title": "Leg ritme op ritme 1",
-			"fragments": ["Geluid 6", "Geluid 7", "Geluid 8", "Geluid 9", "Geluid 10", "Geluid 11", "Geluid 12", "Geluid 13"],
+			"fragments": [{"id":"49", "name":"Geluid 49"}, {"id":"50", "name":"Geluid 50"}, {"id":"51", "name":"Geluid 51"}, {"id":"52", "name":"Geluid 52"},{"id":"49", "name":"Geluid 49"}, {"id":"50", "name":"Geluid 50"}, {"id":"51", "name":"Geluid 51"}, {"id":"52", "name":"Geluid 52"}],
 			"path_to_sound": ""
 		},
 		"Project 12": {
 			"disabled": false,
+			"open": false,
+			"availableSlots": 4,
+			"background": "#858796",
 			"title": "Maak ritme na 1",
-			"fragments": ["Geluid 6", "Geluid 7", "Geluid 8", "Geluid 9", "Geluid 10", "Geluid 11", "Geluid 12", "Geluid 13"],
+			"fragments": [{"id":"53", "name":"Geluid 53"}, {"id":"54", "name":"Geluid 54"}, {"id":"55", "name":"Geluid 55"}, {"id":"56", "name":"Geluid 56"}],
 			"path_to_sound": ""
 		},
 		"Project 13": {
 			"disabled": false,
+			"open": true,
+			"availableSlots": 8,
+			"background": "#858796",
 			"title": "Maak eigen ritme 1",
-			"fragments": ["Geluid 6", "Geluid 7", "Geluid 8", "Geluid 9", "Geluid 10", "Geluid 11", "Geluid 12", "Geluid 13","Geluid 14", "Geluid 15", "Geluid 16", "Geluid 17", "Geluid 18", "Geluid 19", "Geluid 20", "Geluid 21"],
+			"fragments": [{"id":"57", "name":"Geluid 57"}, {"id":"58", "name":"Geluid 58"}, {"id":"59", "name":"Geluid 59"}, {"id":"60", "name":"Geluid 60"}, {"id":"61", "name":"Geluid 61"}, {"id":"62", "name":"Geluid 62"}, {"id":"63", "name":"Geluid 63"}, {"id":"64", "name":"Geluid 64"},{"id":"65", "name":"Geluid 65"}, {"id":"66", "name":"Geluid 66"}, {"id":"67", "name":"Geluid 67"}, {"id":"68", "name":"Geluid 68"}, {"id":"69", "name":"Geluid 69"}, {"id":"70", "name":"Geluid 70"}, {"id":"71", "name":"Geluid 71"}, {"id":"72", "name":"Geluid 72"}],
 			"path_to_sound": ""
 		},
 		"Project 14": {
 			"disabled": false,
+			"open": false,
+			"availableSlots": 8,
+			"background": "#858796",
 			"title": "Leg melodie op melodie 1",
-			"fragments": ["Geluid 6", "Geluid 7", "Geluid 8", "Geluid 9", "Geluid 10", "Geluid 11", "Geluid 12", "Geluid 13"],
+			"fragments": [{"id":"71", "name":"Geluid 71"}, {"id":"72", "name":"Geluid 72"}, {"id":"73", "name":"Geluid 73"}, {"id":"74", "name":"Geluid 74"},{"id":"71", "name":"Geluid 71"}, {"id":"72", "name":"Geluid 72"}, {"id":"73", "name":"Geluid 73"}, {"id":"74", "name":"Geluid 74"}],
 			"path_to_sound": ""
 		},
 		"Project 15": {
 			"disabled": false,
+			"open": false,
+			"availableSlots": 4,
+			"background": "#858796",
 			"title": "Maak melodie na 1 ",
-			"fragments": ["Geluid 6", "Geluid 7", "Geluid 8", "Geluid 9", "Geluid 10", "Geluid 11", "Geluid 12", "Geluid 13"],
+			"fragments": [{"id":"75", "name":"Geluid 75"}, {"id":"76", "name":"Geluid 76"}, {"id":"77", "name":"Geluid 77"}, {"id":"78", "name":"Geluid 78"}],
 			"path_to_sound": ""
 		},
 		"Project 16": {
 			"disabled": false,
+			"open": true,
+			"availableSlots": 8,
+			"background": "#858796",
 			"title": "Maak eigen melodie 1",
-			"fragments": ["Geluid 6", "Geluid 7", "Geluid 8", "Geluid 9", "Geluid 10", "Geluid 11", "Geluid 12", "Geluid 13","Geluid 14", "Geluid 15", "Geluid 16", "Geluid 17", "Geluid 18", "Geluid 19", "Geluid 20", "Geluid 21"],
+			"fragments": [{"id":"79", "name":"Geluid 79"}, {"id":"80", "name":"Geluid 80"}, {"id":"81", "name":"Geluid 81"}, {"id":"82", "name":"Geluid 82"},{"id":"83", "name":"Geluid 83"}, {"id":"84", "name":"Geluid 84"}, {"id":"85", "name":"Geluid 85"}, {"id":"86", "name":"Geluid 86"},{"id":"87", "name":"Geluid 87"}, {"id":"88", "name":"Geluid 88"}, {"id":"89", "name":"Geluid 89"}, {"id":"90", "name":"Geluid 90"},{"id":"91", "name":"Geluid 91"}, {"id":"92", "name":"Geluid 92"}, {"id":"93", "name":"Geluid 93"}, {"id":"94", "name":"Geluid 94"}],
 			"path_to_sound": ""
 		}
 

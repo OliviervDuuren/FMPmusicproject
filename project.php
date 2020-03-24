@@ -124,23 +124,45 @@ if( isset($_POST['submitSounds'])) {
 
               <form name="soundvalue" class="sounds-form" action="" method="post">
                 <div class="row justify-content-center">
-              <?php foreach ($json_project->fragments as $key => $value) {
-
+                <?php 
+                  if ($json_project->open) {
+                    for ($i=0; $i < $json_project->availableSlots ; $i++) { 
                 echo "<div class='col-sm-2 text-center block-card mb-5'>
                   <a data-toggle='modal' data-target=''>
-                    <div class='card bg-secondary d-sm-flex justify-content-center align-items-center shadow mb-4 dropdown show'>
+                    <div style='background-color: " . $json_project->background . ";' class='card d-sm-flex justify-content-center align-items-center shadow mb-4 dropdown show'>
                       <div class='card-body'>
                         <i class='fas fa-music suitcase'></i>
                       </div>
                     </div>
                     </a>
-                    <select name='soundvalue[]' class='btn btn-secondary mdb-select md-form colorful-select dropdown-primary' onfocus='soundvalue'>
-                      <option value='" . $key . "' selected>Kies geluid</option>
-                      <option value='" . $key . "'>" . $value . "</option>
-                    </select>
+                    <select name='soundvalue[]' class='btn  mdb-select md-form colorful-select dropdown-primary' onfocus='soundvalue'>
+                      <option value='' selected>Kies geluid</option>";
+                      
+                      for ($j=0; $j < count($json_project->fragments) ; $j++) { // loop through fragments
+                        echo "<option value='" . $json_project->fragments[$j]->id . "'>" . $json_project->fragments[$j]->name . "</option>";
+                      }
 
+                echo "</select>
                   </div>";
-              } ?>
+              }
+            }
+              else{
+                for ($i=0; $i < $json_project->availableSlots ; $i++) {
+                  echo "<div class='col-sm-2 text-center block-card mb-5'>
+                    <a data-toggle='modal' data-target=''>
+                      <div style='background-color: " . $json_project->background . ";' class='card d-sm-flex justify-content-center align-items-center shadow mb-4 dropdown show'>
+                        <div class='card-body'>
+                          <i class='fas fa-music suitcase'></i>
+                        </div>
+                      </div>
+                      </a>
+                      <select name='soundvalue[]' class='btn btn-secondary mdb-select md-form colorful-select dropdown-primary' onfocus='soundvalue'>
+                        <option value='". $json_project->fragments[$i]->id . "' selected>" . $json_project->fragments[$i]->name . "</option>
+                      </select>
+                    </div>";
+              }
+            }
+              ?>
             </div>
 
             <div class="row justify-content-center">
