@@ -19,6 +19,7 @@ if( isset($_POST['submitSounds'])) {
   $fp = fopen('data.txt', 'wb');
   foreach ($_POST["soundvalue"] as $key => $value) {
       fwrite($fp, $value);
+      fwrite($fp, ",");
       //echo $value;
   }
   fclose($fp);
@@ -129,13 +130,13 @@ if( isset($_POST['submitSounds'])) {
                     for ($i=0; $i < $json_project->availableSlots ; $i++) { 
                 echo "<div class='col-sm-2 text-center block-card mb-5'>
                   <a data-toggle='modal' data-target=''>
-                    <div style='background-color: " . $json_project->background . ";' class='card d-sm-flex justify-content-center align-items-center shadow mb-4 dropdown show'>
+                    <div class='card bg-secondary d-sm-flex justify-content-center align-items-center shadow mb-4 dropdown show'>
                       <div class='card-body'>
                         <i class='fas fa-music suitcase'></i>
                       </div>
                     </div>
                     </a>
-                    <select name='soundvalue[]' class='btn  mdb-select md-form colorful-select dropdown-primary' onfocus='soundvalue'>
+                    <select name='soundvalue[]' class='btn bg-secondary mdb-select md-form colorful-select dropdown-primary' onfocus='soundvalue'>
                       <option value='' selected>Kies geluid</option>";
                       
                       for ($j=0; $j < count($json_project->fragments) ; $j++) { // loop through fragments
@@ -150,7 +151,7 @@ if( isset($_POST['submitSounds'])) {
                 for ($i=0; $i < $json_project->availableSlots ; $i++) {
                   echo "<div class='col-sm-2 text-center block-card mb-5'>
                     <a data-toggle='modal' data-target=''>
-                      <div style='background-color: " . $json_project->background . ";' class='card d-sm-flex justify-content-center align-items-center shadow mb-4 dropdown show'>
+                      <div class='card bg-secondary d-sm-flex justify-content-center align-items-center shadow mb-4 dropdown show'>
                         <div class='card-body'>
                           <i class='fas fa-music suitcase'></i>
                         </div>
