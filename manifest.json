@@ -7,7 +7,7 @@
 			"availableSlots": 4,
 			"background": "#858796",
 			"title": "Van zacht naar hard 1",
-			"fragments": [{"id":"1", "name":"Geluid 1"}, {"id":"2", "name":"Geluid 2"}, {"id":"3", "name":"Geluid 3"}, {"id":"4", "name":"Geluid 4"}],
+			"fragments": [{"id":"1", "name":"Gitaar 1"}, {"id":"2", "name":"Gitaar 2"}, {"id":"3", "name":"Gitaar 3"}, {"id":"4", "name":"Gitaar 4"}],
 			"path_to_sound": ""
 		},
 		"Project 2": {
@@ -16,7 +16,7 @@
 			"availableSlots": 4,
 			"background": "#858796",
 			"title": "Van hard naar zacht 1",
-			"fragments": [{"id":"5", "name":"Geluid 5"}, {"id":"6", "name":"Geluid 6"}, {"id":"7", "name":"Geluid 7"}, {"id":"8", "name":"Geluid 8"}],
+			"fragments": [{"id":"5", "name":"Blazers 1"}, {"id":"6", "name":"Blazers 2"}, {"id":"7", "name":"Blazers 3"}, {"id":"8", "name":"Blazers 4"}],
 			"path_to_sound": ""
 		},
 		"Project 3": {
@@ -25,7 +25,7 @@
 			"availableSlots": 4,
 			"background": "#858796",
 			"title": "Sirene nabootsen",
-			"fragments": [{"id":"9", "name":"Geluid 9"}, {"id":"10", "name":"Geluid 10"}, {"id":"11", "name":"Geluid 11"}, {"id":"12", "name":"Geluid 12"}],
+			"fragments": [{"id":"9", "name":"Sirene 1"}, {"id":"10", "name":"Sirene 2"}, {"id":"11", "name":"Sirene 3"}, {"id":"12", "name":"Sirene 4"}],
 			"path_to_sound": ""
 		},
 		"Project 4": {
@@ -34,7 +34,7 @@
 			"availableSlots": 8,
 			"background": "#858796",
 			"title": "Leg noten gelijk 1",
-			"fragments": [{"id":"13", "name":"Geluid 13"}, {"id":"13", "name":"Geluid 13"}, {"id":"14", "name":"Geluid 14"}, {"id":"14", "name":"Geluid 14"},{"id":"15", "name":"Geluid 15"}, {"id":"15", "name":"Geluid 15"}, {"id":"16", "name":"Geluid 16"}, {"id":"16", "name":"Geluid 16"}],
+			"fragments": [{"id":"13", "name":"Piano 1"}, {"id":"13", "name":"Piano 1"}, {"id":"14", "name":"Piano 2"}, {"id":"14", "name":"Piano 2"},{"id":"15", "name":"Piano 3"}, {"id":"15", "name":"Piano 3"}, {"id":"16", "name":"Piano 4"}, {"id":"16", "name":"Piano 4"}],
 			"path_to_sound": ""
 		},
 		"Project 5": {
@@ -43,7 +43,7 @@
 			"availableSlots": 4,
 			"background": "#858796",
 			"title": "Van hoog naar laag 1",
-			"fragments": [{"id":"17", "name":"Geluid 17"}, {"id":"18", "name":"Geluid 18"}, {"id":"19", "name":"Geluid 19"}, {"id":"20", "name":"Geluid 20"}],
+			"fragments": [{"id":"17", "name":"Strijkers 1"}, {"id":"18", "name":"Strijkers 2"}, {"id":"19", "name":"Strijkers 3"}, {"id":"20", "name":"Strijkers 4"}],
 			"path_to_sound": ""
 		},
 		"Project 6": {
@@ -52,7 +52,7 @@
 			"availableSlots": 4,
 			"background": "#858796",
 			"title": "Van laag naar hoog 1",
-			"fragments": [{"id":"21", "name":"Geluid 21"}, {"id":"22", "name":"Geluid 22"}, {"id":"23", "name":"Geluid 23"}, {"id":"24", "name":"Geluid 24"}],
+			"fragments": [{"id":"21", "name":"Fluiten 1"}, {"id":"22", "name":"Fluiten 2"}, {"id":"23", "name":"Fluiten 3"}, {"id":"24", "name":"Fluiten 4"}],
 			"path_to_sound": ""
 		},
 		"Project 7": {
@@ -61,7 +61,7 @@
 			"availableSlots": 4,
 			"background": "#858796",
 			"title": "Maak toonladder C",
-			"fragments": [{"id":"25", "name":"Geluid 25"}, {"id":"26", "name":"Geluid 26"}, {"id":"27", "name":"Geluid 27"}, {"id":"28", "name":"Geluid 28"}],
+			"fragments": [{"id":"25", "name":"Koor 1"}, {"id":"26", "name":"Koor 2"}, {"id":"27", "name":"Koor 3"}, {"id":"28", "name":"Koor 4"}],
 			"path_to_sound": ""
 		},
 		"Project 8": {
@@ -70,7 +70,7 @@
 			"availableSlots": 8,
 			"background": "#858796",
 			"title": "Leg maatsoort bij maatsoort 1",
-			"fragments": [{"id":"29", "name":"Geluid 29"}, {"id":"30", "name":"Geluid 30"}, {"id":"31", "name":"Geluid 31"}, {"id":"32", "name":"Geluid 32"},{"id":"33", "name":"Geluid 33"}, {"id":"34", "name":"Geluid 34"}, {"id":"35", "name":"Geluid 35"}, {"id":"36", "name":"Geluid 36"}],
+			"fragments": [{"id":"29", "name":"Maatsoort 1"}, {"id":"30", "name":"Maatsoort 2"}, {"id":"31", "name":"Maatsoort 3"}, {"id":"32", "name":"Maatsoort 4"},{"id":"33", "name":"Maatsoort 5"}, {"id":"34", "name":"Maatsoort 6"}, {"id":"35", "name":"Maatsoort 7"}, {"id":"36", "name":"Maatsoort 8"}],
 			"path_to_sound": ""
 		},
 		"Project 9": {
@@ -79,7 +79,7 @@
 			"availableSlots": 8,
 			"background": "#858796",
 			"title": "Leg ritme bij ritme 1",
-			"fragments": [{"id":"37", "name":"Geluid 37"}, {"id":"38", "name":"Geluid 38"}, {"id":"39", "name":"Geluid 39"}, {"id":"40", "name":"Geluid 40"},{"id":"41", "name":"Geluid 41"}, {"id":"42", "name":"Geluid 42"}, {"id":"43", "name":"Geluid 43"}, {"id":"44", "name":"Geluid 44"}],
+			"fragments": [{"id":"37", "name":"Ritme 1"}, {"id":"38", "name":"Ritme 2"}, {"id":"39", "name":"Ritme 3"}, {"id":"40", "name":"Ritme 4"},{"id":"41", "name":"Ritme 5"}, {"id":"42", "name":"Ritme 6"}, {"id":"43", "name":"Ritme 7"}, {"id":"44", "name":"Ritme 8"}],
 			"path_to_sound": ""
 		},
 		"Project 10": {
@@ -88,7 +88,7 @@
 			"availableSlots": 8,
 			"background": "#858796",
 			"title": "Leg melodie bij ritme 1",
-			"fragments": [{"id":"37", "name":"Geluid 37"}, {"id":"38", "name":"Geluid 38"}, {"id":"39", "name":"Geluid 39"}, {"id":"40", "name":"Geluid 40"},{"id":"45", "name":"Geluid 45"}, {"id":"46", "name":"Geluid 46"}, {"id":"47", "name":"Geluid 47"}, {"id":"48", "name":"Geluid 48"}],
+			"fragments": [{"id":"37", "name":"Ritme 1"}, {"id":"38", "name":"Ritme 2"}, {"id":"39", "name":"Ritme 3"}, {"id":"40", "name":"Ritme 4"},{"id":"45", "name":"Melodie 1"}, {"id":"46", "name":"Melodie 2"}, {"id":"47", "name":"Melodie 3"}, {"id":"48", "name":"Melodie 4"}],
 			"path_to_sound": ""
 		},
 		"Project 11": {
@@ -97,7 +97,7 @@
 			"availableSlots": 8,
 			"background": "#858796",
 			"title": "Leg ritme op ritme 1",
-			"fragments": [{"id":"49", "name":"Geluid 49"}, {"id":"50", "name":"Geluid 50"}, {"id":"51", "name":"Geluid 51"}, {"id":"52", "name":"Geluid 52"},{"id":"49", "name":"Geluid 49"}, {"id":"50", "name":"Geluid 50"}, {"id":"51", "name":"Geluid 51"}, {"id":"52", "name":"Geluid 52"}],
+			"fragments": [{"id":"49", "name":"Ritme 1"}, {"id":"50", "name":"Ritme 2"}, {"id":"51", "name":"Ritme 3"}, {"id":"52", "name":"Ritme 4"},{"id":"49", "name":"Ritme 1"}, {"id":"50", "name":"Ritme 2"}, {"id":"51", "name":"Ritme 3"}, {"id":"52", "name":"Ritme 4"}],
 			"path_to_sound": ""
 		},
 		"Project 12": {
@@ -106,7 +106,7 @@
 			"availableSlots": 4,
 			"background": "#858796",
 			"title": "Maak ritme na 1",
-			"fragments": [{"id":"53", "name":"Geluid 53"}, {"id":"54", "name":"Geluid 54"}, {"id":"55", "name":"Geluid 55"}, {"id":"56", "name":"Geluid 56"}],
+			"fragments": [{"id":"53", "name":"Ritme 1"}, {"id":"54", "name":"Ritme 2"}, {"id":"55", "name":"Ritme 3"}, {"id":"56", "name":"Ritme 4"}],
 			"path_to_sound": ""
 		},
 		"Project 13": {
@@ -115,7 +115,7 @@
 			"availableSlots": 8,
 			"background": "#858796",
 			"title": "Maak eigen ritme 1",
-			"fragments": [{"id":"57", "name":"Geluid 57"}, {"id":"58", "name":"Geluid 58"}, {"id":"59", "name":"Geluid 59"}, {"id":"60", "name":"Geluid 60"}, {"id":"61", "name":"Geluid 61"}, {"id":"62", "name":"Geluid 62"}, {"id":"63", "name":"Geluid 63"}, {"id":"64", "name":"Geluid 64"},{"id":"65", "name":"Geluid 65"}, {"id":"66", "name":"Geluid 66"}, {"id":"67", "name":"Geluid 67"}, {"id":"68", "name":"Geluid 68"}, {"id":"69", "name":"Geluid 69"}, {"id":"70", "name":"Geluid 70"}, {"id":"71", "name":"Geluid 71"}, {"id":"72", "name":"Geluid 72"}],
+			"fragments": [{"id":"57", "name":"Klank 1"}, {"id":"58", "name":"Klank 2"}, {"id":"59", "name":"Klank 3"}, {"id":"60", "name":"Klank 4"}, {"id":"61", "name":"klank 5"}, {"id":"62", "name":"Klank 6"}, {"id":"63", "name":"Klank 7"}, {"id":"64", "name":"Klank 8"},{"id":"65", "name":"Klank 9"}, {"id":"66", "name":"Klank 10"}, {"id":"67", "name":"Klank 11"}, {"id":"68", "name":"Klank 12"}, {"id":"69", "name":"Klank 13"}, {"id":"70", "name":"Klank 14"}, {"id":"71", "name":"Klank 15"}, {"id":"72", "name":"Klank 16"}],
 			"path_to_sound": ""
 		},
 		"Project 14": {
@@ -124,7 +124,7 @@
 			"availableSlots": 8,
 			"background": "#858796",
 			"title": "Leg melodie op melodie 1",
-			"fragments": [{"id":"71", "name":"Geluid 71"}, {"id":"72", "name":"Geluid 72"}, {"id":"73", "name":"Geluid 73"}, {"id":"74", "name":"Geluid 74"},{"id":"71", "name":"Geluid 71"}, {"id":"72", "name":"Geluid 72"}, {"id":"73", "name":"Geluid 73"}, {"id":"74", "name":"Geluid 74"}],
+			"fragments": [{"id":"71", "name":"Melodie 1"}, {"id":"72", "name":"Melodie 2"}, {"id":"73", "name":"Melodie 3"}, {"id":"74", "name":"Melodie 4"},{"id":"71", "name":"Melodie 1"}, {"id":"72", "name":"Melodie 2"}, {"id":"73", "name":"Melodie 3"}, {"id":"74", "name":"Melodie 4"}],
 			"path_to_sound": ""
 		},
 		"Project 15": {
@@ -133,7 +133,7 @@
 			"availableSlots": 4,
 			"background": "#858796",
 			"title": "Maak melodie na 1 ",
-			"fragments": [{"id":"75", "name":"Geluid 75"}, {"id":"76", "name":"Geluid 76"}, {"id":"77", "name":"Geluid 77"}, {"id":"78", "name":"Geluid 78"}],
+			"fragments": [{"id":"75", "name":"Melodie 1"}, {"id":"76", "name":"Melodie 2"}, {"id":"77", "name":"Melodie 3"}, {"id":"78", "name":"Melodie 4"}],
 			"path_to_sound": ""
 		},
 		"Project 16": {
@@ -142,7 +142,7 @@
 			"availableSlots": 8,
 			"background": "#858796",
 			"title": "Maak eigen melodie 1",
-			"fragments": [{"id":"79", "name":"Geluid 79"}, {"id":"80", "name":"Geluid 80"}, {"id":"81", "name":"Geluid 81"}, {"id":"82", "name":"Geluid 82"},{"id":"83", "name":"Geluid 83"}, {"id":"84", "name":"Geluid 84"}, {"id":"85", "name":"Geluid 85"}, {"id":"86", "name":"Geluid 86"},{"id":"87", "name":"Geluid 87"}, {"id":"88", "name":"Geluid 88"}, {"id":"89", "name":"Geluid 89"}, {"id":"90", "name":"Geluid 90"},{"id":"91", "name":"Geluid 91"}, {"id":"92", "name":"Geluid 92"}, {"id":"93", "name":"Geluid 93"}, {"id":"94", "name":"Geluid 94"}],
+			"fragments": [{"id":"79", "name":"klank 1"}, {"id":"80", "name":"Klank 2"}, {"id":"81", "name":"Klank 3"}, {"id":"82", "name":"Klank 4"},{"id":"83", "name":"Klank 5"}, {"id":"84", "name":"Klank 6"}, {"id":"85", "name":"Klank 7"}, {"id":"86", "name":"Klank 8"},{"id":"87", "name":"Klank 9"}, {"id":"88", "name":"Klank 10"}, {"id":"89", "name":"Klank 11"}, {"id":"90", "name":"Klank 12"},{"id":"91", "name":"Klank 13"}, {"id":"92", "name":"Klank 14"}, {"id":"93", "name":"Klank 15"}, {"id":"94", "name":"Klank 16"}],
 			"path_to_sound": ""
 		}
 
