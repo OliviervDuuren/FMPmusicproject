@@ -19,7 +19,7 @@ if( isset($_POST['submitSounds'])) {
   $fp = fopen('data.txt', 'wb');
   foreach ($_POST["soundvalue"] as $key => $value) {
       fwrite($fp, $value);
-      fwrite($fp, ",");
+      fwrite($fp, ";");
       //echo $value;
   }
   fclose($fp);
@@ -136,7 +136,7 @@ if( isset($_POST['submitSounds'])) {
                       </div>
                     </div>
                     </a>
-                    <select name='soundvalue[]' class='btn bg-secondary mdb-select md-form colorful-select dropdown-primary' onfocus='soundvalue'>
+                    <select name='soundvalue[]' class='btn btn-secondary mdb-select md-form colorful-select dropdown-primary' onfocus='soundvalue'>
                       <option value='' selected>Kies geluid</option>";
                       
                       for ($j=0; $j < count($json_project->fragments) ; $j++) { // loop through fragments
