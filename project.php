@@ -120,9 +120,17 @@ if( isset($_POST['submitSounds'])) {
 
           <div class="text-center">
 
-            <div class="d-sm-flex justify-content-center align-items-center mb-4">
-              <p class="text-primary">Speel met onderstaande fragmenten en maak <b><?php echo $json_project->title; ?></b> </p>
-            </div>
+            <?php if ($_SESSION['role'] == "Child") : ?>
+              <div class="d-sm-flex justify-content-center align-items-center mb-4">
+              <p class="text-primary"><?php echo $json_project->description[0]->Child ?> </p>
+              </div>
+            <?php endif; ?>
+            <?php if ($_SESSION['role'] == "Teacher") : ?>
+              <div class="d-sm-flex justify-content-center align-items-center mb-4">
+              <p class="text-primary"><?php echo $json_project->description[0]->Teacher ?> </p>
+              </div>
+            <?php endif; ?>
+
 
 
               <form name="soundvalue" class="sounds-form" action="" method="post">

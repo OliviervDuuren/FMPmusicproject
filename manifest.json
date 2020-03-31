@@ -8,7 +8,7 @@
 			"background": "#858796",
 			"title": "Van zacht naar hard 1",
 			"fragments": [{"id":"1", "name":"Gitaar 1"}, {"id":"2", "name":"Gitaar 2"}, {"id":"3", "name":"Gitaar 3"}, {"id":"4", "name":"Gitaar 4"}],
-			"path_to_sound": ""
+			"description": [{"Teacher":"In deze opdracht beginnen kinderen te leren wat dynamiek is. Ze zullen dan ook vier geluiden van zacht naar hard op de juiste volgorde in het bordje moeten leggen. Deze opdracht gaat dus met namen over het nauwkeurig luisteren, oftewel trainen van het gehoor. Hier zal klankkleur voor het eerst aan bod komen belangrijk zijn en zal er nog maar slechts één enkel instrument gebruikt worden.", "Child":"Leg 4 geluiden van zacht naar hard op de juiste volgorde in het bordje. Luister goed!"}]
 		},
 		"Project 2": {
 			"disabled": false,
@@ -17,7 +17,7 @@
 			"background": "#858796",
 			"title": "Van hard naar zacht 1",
 			"fragments": [{"id":"5", "name":"Blazers 1"}, {"id":"6", "name":"Blazers 2"}, {"id":"7", "name":"Blazers 3"}, {"id":"8", "name":"Blazers 4"}],
-			"path_to_sound": ""
+			"description": [{"Teacher":"In deze opdracht gaan kinderen verder met het leren over dynamiek. Ze zullen dit keer vier geluiden van hard naar zacht op de juiste volgorde in het bordje moeten leggen. Deze opdracht gaat dus met namen over het nauwkeurig luisteren, oftewel trainen van het gehoor. Hier zal een ander instrument gebruikt worden en wordt dus meer beroep gedaan worden op klankkleur belangrijker zijn dan de vorige opdracht, want er zal gebruik gemaakt worden van meerdere instrumenten.", "Child":"Leg 4 geluiden van hard naar zacht op de juiste volgorde in het bordje. Luister goed!"}]
 		},
 		"Project 3": {
 			"disabled": false,
@@ -26,7 +26,7 @@
 			"background": "#858796",
 			"title": "Sirene nabootsen",
 			"fragments": [{"id":"9", "name":"Sirene 1"}, {"id":"10", "name":"Sirene 2"}, {"id":"11", "name":"Sirene 3"}, {"id":"12", "name":"Sirene 4"}],
-			"path_to_sound": ""
+			"description": [{"Teacher":"In deze opdracht gaan kinderen verder met het leren over dynamiek. Ze zullen dit keer vier geluiden exploratief naar eigen gehoor op een volgorde in het bordje leggen die overeenkomt met een betekenisvolle situatie: namelijk een voorbijrijdende ambulance sirene. Deze opdracht gaat dus niet alleen over het nauwkeurig luisteren, oftewel trainen van het gehoor, maar ook over analytisch denken. Hier zal klankkleur weer belangrijker zijn dan de vorige opdracht, want er kan gebruik gemaakt worden van meerdere soorten geluiden.", "Child":"Leg met 4 tegels 4 geluiden op de juiste volgorde in het bordje zodat het lijkt alsof je een ziekenwagen met sirene hoort langs rijden. Luister goed!"}]
 		},
 		"Project 4": {
 			"disabled": false,
@@ -35,7 +35,7 @@
 			"background": "#858796",
 			"title": "Leg noten gelijk 1",
 			"fragments": [{"id":"13", "name":"Piano 1"}, {"id":"13", "name":"Piano 1"}, {"id":"14", "name":"Piano 2"}, {"id":"14", "name":"Piano 2"},{"id":"15", "name":"Piano 3"}, {"id":"15", "name":"Piano 3"}, {"id":"16", "name":"Piano 4"}, {"id":"16", "name":"Piano 4"}],
-			"path_to_sound": ""
+			"description": [{"Teacher":"In deze opdracht beginnen kinderen te leren wat toonhoogte inhoudt. Ze zullen dan ook vier tonen op de gelijke dubbelganger moeten leggen in het bordje. Deze opdracht gaat dus met namen over het nauwkeurig luisteren, oftewel trainen van het gehoor. Hier zal Klankkleur nog niet belangrijk zijn en zal er nog maar slechts één enkel instrument gebruikt worden.", "Child":"Leg met 8 tegels de 4 verschillende geluiden boven elkaar in het bordje die hetzelfde zijn. Luister goed!"}]
 		},
 		"Project 5": {
 			"disabled": false,
@@ -44,7 +44,7 @@
 			"background": "#858796",
 			"title": "Van hoog naar laag 1",
 			"fragments": [{"id":"17", "name":"Strijkers 1"}, {"id":"18", "name":"Strijkers 2"}, {"id":"19", "name":"Strijkers 3"}, {"id":"20", "name":"Strijkers 4"}],
-			"path_to_sound": ""
+			"description": [{"Teacher":"In deze opdracht beginnen kinderen te leren wat toonhoogte inhoudt. Ze zullen dan ook vier tonen die nog redelijk uit elkaar liggen op de goede volgorde van hoog naar laag moeten leggen in het bordje. Deze opdracht gaat dus met namen over het nauwkeurig luisteren, oftewel trainen van het gehoor. Hier zal een ander instrument gebruikt worden dan de vorige opdrachten, maar slechts één enkel instrument tegelijk.", "Child":"Leg met 4 tegels de 4 verschillende geluiden van hoge toon naar lage toon op de juiste volgorde in het bordje. Luister goed!"}]
 		},
 		"Project 6": {
 			"disabled": false,
@@ -53,7 +53,7 @@
 			"background": "#858796",
 			"title": "Van laag naar hoog 1",
 			"fragments": [{"id":"21", "name":"Fluiten 1"}, {"id":"22", "name":"Fluiten 2"}, {"id":"23", "name":"Fluiten 3"}, {"id":"24", "name":"Fluiten 4"}],
-			"path_to_sound": ""
+			"description": [{"Teacher":"In deze opdracht beginnen kinderen te leren wat toonhoogte inhoudt. Ze zullen dan ook vier tonen die wat minder uit elkaar liggen  dan de vorige opdracht op de goede volgorde van laag naar hoog moeten leggen in het bordje. Deze opdracht gaat dus met namen over het nauwkeurig luisteren, oftewel trainen van het gehoor. Hier zal een ander instrument gebruikt worden dan de vorige opdrachten, maar slechts één enkel instrument tegelijk.", "Child":"Leg met 4 tegels de 4 verschillende geluiden van lage toon naar hoge toon op de juiste volgorde in het bordje. Luister goed!"}]
 		},
 		"Project 7": {
 			"disabled": false,
@@ -62,7 +62,7 @@
 			"background": "#858796",
 			"title": "Maak toonladder C",
 			"fragments": [{"id":"25", "name":"Koor 1"}, {"id":"26", "name":"Koor 2"}, {"id":"27", "name":"Koor 3"}, {"id":"28", "name":"Koor 4"}],
-			"path_to_sound": ""
+			"description": [{"Teacher":"In deze opdracht beginnen kinderen te leren wat toonhoogte inhoudt. Ze zullen dan ook vier keer twee tonen horen op de tegels (bijv. C-D of E-F) op de goede volgorde van laag naar hoog moeten leggen in het bordje. Deze opdracht gaat dus met namen over het nauwkeurig luisteren, oftewel trainen van het gehoor. Hier zal een ander instrument gebruikt worden dan de vorige opdrachten, maar slechts één enkel instrument tegelijk.", "Child":"Leg met 4 tegels de 4 geluiden in de toonladder van C van laag naar hoog in het bordje. Luister goed!"}]
 		},
 		"Project 8": {
 			"disabled": false,
@@ -71,7 +71,7 @@
 			"background": "#858796",
 			"title": "Leg maatsoort bij maatsoort 1",
 			"fragments": [{"id":"29", "name":"Maatsoort 1"}, {"id":"30", "name":"Maatsoort 2"}, {"id":"31", "name":"Maatsoort 3"}, {"id":"32", "name":"Maatsoort 4"},{"id":"33", "name":"Maatsoort 5"}, {"id":"34", "name":"Maatsoort 6"}, {"id":"35", "name":"Maatsoort 7"}, {"id":"36", "name":"Maatsoort 8"}],
-			"path_to_sound": ""
+			"description": [{"Teacher":"In deze opdracht beginnen kinderen met oefeningen om maatgevoel te versterken. Ze zullen dan ook vier verschillende maatsoorten op de gelijke dubbelganger moeten leggen in het bordje. De tonen die klinken zullen ook redelijk gelijk zijn aan elkaar over de verschillende maatsoorten. Deze opdracht gaat dus met namen over het nauwkeurig luisteren, oftewel trainen van het gehoor. Hier zal Klankkleur nog niet belangrijk zijn en zal er nog maar slechts één enkel instrument gebruikt worden.", "Child":"Leg met 8 tegels de 8 geluiden die dezelfde maatsoort hebben onder elkaar. Luister goed!"}]
 		},
 		"Project 9": {
 			"disabled": false,
@@ -80,7 +80,7 @@
 			"background": "#858796",
 			"title": "Leg ritme bij ritme 1",
 			"fragments": [{"id":"37", "name":"Ritme 1"}, {"id":"38", "name":"Ritme 2"}, {"id":"39", "name":"Ritme 3"}, {"id":"40", "name":"Ritme 4"},{"id":"41", "name":"Ritme 5"}, {"id":"42", "name":"Ritme 6"}, {"id":"43", "name":"Ritme 7"}, {"id":"44", "name":"Ritme 8"}],
-			"path_to_sound": ""
+			"description": [{"Teacher":"In deze opdracht beginnen kinderen met oefeningen om maatgevoel te versterken. Ze zullen dan ook vier verschillende ritmes in vier verschillende maatsoorten op een ritme  moeten leggen met een gelijke maatsoort in het bordje. De tonen die klinken zullen ook redelijk gelijk zijn aan elkaar over de verschillende maatsoorten. Deze opdracht gaat dus met namen over het nauwkeurig luisteren, oftewel trainen van het gehoor. ", "Child":"Leg met 8 tegels de 8 geluiden die dezelfde maatsoort hebben onder elkaar. Luister goed!"}]
 		},
 		"Project 10": {
 			"disabled": false,
@@ -89,7 +89,7 @@
 			"background": "#858796",
 			"title": "Leg melodie bij ritme 1",
 			"fragments": [{"id":"37", "name":"Ritme 1"}, {"id":"38", "name":"Ritme 2"}, {"id":"39", "name":"Ritme 3"}, {"id":"40", "name":"Ritme 4"},{"id":"45", "name":"Melodie 1"}, {"id":"46", "name":"Melodie 2"}, {"id":"47", "name":"Melodie 3"}, {"id":"48", "name":"Melodie 4"}],
-			"path_to_sound": ""
+			"description": [{"Teacher":"In deze opdracht beginnen kinderen met oefeningen om maatgevoel te versterken. Ze zullen dan ook vier verschillende melodieën in vier verschillende maatsoorten op een melodie moeten leggen met een gelijke maatsoort in het bordje. De tonen die klinken zullen ook redelijk gelijk zijn aan elkaar over de verschillende maatsoorten. Deze opdracht gaat dus met namen over het nauwkeurig luisteren, oftewel trainen van het gehoor. ", "Child":"Leg met 8 tegels de 8 geluiden die dezelfde maatsoort hebben onder elkaar. Luister goed!"}]
 		},
 		"Project 11": {
 			"disabled": false,
@@ -98,7 +98,7 @@
 			"background": "#858796",
 			"title": "Leg ritme op ritme 1",
 			"fragments": [{"id":"49", "name":"Ritme 1"}, {"id":"50", "name":"Ritme 2"}, {"id":"51", "name":"Ritme 3"}, {"id":"52", "name":"Ritme 4"},{"id":"49", "name":"Ritme 1"}, {"id":"50", "name":"Ritme 2"}, {"id":"51", "name":"Ritme 3"}, {"id":"52", "name":"Ritme 4"}],
-			"path_to_sound": ""
+			"description": [{"Teacher":"In deze opdracht beginnen kinderen te leren wat ritme inhoudt. Ze zullen dan ook vier verschillende korte ritmes op een dubbelganger ritme  moeten leggen in het bordje. De ritmes die klinken zullen nog redelijke eenvoudig te onderscheiden zijn. Deze opdracht gaat dus met namen over het nauwkeurig luisteren, oftewel trainen van het gehoor. ", "Child":"Leg met 8 tegels de 8 geluiden die hetzelfde ritme hebben onder elkaar. Luister goed!"}]
 		},
 		"Project 12": {
 			"disabled": false,
@@ -107,7 +107,7 @@
 			"background": "#858796",
 			"title": "Maak ritme na 1",
 			"fragments": [{"id":"53", "name":"Ritme 1"}, {"id":"54", "name":"Ritme 2"}, {"id":"55", "name":"Ritme 3"}, {"id":"56", "name":"Ritme 4"}],
-			"path_to_sound": ""
+			"description": [{"Teacher":"In deze opdracht beginnen kinderen te leren wat ritme inhoudt. Ze zullen in deze oefening een ritme na moeten maken van in het bordje. Het ritme zal net iets moeilijker zijn dan de vorige opdracht. Deze opdracht gaat dus met namen over het nauwkeurig luisteren en analyseren, maar met name dus het trainen van het gehoor. ", "Child":"Leg met 8 tegels de 8 geluiden op de juiste volgorde onder elkaar en maak het ritme na. Luister goed!"}]
 		},
 		"Project 13": {
 			"disabled": false,
@@ -116,7 +116,7 @@
 			"background": "#858796",
 			"title": "Maak eigen ritme 1",
 			"fragments": [{"id":"57", "name":"Klank 1"}, {"id":"58", "name":"Klank 2"}, {"id":"59", "name":"Klank 3"}, {"id":"60", "name":"Klank 4"}, {"id":"61", "name":"klank 5"}, {"id":"62", "name":"Klank 6"}, {"id":"63", "name":"Klank 7"}, {"id":"64", "name":"Klank 8"},{"id":"65", "name":"Klank 9"}, {"id":"66", "name":"Klank 10"}, {"id":"67", "name":"Klank 11"}, {"id":"68", "name":"Klank 12"}, {"id":"69", "name":"Klank 13"}, {"id":"70", "name":"Klank 14"}, {"id":"71", "name":"Klank 15"}, {"id":"72", "name":"Klank 16"}],
-			"path_to_sound": ""
+			"description": [{"Teacher":"In deze opdracht beginnen kinderen te leren wat ritmes zelf maken inhoudt. Ze zullen in deze oefening een ritme kunnen maken in het bordje. De geluiden zullen redelijk bekend zijn en nog niet ontzettend divers. Deze opdracht gaat dus met namen over het creatief vermogen naast het luisteren. ", "Child":"Maak een eigen ritme en kies de klanken die je zelf wilt! Succes!"}]
 		},
 		"Project 14": {
 			"disabled": false,
@@ -125,7 +125,7 @@
 			"background": "#858796",
 			"title": "Leg melodie op melodie 1",
 			"fragments": [{"id":"71", "name":"Melodie 1"}, {"id":"72", "name":"Melodie 2"}, {"id":"73", "name":"Melodie 3"}, {"id":"74", "name":"Melodie 4"},{"id":"71", "name":"Melodie 1"}, {"id":"72", "name":"Melodie 2"}, {"id":"73", "name":"Melodie 3"}, {"id":"74", "name":"Melodie 4"}],
-			"path_to_sound": ""
+			"description": [{"Teacher":"In deze opdracht beginnen kinderen te leren wat melodie inhoudt. Ze zullen dan ook vier verschillende korte melodieën op een dubbelganger melodie moeten leggen in het bordje. De melodieën die klinken zullen nog redelijke eenvoudig te onderscheiden zijn. Deze opdracht gaat dus met namen over het nauwkeurig luisteren, oftewel trainen van het gehoor. ", "Child":"Leg met 8 tegels de 8 geluiden die dezelfde melodie hebben onder elkaar. Luister goed!"}]
 		},
 		"Project 15": {
 			"disabled": false,
@@ -134,7 +134,7 @@
 			"background": "#858796",
 			"title": "Maak melodie na 1 ",
 			"fragments": [{"id":"75", "name":"Melodie 1"}, {"id":"76", "name":"Melodie 2"}, {"id":"77", "name":"Melodie 3"}, {"id":"78", "name":"Melodie 4"}],
-			"path_to_sound": ""
+			"description": [{"Teacher":"In deze opdracht beginnen kinderen te leren wat melodie inhoudt. Ze zullen in deze oefening een melodie na moeten maken van in het bordje. De melodie zal net iets minder eenvoudig zijn dan de vorige opdracht. Deze opdracht gaat dus met namen over het nauwkeurig luisteren, oftewel trainen van het gehoor. ", "Child":"Leg met 8 tegels de 8 geluiden op de juiste volgorde onder elkaar en maak de melodie na. Luister goed!"}]
 		},
 		"Project 16": {
 			"disabled": false,
@@ -143,7 +143,34 @@
 			"background": "#858796",
 			"title": "Maak eigen melodie 1",
 			"fragments": [{"id":"79", "name":"klank 1"}, {"id":"80", "name":"Klank 2"}, {"id":"81", "name":"Klank 3"}, {"id":"82", "name":"Klank 4"},{"id":"83", "name":"Klank 5"}, {"id":"84", "name":"Klank 6"}, {"id":"85", "name":"Klank 7"}, {"id":"86", "name":"Klank 8"},{"id":"87", "name":"Klank 9"}, {"id":"88", "name":"Klank 10"}, {"id":"89", "name":"Klank 11"}, {"id":"90", "name":"Klank 12"},{"id":"91", "name":"Klank 13"}, {"id":"92", "name":"Klank 14"}, {"id":"93", "name":"Klank 15"}, {"id":"94", "name":"Klank 16"}],
-			"path_to_sound": ""
+			"description": [{"Teacher":"In deze opdracht beginnen kinderen te leren wat melodieën zelf maken inhoudt. Ze zullen in deze oefening een melodie kunnen maken in het bordje. De geluiden zullen redelijk bekend zijn en nog niet ontzettend divers. Deze opdracht gaat dus met namen over het creatief vermogen naast het luisteren. ", "Child":"Maak een eigen melodie en kies de klanken die je zelf wilt! Succes!"}]
+		},
+		"Project 17": {
+			"disabled": false,
+			"open": false,
+			"availableSlots": 8,
+			"background": "#858796",
+			"title": "Leg octaven goed",
+			"fragments": [{"id":"95", "name":"Toon 1"}, {"id":"96", "name":"Toon 2"}, {"id":"97", "name":"Toon 3"}, {"id":"98", "name":"Toon 4"},{"id":"99", "name":"Toon 5"}, {"id":"100", "name":"Toon 6"}, {"id":"101", "name":"Toon 7"}, {"id":"102", "name":"Toon 8"}],
+			"description": [{"Teacher":"In deze opdracht beginnen kinderen te leren wat harmonie inhoudt. Ze zullen dan ook vier verschillende octaven op elkaar moeten leggen in het bordje. De octaven die klinken zullen nog redelijke eenvoudig te onderscheiden zijn. Deze opdracht gaat dus met namen over het nauwkeurig luisteren, oftewel trainen van het gehoor. ", "Child":"Leg met 8 tegels de 8 geluiden die dezelfde klank hebben onder elkaar. Luister goed!"}]
+		},
+		"Project 18": {
+			"disabled": false,
+			"open": false,
+			"availableSlots": 8,
+			"background": "#858796",
+			"title": "Maak melodie met octaven",
+			"fragments": [{"id":"103", "name":"Toon 1"}, {"id":"104", "name":"Toon 2"}, {"id":"105", "name":"Toon 3"}, {"id":"106", "name":"Toon 4"},{"id":"107", "name":"Toon 5"}, {"id":"108", "name":"Toon 6"}, {"id":"109", "name":"Toon 7"}, {"id":"110", "name":"Toon 8"}],
+			"description": [{"Teacher":"In deze opdracht beginnen kinderen te leren wat harmonie inhoudt. Ze zullen dan ook een melodie maken in octaven in het bordje. De melodie die klinkt zal nog redelijk eenvoudig zijn. Deze opdracht gaat dus met namen over het nauwkeurig luisteren, oftewel trainen van het gehoor. ", "Child":"Leg met 8 tegels de melodie twee keer hetzelfde neer in het bordje. Luister goed!"}]
+		},
+		"Project 19": {
+			"disabled": false,
+			"open": false,
+			"availableSlots": 8,
+			"background": "#858796",
+			"title": "Plaats twee melodieën",
+			"fragments": [{"id":"111", "name":"Klank 1"}, {"id":"112", "name":"Klank 2"}, {"id":"113", "name":"Klank 3"}, {"id":"114", "name":"Klank 4"},{"id":"115", "name":"Klank 5"}, {"id":"116", "name":"Klank 6"}, {"id":"117", "name":"Klank 7"}, {"id":"118", "name":"Klank 8"}],
+			"description": [{"Teacher":"In deze opdracht beginnen kinderen te leren wat harmonie inhoudt. Ze zullen dan ook een melodie maken in octaven in het bordje. De melodie die klinkt zal nog redelijk eenvoudig zijn. Deze opdracht gaat dus met namen over het nauwkeurig luisteren, oftewel trainen van het gehoor. ", "Child":"Leg met 8 tegels de melodie twee keer hetzelfde neer in het bordje. Luister goed!"}]
 		}
 
 	},

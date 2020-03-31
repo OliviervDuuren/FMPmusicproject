@@ -1,4 +1,4 @@
-<?php if ($_SESSION['role'] == "teacher") : ?>
+<?php if ($_SESSION['role'] == "Teacher") : ?>
 
   <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
 

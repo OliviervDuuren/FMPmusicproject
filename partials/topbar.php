@@ -6,7 +6,7 @@
     <i class="fa fa-bars"></i>
   </button>
 
-  <!-- <?php if ($_SESSION['role'] == "child") : ?>
+  <!-- <?php if ($_SESSION['role'] == "Child") : ?>
     <button id="terug" class="btn-lg btn-primary hBack" type="button"><i class="fas fa-arrow-circle-left suitcase"></i>Terug</button>
   <?php endif;  ?> -->
 

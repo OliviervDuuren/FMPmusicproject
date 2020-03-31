@@ -16,7 +16,7 @@ $active_page = "dashboard";
 if (isset($_POST['add-student'])) {
 
   $sql = "INSERT INTO users (surname, lastname, role, level, parent_id, username, password)
-      VALUES ('" . $_POST["surname"] . "','" . $_POST["lastname"] . "', 'child','" . $_POST["level"] . "','" . $_SESSION["user_id"] . "', '" . $_POST["username"] . "', '" . $_POST["password"] . "')";
+      VALUES ('" . $_POST["surname"] . "','" . $_POST["lastname"] . "', 'Child','" . $_POST["level"] . "','" . $_SESSION["user_id"] . "', '" . $_POST["username"] . "', '" . $_POST["password"] . "')";
   $result = mysqli_query($mysqli, $sql);
 }
 
@@ -80,7 +80,7 @@ green4: #155C2B
 
       <!-- Main Content -->
       <div id="content">
-        <?php if ($_SESSION['role'] == "teacher") : ?>
+        <?php if ($_SESSION['role'] == "Teacher") : ?>
           <?php include("partials/topbar.php"); ?>
         <?php endif; ?>
         <!-- Begin Page Content -->
@@ -88,13 +88,13 @@ green4: #155C2B
 
           <!-- Page Heading -->
 
-          <?php if ($_SESSION['role'] == "teacher") : ?>
+          <?php if ($_SESSION['role'] == "Teacher") : ?>
             <div class="d-sm-flex align-items-center justify-content-baseline mb-4">
               <h1 class="h3 text-gray-800">Dashboard</h1>
             </div>
           <?php endif; ?>
 
-          <?php if ($_SESSION['role'] == "child") : ?>
+          <?php if ($_SESSION['role'] == "Child") : ?>
             <div class="modal fade" id="LaunchModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
               <div class="modal-dialog modal-dialog-centered" role="document">
                 <div class="modal-content">
@@ -110,7 +110,7 @@ green4: #155C2B
 
           <?php endif; ?>
 
-          <?php if ($_SESSION['role'] == "teacher") : ?>
+          <?php if ($_SESSION['role'] == "Teacher") : ?>
 
             <table class="table">
               <thead>
@@ -150,7 +150,7 @@ green4: #155C2B
       </div>
       <!-- End of Page Wrapper -->
 
-      <?php if ($_SESSION['role'] == "teacher") : ?>
+      <?php if ($_SESSION['role'] == "Teacher") : ?>
         <!-- Footer -->
         <footer class="sticky-footer bg-white">
           <div class="container my-auto">
