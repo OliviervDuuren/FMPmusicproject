@@ -88,29 +88,23 @@ green4: #155C2B
 
           <!-- Page Heading -->
 
+          <div class="modal fade" id="LaunchModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered" role="document">
+              <div class="modal-content">
+                <div class="modal-header d-flex justify-content-center">
+                  <h5 class="modal-title" id="exampleModalCenterTitle">Hallo <?php echo $_SESSION['surname'] . " " . $_SESSION['lastname'] ?></h5>
+                </div>
+                <div class="modal-body">
+                  <a <?php if ($_SESSION['role'] == "Child" || $_SESSION['role'] == "Developer" ) { ?> href="projectblocks.php" <?php } ?> class="d-flex justify-content-center btn-lg btn-primary" role="button" aria-disabled="true" <?php if ($_SESSION['role'] == "Teacher") { ?> data-dismiss="modal" <?php } ?>>Start </a>
+                </div>
+              </div>
+            </div>
+          </div>
+          
           <?php if ($_SESSION['role'] == "Teacher") : ?>
             <div class="d-sm-flex align-items-center justify-content-baseline mb-4">
               <h1 class="h3 text-gray-800">Dashboard</h1>
             </div>
-          <?php endif; ?>
-
-          <?php if ($_SESSION['role'] == "Child") : ?>
-            <div class="modal fade" id="LaunchModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-              <div class="modal-dialog modal-dialog-centered" role="document">
-                <div class="modal-content">
-                  <div class="modal-header d-flex justify-content-center">
-                    <h5 class="modal-title" id="exampleModalCenterTitle">Hallo <?php echo $_SESSION['surname'] . " " . $_SESSION['lastname'] ?></h5>
-                  </div>
-                  <div class="modal-body">
-                    <a href="projectblocks.php" class="d-flex justify-content-center btn-lg btn-primary" role="button" aria-disabled="true">Start</a>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-          <?php endif; ?>
-
-          <?php if ($_SESSION['role'] == "Teacher") : ?>
 
             <table class="table">
               <thead>
@@ -130,7 +124,7 @@ green4: #155C2B
                       "<tr data-id='" . $row["id"] . "'>" .
                         "<th scope='row'>" . $count . "</th>" .
                         "<td>" . $row["surname"] . "</td>" .
-                        "<td>" . "<div class='progress'><div class='progress-bar' role='progressbar' style='width: " . $row["vordering"] . "%' aria-valuenow='" . $row["vordering"]. "' aria-valuemin='0' aria-valuemax='10'></div>
+                        "<td>" . "<div class='progress'><div class='progress-bar' role='progressbar' style='width: " . $row["vordering"] . "%' aria-valuenow='" . $row["vordering"] . "' aria-valuemin='0' aria-valuemax='10'></div>
                       </div>" . "</td>" .
                         "</tr>";
                     $count++;

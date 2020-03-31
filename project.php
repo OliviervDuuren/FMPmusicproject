@@ -15,14 +15,30 @@ $json_data = json_decode(file_get_contents("manifest.json"));
 $json_project = $json_data->$block->$project;
 
 
-if( isset($_POST['submitSounds'])) {
+if (isset($_POST['submitSounds'])) {
   $fp = fopen('data.txt', 'wb');
   foreach ($_POST["soundvalue"] as $key => $value) {
-      fwrite($fp, $value);
-      fwrite($fp, ";");
-      //echo $value;
+    fwrite($fp, $value);
+    fwrite($fp, ";");
+    //echo $value;
   }
   fclose($fp);
+}
+
+if (isset($_POST['submitProject'])) {
+  echo "project:";
+  echo $json_project->id;
+  echo "afgerond!";
+
+  $sql = "UPDATE users
+          SET vordering   = '" . $json_project->id . "'
+          WHERE username = " . $_SESSION['username'] . "";
+  
+  error_log(print_r($sql, TRUE));
+
+  $result = mysqli_query($mysqli, $sql);  
+  //header("location: blocks.php");
+
 }
 
 ?>
@@ -85,7 +101,7 @@ if( isset($_POST['submitSounds'])) {
 
           <?php endif; ?>
 
-          <?php if ($_SESSION['role'] == "Child") : ?>
+          <?php if ($_SESSION['role'] == "Child" || $_SESSION['role'] == "Developer") : ?>
             <button class="btn-lg btn-primary hBack" type="button"><i class="fas fa-arrow-circle-left suitcase"></i>Terug</button>
           <?php endif; ?>
 
@@ -122,23 +138,23 @@ if( isset($_POST['submitSounds'])) {
 
             <?php if ($_SESSION['role'] == "Child") : ?>
               <div class="d-sm-flex justify-content-center align-items-center mb-4">
-              <p class="text-primary"><?php echo $json_project->description[0]->Child ?> </p>
+                <p class="text-primary"><?php echo $json_project->description[0]->Child ?> </p>
               </div>
             <?php endif; ?>
             <?php if ($_SESSION['role'] == "Teacher") : ?>
               <div class="d-sm-flex justify-content-center align-items-center mb-4">
-              <p class="text-primary"><?php echo $json_project->description[0]->Teacher ?> </p>
+                <p class="text-primary"><?php echo $json_project->description[0]->Teacher ?> </p>
               </div>
             <?php endif; ?>
 
 
 
-              <form name="soundvalue" class="sounds-form" action="" method="post">
-                <div class="row justify-content-center">
-                <?php 
-                  if ($json_project->open) {
-                    for ($i=0; $i < $json_project->availableSlots ; $i++) { 
-                echo "<div class='col-sm-2 text-center block-card mb-5'>
+            <form name="soundvalue" class="sounds-form" action="" method="post">
+              <div class="row justify-content-center">
+                <?php
+                if ($json_project->open) {
+                  for ($i = 0; $i < $json_project->availableSlots; $i++) {
+                    echo "<div class='col-sm-2 text-center block-card mb-5'>
                   <a data-toggle='modal' data-target=''>
                     <div class='card bg-secondary d-sm-flex justify-content-center align-items-center shadow mb-4 dropdown show'>
                       <div class='card-body'>
@@ -148,18 +164,17 @@ if( isset($_POST['submitSounds'])) {
                     </a>
                     <select name='soundvalue[]' class='btn btn-secondary mdb-select md-form colorful-select dropdown-primary' onfocus='soundvalue'>
                       <option value='' selected>Kies geluid</option>";
-                      
-                      for ($j=0; $j < count($json_project->fragments) ; $j++) { // loop through fragments
-                        echo "<option value='" . $json_project->fragments[$j]->id . "'>" . $json_project->fragments[$j]->name . "</option>";
-                      }
 
-                echo "</select>
+                    for ($j = 0; $j < count($json_project->fragments); $j++) { // loop through fragments
+                      echo "<option value='" . $json_project->fragments[$j]->id . "'>" . $json_project->fragments[$j]->name . "</option>";
+                    }
+
+                    echo "</select>
                   </div>";
-              }
-            }
-              else{
-                for ($i=0; $i < $json_project->availableSlots ; $i++) {
-                  echo "<div class='col-sm-2 text-center block-card mb-5'>
+                  }
+                } else {
+                  for ($i = 0; $i < $json_project->availableSlots; $i++) {
+                    echo "<div class='col-sm-2 text-center block-card mb-5'>
                     <a data-toggle='modal' data-target=''>
                       <div class='card bg-secondary d-sm-flex justify-content-center align-items-center shadow mb-4 dropdown show'>
                         <div class='card-body'>
@@ -168,124 +183,111 @@ if( isset($_POST['submitSounds'])) {
                       </div>
                       </a>
                       <select name='soundvalue[]' class='btn btn-secondary soundclick md-form colorful-select dropdown-primary' onfocus='soundvalue'>
-                        <option class='soundclick' value='". $json_project->fragments[$i]->id . "' selected>" . $json_project->fragments[$i]->name . "</option>
+                        <option class='soundclick' value='" . $json_project->fragments[$i]->id . "' selected>" . $json_project->fragments[$i]->name . "</option>
                       </select>
-                      <audio src='mp3/". $json_project->fragments[$i]->id .".mp3'></audio>
+                      <audio src='mp3/" . $json_project->fragments[$i]->id . ".mp3'></audio>
                     </div>";
-              }
-            }
-              ?>
-            </div>
+                  }
+                }
+                ?>
+              </div>
 
-            <script>
-              $('.soundclick').on('change', function(){
-              $(this).siblings('audio').play();
-              });
-            </script>
+              <script src="vendor/jquery/jquery.min.js">
+                $('.soundclick').on('click', function() {
+                  $(this).siblings('audio').play();
+                  console.log("playing");
+                });
+              </script>
 
-            <div class="row justify-content-center">
-              <button class="btn btn-primary" type="submit" name="submitSounds"> Geluiden uploaden</button>
-            </div>
+              <!-- Button trigger modal -->
+              <div class="row justify-content-center">
+                <button type="button" class="btn btn-primary mb-4" data-toggle="modal" data-target="#gspeelModal"> Geluiden uploaden</button>
+              </div>
 
-            </form>
+
               <!-- Modal -->
               <div class="modal fade" id="gspeelModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
                 <div class="modal-dialog modal-dialog-centered" role="document">
                   <div class="modal-content">
-                    <div class="modal-header ">
-                      <h5 class="modal-title justify-content-center" id="exampleModalLongTitle">Speel geluid</h5>
-                      <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <div class="modal-header d-block ">
+                      <h5 class="modal-title text-center " id="exampleModalLongTitle">Geluiden uploaden</h5>
+                      <!-- <button type="button" name="submitSounds" class="close " data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
-                      </button>
+                      </button> -->
                     </div>
-                    <div class="modal-body">
-                      Op dit moment werkt deze functie nog niet. Hier zouden de geluiden hoorbaar moeten zijn. Dank u!
+                    <div class="modal-body ">
+                      Er is geen bordje actief in de buurt waar de geluiden op kunnen worden gezet!
                     </div>
                     <div class="modal-footer justify-content-center">
-                      <button type="button" class="btn btn-primary" data-dismiss="modal">Oke</button>
+                      <button type="submit" name="submitSounds" class="btn btn-primary" data-dismiss="modal">Oke</button>
+                      <button <?php if ($_SESSION['role'] == "Child" || $_SESSION['role'] == "Teacher") { ?> disabled <?php } ?> type="submit" name="submitSounds" class="btn btn-primary" data-toggle="modal" data-target="#gspeelModal">Upload</button>
+                      <input id="vordering" type="hidden" value="<?php echo $json_project->id  ?>" name="vordering">
+                      <button <?php if ($_SESSION['role'] == "Child" || $_SESSION['role'] == "Teacher") { ?> disabled style="display:none;" <?php } ?> type="submit" name="submitProject" class="btn btn-primary" data-toggle="modal" data-target="#gspeelModal">Afronden</button>
                     </div>
                   </div>
                 </div>
               </div>
 
-            </div>
-            <!-- <button class="btn btn-primary mb-3" data-toggle="modal" data-target="" type="submit" onclick="submitForms()">
+            </form>
+
+          </div>
+          <!-- <button class="btn btn-primary mb-3" data-toggle="modal" data-target="" type="submit" onclick="submitForms()">
               Geluiden uploaden
             </button> -->
 
-            <!-- Modal -->
-
-            <div class="modal fade" id="guploadModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-              <div class="modal-dialog modal-dialog-centered" role="document">
-                <div class="modal-content">
-                  <div class="modal-header ">
-                    <h5 class="modal-title justify-content-center" id="exampleModalLongTitle">Upload geluiden</h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                      <span aria-hidden="true">&times;</span>
-                    </button>
-                  </div>
-                  <div class="modal-body">
-                    Op dit moment werkt deze functie nog niet. Vraag aan iemand hoe de geluiden aangepast kunnen worden op het bordje met tegeltjes. Dank u!
-                  </div>
-                  <div class="modal-footer justify-content-center">
-                    <button type="button" class="btn btn-primary" data-dismiss="modal">Oke</button>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-          </div>
-
-          <!-- End of Main Content -->
-
 
 
         </div>
-        <!-- End of Content Wrapper -->
+
+        <!-- End of Main Content -->
+
+
 
       </div>
-      <!-- End of Page Wrapper -->
+      <!-- End of Content Wrapper -->
+
     </div>
+    <!-- End of Page Wrapper -->
+  </div>
 
-      <!-- Footer -->
-      <footer class="sticky-footer bg-white">
-        <div class="container my-auto">
-          <div class="copyright text-center my-auto">
-            <span>Copyright &copy; Your Website 2020</span>
-          </div>
-        </div>
-      </footer>
-      <!-- End of Footer -->
+  <!-- Footer -->
+  <footer class="sticky-footer bg-white">
+    <div class="container my-auto">
+      <div class="copyright text-center my-auto">
+        <span>Copyright &copy; Your Website 2020</span>
+      </div>
+    </div>
+  </footer>
+  <!-- End of Footer -->
 
-      <!-- Scroll to Top Button-->
-      <a class="scroll-to-top rounded" href="#page-top">
-        <i class="fas fa-angle-up"></i>
-      </a>
+  <!-- Scroll to Top Button-->
+  <a class="scroll-to-top rounded" href="#page-top">
+    <i class="fas fa-angle-up"></i>
+  </a>
 
-      <!-- Bootstrap core JavaScript-->
-      <script src="vendor/jquery/jquery.min.js"></script>
-      <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <!-- Bootstrap core JavaScript-->
+  <script src="vendor/jquery/jquery.min.js"></script>
+  <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 
-      <!-- Core plugin JavaScript-->
-      <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
+  <!-- Core plugin JavaScript-->
+  <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
 
-      <!-- Custom scripts for all pages-->
-      <script src="js/sb-admin-2.min.js"></script>
+  <!-- Custom scripts for all pages-->
+  <script src="js/sb-admin-2.min.js"></script>
 
-      <script type="text/javascript">
-        $(".hBack").on("click", function(e) {
-          e.preventDefault();
-          window.history.back();
-        });
+  <script type="text/javascript">
+    $(".hBack").on("click", function(e) {
+      e.preventDefault();
+      window.history.back();
+    });
 
-//         submitForms = function(){
-//
-//           document.getElementById("my_form_Geluid1").submit();
-//           document.getElementById("my_form_Geluid8").submit();
-//
-// }
-
-      </script>
+    //         submitForms = function(){
+    //
+    //           document.getElementById("my_form_Geluid1").submit();
+    //           document.getElementById("my_form_Geluid8").submit();
+    //
+    // }
+  </script>
 </body>
 
 </html>
