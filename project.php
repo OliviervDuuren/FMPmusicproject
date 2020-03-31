@@ -51,6 +51,8 @@ if( isset($_POST['submitSounds'])) {
 
 <body id="page-top">
 
+
+
   <!-- Page Wrapper -->
   <div id="wrapper">
 
@@ -70,7 +72,7 @@ if( isset($_POST['submitSounds'])) {
         <!-- Begin Page Content -->
         <div class="container">
 
-          <?php if ($_SESSION['role'] == "teacher") : ?>
+          <?php if ($_SESSION['role'] == "Teacher") : ?>
             <nav aria-label="breadcrumb">
               <ol class="breadcrumb">
 
@@ -83,7 +85,7 @@ if( isset($_POST['submitSounds'])) {
 
           <?php endif; ?>
 
-          <?php if ($_SESSION['role'] == "child") : ?>
+          <?php if ($_SESSION['role'] == "Child") : ?>
             <button class="btn-lg btn-primary hBack" type="button"><i class="fas fa-arrow-circle-left suitcase"></i>Terug</button>
           <?php endif; ?>
 
@@ -157,14 +159,21 @@ if( isset($_POST['submitSounds'])) {
                         </div>
                       </div>
                       </a>
-                      <select name='soundvalue[]' class='btn btn-secondary mdb-select md-form colorful-select dropdown-primary' onfocus='soundvalue'>
-                        <option value='". $json_project->fragments[$i]->id . "' selected>" . $json_project->fragments[$i]->name . "</option>
+                      <select name='soundvalue[]' class='btn btn-secondary soundclick md-form colorful-select dropdown-primary' onfocus='soundvalue'>
+                        <option class='soundclick' value='". $json_project->fragments[$i]->id . "' selected>" . $json_project->fragments[$i]->name . "</option>
                       </select>
+                      <audio src='mp3/". $json_project->fragments[$i]->id .".mp3'></audio>
                     </div>";
               }
             }
               ?>
             </div>
+
+            <script>
+              $('.soundclick').on('change', function(){
+              $(this).siblings('audio').play();
+              });
+            </script>
 
             <div class="row justify-content-center">
               <button class="btn btn-primary" type="submit" name="submitSounds"> Geluiden uploaden</button>
