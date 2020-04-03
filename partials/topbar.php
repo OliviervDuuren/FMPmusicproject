@@ -5,6 +5,9 @@
   <button id="sidebarToggleTop" class="btn btn-link d-md-none rounded-circle mr-3">
     <i class="fa fa-bars"></i>
   </button>
+  <?php if ($_SESSION['role'] == "Child" || $_SESSION['role'] == "Developer") : ?>
+            <button class="btn-lg btn-warning hBack" type="button"><i class="fas fa-arrow-circle-left suitcase"></i> Terug</button>
+  <?php endif; ?>
 
   <!-- <?php if ($_SESSION['role'] == "Child") : ?>
     <button id="terug" class="btn-lg btn-primary hBack" type="button"><i class="fas fa-arrow-circle-left suitcase"></i>Terug</button>

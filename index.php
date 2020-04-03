@@ -95,12 +95,12 @@ green4: #155C2B
                   <h5 class="modal-title" id="exampleModalCenterTitle">Hallo <?php echo $_SESSION['surname'] . " " . $_SESSION['lastname'] ?></h5>
                 </div>
                 <div class="modal-body">
-                  <a <?php if ($_SESSION['role'] == "Child" || $_SESSION['role'] == "Developer" ) { ?> href="projectblocks.php" <?php } ?> class="d-flex justify-content-center btn-lg btn-primary" role="button" aria-disabled="true" <?php if ($_SESSION['role'] == "Teacher") { ?> data-dismiss="modal" <?php } ?>>Start </a>
+                  <a <?php if ($_SESSION['role'] == "Child" || $_SESSION['role'] == "Developer") { ?> href="projectblocks.php" <?php } ?> class="d-flex justify-content-center btn-lg btn-primary" role="button" aria-disabled="true" <?php if ($_SESSION['role'] == "Teacher") { ?> data-dismiss="modal" <?php } ?>>Start </a>
                 </div>
               </div>
             </div>
           </div>
-          
+
           <?php if ($_SESSION['role'] == "Teacher") : ?>
             <div class="d-sm-flex align-items-center justify-content-baseline mb-4">
               <h1 class="h3 text-gray-800">Dashboard</h1>

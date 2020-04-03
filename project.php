@@ -45,6 +45,10 @@ if (isset($_POST['submitProject'])) {
   }
 }
 
+$f = fopen('php/boardinfo.txt', 'r');
+$line = fgets($f);
+fclose($f);
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -66,12 +70,24 @@ if (isset($_POST['submitProject'])) {
 
   <!-- Custom styles for this template-->
   <link href="css/sb-admin-2.min.css" rel="stylesheet">
+  <link href="css/my.css" rel="stylesheet">
+
+  <script type="text/javascript">
+    function searchBoard() {
+      alert("Searching board");
+      setTimeout("stopSearching()", 5000); // after 5 secs
+      //var selectBox = document.getElementById("searchBoardSelect");
+      // var selectedValue = selectBox.options[selectBox.selectedIndex].value;
+      //alert("HEYYY");
+      document.getElementById("boardNotFound").style.display = "none";
+      document.getElementById("loading").style.display = "block";
+      $('#searchingBoardModal').modal('show');
+    }
+  </script>
 
 </head>
 
 <body id="page-top">
-
-
 
   <!-- Page Wrapper -->
   <div id="wrapper">
@@ -92,6 +108,7 @@ if (isset($_POST['submitProject'])) {
         <!-- Begin Page Content -->
         <div class="container">
 
+          <!-- Breadcrumb voor leerkrachten -->
           <?php if ($_SESSION['role'] == "Teacher") : ?>
             <nav aria-label="breadcrumb">
               <ol class="breadcrumb">
@@ -102,45 +119,17 @@ if (isset($_POST['submitProject'])) {
 
               </ol>
             </nav>
-
           <?php endif; ?>
 
-          <?php if ($_SESSION['role'] == "Child" || $_SESSION['role'] == "Developer") : ?>
-            <button class="btn-lg btn-primary hBack" type="button"><i class="fas fa-arrow-circle-left suitcase"></i>Terug</button>
-          <?php endif; ?>
-
-          <!-- Page Heading -->
+          <!-- Titel van de pagina -->
           <div class="d-sm-flex align-items-center justify-content-center mb-4">
-            <h1 class="h3 text-gray-800"><?php echo $project; ?></h1>
+            <h1 class="h3 text-gray-800"><?php echo $json_project->title; ?></h1>
           </div>
 
-          <!-- Content Row -->
-          <div class="row justify-content-center">
-
-
-            <div class="col-sm-2 text-center block-card">
-              <div class="card bg-primary d-sm-flex justify-content-center align-items-center shadow mb-4">
-                <div class="card-body">
-                  <i class="fas fa-suitcase suitcase"></i>
-                </div>
-              </div>
-              <!-- <h1 class="h4"><?php echo $json_project->title; ?></h1> -->
-            </div>
-
-          </div>
-          <div class="row justify-content-center">
-
-
-
-            <h1 class="h4"><?php echo $json_project->title; ?></h1>
-
-
-          </div>
-          <!-- /.container-fluid -->
 
           <div class="text-center">
 
-            <?php if ($_SESSION['role'] == "Child") : ?>
+            <?php if ($_SESSION['role'] == "Child" || $_SESSION['role'] == "Developer") : ?>
               <div class="d-sm-flex justify-content-center align-items-center mb-4">
                 <p class="text-primary"><?php echo $json_project->description[0]->Child ?> </p>
               </div>
@@ -150,8 +139,6 @@ if (isset($_POST['submitProject'])) {
                 <p class="text-primary"><?php echo $json_project->description[0]->Teacher ?> </p>
               </div>
             <?php endif; ?>
-
-
 
             <form name="soundvalue" class="sounds-form" action="" method="post">
               <div class="row justify-content-center">
@@ -203,30 +190,65 @@ if (isset($_POST['submitProject'])) {
                 });
               </script>
 
-              <!-- Button trigger modal -->
+              <!-- Sound upload Button trigger modal -->
               <div class="row justify-content-center">
-                <button type="button" class="btn btn-primary mb-4" data-toggle="modal" data-target="#gspeelModal"> Geluiden uploaden</button>
+                <button type="button" class="btn-lg btn-primary mb-4" data-toggle="modal" data-target="<?php if ($line == "Niet verbonden") {
+                                                                                                          echo "#searchingBoardModal";
+                                                                                                        } else {
+                                                                                                          echo "#projectUploadModal";
+                                                                                                        } ?> "><i class="fas fa-play suitcase"></i> Start</button>
               </div>
 
-
-              <!-- Modal -->
-              <div class="modal fade" id="gspeelModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+              <!-- Searching a board Modal -->
+              <div class="modal fade" id="searchingBoardModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
                 <div class="modal-dialog modal-dialog-centered" role="document">
                   <div class="modal-content">
                     <div class="modal-header d-block ">
-                      <h5 class="modal-title text-center " id="exampleModalLongTitle">Geluiden uploaden</h5>
+                      <!-- <h5 class="modal-title text-center " id="exampleModalLongTitle1">Geluiden uploaden</h5> -->
+                      <h5 class="modal-title text-center " id="exampleModalLongTitle2">Zoeken naar bordje</h5>
                       <!-- <button type="button" name="submitSounds" class="close " data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
                       </button> -->
                     </div>
                     <div class="modal-body ">
-                      Er is geen bordje actief in de buurt waar de geluiden op kunnen worden gezet!
+                      <div id="loading" class="lds-ellipsis" style="display:block;">
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                      </div>
+                      <div id='boardNotFound' style="display:none;">Er is geen bordje actief in de buurt waar de geluiden op kunnen worden gezet!</div>
+
                     </div>
                     <div class="modal-footer justify-content-center">
-                      <button type="submit" name="submitSounds" class="btn btn-primary" data-dismiss="modal">Oke</button>
-                      <button <?php if ($_SESSION['role'] == "Child" || $_SESSION['role'] == "Teacher") { ?> disabled <?php } ?> type="submit" name="submitSounds" class="btn btn-primary" data-toggle="modal" data-target="#gspeelModal">Upload</button>
+                      <button type="button" name="" class="btn btn-warning" data-dismiss="modal"><i class="fas fa-stop suitcase"></i> Nee</button>
+                      <button <?php if ($_SESSION['role'] == "Child" || $_SESSION['role'] == "Teacher") { ?> disabled <?php } ?> type="button" name="" class="btn btn-primary" data-toggle="modal" data-target="#searchingBoardModal" onclick="searchBoard();"><i class="fas fa-redo suitcase"></i>Nog eens</button>
+
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Uploading project Modal -->
+              <div class="modal fade" id="projectUploadModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered" role="document">
+                  <div class="modal-content">
+                    <div class="modal-header d-block ">
+                      <h5 class="modal-title text-center " id="exampleModalLongTitle1">Geluiden uploaden</h5>
+                      <!-- <h5 class="modal-title text-center " id="exampleModalLongTitle2">Zoeken naar bordje</h5> -->
+                      <!-- <button type="button" name="submitSounds" class="close " data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                      </button> -->
+                    </div>
+                    <div class="modal-body ">
+                      <div>Je geluiden worden geüpload naar <b><?php echo $line; ?></b></div>
+                      <div>Succes!</div>
+                    </div>
+                    <div class="modal-footer justify-content-center">
+                      <button type="button" name="stopbutton" class="btn btn-warning" data-dismiss="modal"><i class="fas fa-stop suitcase"></i>Nee</button>
+                      <button <?php if ($_SESSION['role'] == "Child" || $_SESSION['role'] == "Teacher") { ?> disabled <?php } ?> type="submit" name="submitSounds" class="btn btn-primary" data-toggle="modal" data-target="#projectUploadModal"><i class="fas fa-play"></i>Ja</button>
                       <input id="vordering" type="hidden" value="<?php echo $json_project->id  ?>" name="vordering">
-                      <button <?php if ($_SESSION['role'] == "Child" || $_SESSION['role'] == "Teacher") { ?> disabled style="display:none;" <?php } ?> type="submit" name="submitProject" class="btn btn-primary" data-toggle="modal" data-target="#gspeelModal">Afronden</button>
+                      <button disabled <?php if ($_SESSION['role'] == "Child" || $_SESSION['role'] == "Teacher") { ?> disabled style="display:none;" <?php } ?> type="submit" name="submitProject" class="btn btn-light" data-toggle="modal" data-target="#projectUploadModal"><i class="fas fa-check"></i>Afronden</button>
                     </div>
                   </div>
                 </div>
@@ -235,17 +257,9 @@ if (isset($_POST['submitProject'])) {
             </form>
 
           </div>
-          <!-- <button class="btn btn-primary mb-3" data-toggle="modal" data-target="" type="submit" onclick="submitForms()">
-              Geluiden uploaden
-            </button> -->
-
-
 
         </div>
-
         <!-- End of Main Content -->
-
-
 
       </div>
       <!-- End of Content Wrapper -->
@@ -258,7 +272,15 @@ if (isset($_POST['submitProject'])) {
   <footer class="sticky-footer bg-white">
     <div class="container my-auto">
       <div class="copyright text-center my-auto">
-        <span>Copyright &copy; Your Website 2020</span>
+        <select name="" class="btn btn-light colorful-select dropdown-primary" id="searchBoardSelect" onchange="searchBoard();">
+          <option class="" value="" selected><?php echo $line; ?></option>
+          <?php if ($line == "Niet verbonden") {
+            echo "
+                <option id='searchingboard'>Zoeken naar bordje</option>";
+          }
+          ?>
+        </select>
+        <!-- <span>Copyright &copy; Your Website 2020</span> -->
       </div>
     </div>
   </footer>
@@ -284,13 +306,14 @@ if (isset($_POST['submitProject'])) {
       e.preventDefault();
       window.history.back();
     });
+  </script>
 
-    //         submitForms = function(){
-    //
-    //           document.getElementById("my_form_Geluid1").submit();
-    //           document.getElementById("my_form_Geluid8").submit();
-    //
-    // }
+  <script type="text/javascript">
+    function stopSearching() {
+      alert("stop searching");
+      document.getElementById("boardNotFound").style.display = "block";
+      document.getElementById("loading").style.display = "none";
+    }
   </script>
 </body>
 

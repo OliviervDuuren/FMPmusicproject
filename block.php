@@ -10,13 +10,18 @@ $block = $_GET['block'];
 $active_page = "projectblokken";
 
 if (!isset($_SESSION['level'])) {
-$level = $_GET['level'];
-
+  $level = $_GET['level'];
 }
 
 $json_data = json_decode(file_get_contents("manifest.json"));
 $json_blockdata = $json_data->$block;
-error_log( print_r($json_blockdata, TRUE) );
+error_log(print_r($json_blockdata, TRUE));
+
+//get board information
+$f = fopen('php/boardinfo.txt', 'r');
+$line = fgets($f);
+fclose($f);
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -38,7 +43,20 @@ error_log( print_r($json_blockdata, TRUE) );
 
   <!-- Custom styles for this template-->
   <link href="css/sb-admin-2.min.css" rel="stylesheet">
+  <link href="css/my.css" rel="stylesheet">
 
+  <script type="text/javascript">
+    function searchBoard() {
+      alert("Searching board");
+      setTimeout("stopSearching()", 5000); // after 5 secs
+      //var selectBox = document.getElementById("searchBoardSelect");
+      // var selectedValue = selectBox.options[selectBox.selectedIndex].value;
+      //alert("HEYYY");
+      document.getElementById("boardNotFound").style.display = "none";
+      document.getElementById("loading").style.display = "block";
+      $('#searchingBoardModal').modal('show');
+    }
+  </script>
 </head>
 
 <body id="page-top">
@@ -72,9 +90,11 @@ error_log( print_r($json_blockdata, TRUE) );
 
           <?php endif; ?>
 
-          <?php if ($_SESSION['role'] == "child") : ?>
-            <button class="btn-lg btn-primary hBack" type="button"><i class="fas fa-arrow-circle-left suitcase"></i>Terug</button>
-          <?php endif; ?>
+          <?php //if ($_SESSION['role'] == "Child") : 
+          ?>
+          <!-- <button class="btn-lg btn-primary hBack" type="button"><i class="fas fa-arrow-circle-left suitcase"></i>Terug</button> -->
+          <?php //endif; 
+          ?>
 
           <!-- Page Heading -->
           <div class="d-sm-flex align-items-center justify-content-center mb-4">
@@ -84,205 +104,139 @@ error_log( print_r($json_blockdata, TRUE) );
           <!-- Content Row -->
           <div class="row justify-content-center">
             <?php foreach ($json_blockdata as $key => $value) {
-              if(is_object($value)){
+              if (is_object($value)) {
                 $href_link = "";
                 if (!$value->disabled) {
-                  $href_link = "href='project.php?block=".$block."&project=".$key."'";
+                  $href_link = "href='project.php?block=" . $block . "&project=" . $key . "'";
                 }
                 echo "<div class='disabled col-sm-2 text-center block-card '>
-                  <a class='disabled' ".$href_link.">
-                    <div class='card ".(($value->disabled)?'bg-secondary':'bg-primary')." d-sm-flex justify-content-center align-items-center shadow mb-4'>
+                  <a class='disabled' " . $href_link . ">
+                    <div class='card " . (($value->disabled) ? 'bg-secondary' : 'bg-primary') . " d-sm-flex justify-content-center align-items-center shadow mb-4'>
                       <div class='card-body'>
-                      ".(($value->disabled)?"<i class='fas fa-lock'></i>":"<i class='fas fa-suitcase suitcase'></i>")."
+                      " . (($value->disabled) ? "<i class='fas fa-lock'></i>" : "<i class='fas fa-suitcase suitcase'></i>") . "
                       </div>
                     </div>
-                    <p>".$key."</p>
+                    <p>" . $key . "</p>
                   </a>
                 </div>";
               }
-            }?>
-
-
-            <!-- <div class="col-sm-2 text-center block-card">
-              <a href="project.php?block=<?php echo $block;  ?>&project=1">
-                <div class="card bg-secondary d-sm-flex justify-content-center align-items-center shadow mb-4">
-                  <div class="card-body">
-                    <i class="fas fa-suitcase suitcase"></i>
-                  </div>
-                </div>
-                <p>Project 1</p>
-              </a>
-            </div>
-
-            <div class="col-sm-2 text-center block-card">
-              <a href="project.php?block=<?php echo $block;  ?>&project=2">
-                <div class="card bg-secondary d-sm-flex justify-content-center align-items-center shadow mb-4">
-                  <div class="card-body">
-                    <i class="fas fa-suitcase suitcase"></i>
-                  </div>
-                </div>
-                <p>Project 2</p>
-              </a>
-            </div>
-
-            <div class="col-sm-2 text-center block-card">
-              <a href="project.php?block=<?php echo $block;  ?>&project=3">
-                <div class="card bg-primary d-sm-flex justify-content-center align-items-center shadow mb-4">
-                  <div class="card-body">
-                    <i class="fas fa-suitcase suitcase"></i>
-                  </div>
-                </div>
-                <p>Project 3</p>
-              </a>
-            </div> -->
-
+            } ?>
 
           </div>
           <!-- /.container-fluid -->
 
-          <?php if ($_SESSION['level'] == "2" || $_SESSION['level'] == "3" || $_SESSION['role'] == "teacher") : ?>
-            <!-- <div class="row justify-content-center">
-              <div class="col-sm-2 text-center block-card">
-                <a href="project.php?block=<?php echo $block;  ?>&project=4">
-                  <div class="card bg-secondary d-sm-flex justify-content-center align-items-center shadow mb-4">
-                    <div class="card-body">
-                      <i class="fas fa-suitcase suitcase"></i>
-                    </div>
+          <!-- Searching a board Modal -->
+          <div class="modal fade" id="searchingBoardModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered" role="document">
+              <div class="modal-content">
+                <div class="modal-header d-block ">
+                  <!-- <h5 class="modal-title text-center " id="exampleModalLongTitle1">Geluiden uploaden</h5> -->
+                  <h5 class="modal-title text-center " id="exampleModalLongTitle2">Zoeken naar bordje</h5>
+                  <!-- <button type="button" name="submitSounds" class="close " data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                      </button> -->
+                </div>
+                <div class="modal-body ">
+                  <div id="loading" class="lds-ellipsis" style="display:block;">
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
                   </div>
-                  <p>Project 4</p>
-                </a>
-              </div>
-              <div class="col-sm-2 text-center block-card">
-                <a href="project.php?block=<?php echo $block;  ?>&project=5">
-                  <div class="card bg-secondary d-sm-flex justify-content-center align-items-center shadow mb-4">
-                    <div class="card-body">
-                      <i class="fas fa-suitcase suitcase"></i>
-                    </div>
-                  </div>
-                  <p>Project 5</p>
-                </a>
-              </div>
-              <div class="col-sm-2 text-center block-card">
-                <a href="project.php?block=<?php echo $block;  ?>&project=6">
-                  <div class="card bg-secondary d-sm-flex justify-content-center align-items-center shadow mb-4">
-                    <div class="card-body">
-                      <i class="fas fa-suitcase suitcase"></i>
-                    </div>
-                  </div>
-                  <p>Project 6</p>
-                </a>
-              </div>
-            </div> -->
+                  <div id='boardNotFound' style="display:none;">Er is geen bordje actief in de buurt waar de geluiden op kunnen worden gezet!</div>
 
-          <?php endif; ?>
+                </div>
+                <div class="modal-footer justify-content-center">
+                  <button type="button" name="" class="btn btn-warning" data-dismiss="modal"><i class="fas fa-stop suitcase"></i> Nee</button>
+                  <button <?php if ($_SESSION['role'] == "Child" || $_SESSION['role'] == "Teacher") { ?> disabled <?php } ?> type="button" name="" class="btn btn-primary" data-toggle="modal" data-target="#searchingBoardModal" onclick="searchBoard();"><i class="fas fa-redo suitcase"></i> Nog eens</button>
 
-          <?php if ($_SESSION['level'] == "3" || $_SESSION['role'] == "teacher") : ?>
-<!--
-            <div class="row justify-content-center">
-              <div class="col-sm-2 text-center block-card">
-                <a href="project.php?block=<?php echo $block;  ?>&project=7">
-                  <div class="card bg-secondary d-sm-flex justify-content-center align-items-center shadow mb-4">
-                    <div class="card-body">
-                      <i class="fas fa-suitcase suitcase"></i>
-                    </div>
-                  </div>
-                  <p>Project 7</p>
-                </a>
+                </div>
               </div>
-              <div class="col-sm-2 text-center block-card">
-                <a href="project.php?block=<?php echo $block;  ?>&project=8">
-                  <div class="card bg-secondary d-sm-flex justify-content-center align-items-center shadow mb-4">
-                    <div class="card-body">
-                      <i class="fas fa-suitcase suitcase"></i>
-                    </div>
-                  </div>
-                  <p>Project 8</p>
-                </a>
-              </div>
-              <div class="col-sm-2 text-center block-card">
-                <a href="project.php?block=<?php echo $block;  ?>&project=9">
-                  <div class="card bg-secondary d-sm-flex justify-content-center align-items-center shadow mb-4">
-                    <div class="card-body">
-                      <i class="fas fa-suitcase suitcase"></i>
-                    </div>
-                  </div>
-                  <p>Project 9</p>
-                </a>
-              </div>
-            </div> -->
-
-          <?php endif; ?>
+            </div>
+          </div>
 
         </div>
         <!-- End of Main Content -->
 
-
-
       </div>
       <!-- End of Content Wrapper -->
 
-      <!-- Footer -->
-      <footer class="sticky-footer bg-white">
-        <div class="container my-auto">
-          <div class="copyright text-center my-auto">
-            <span>Copyright &copy; Your Website 2020</span>
-          </div>
-        </div>
-      </footer>
-      <!-- End of Footer -->
-
     </div>
     <!-- End of Page Wrapper -->
+  </div>
 
-
-
-    <!-- Scroll to Top Button-->
-    <a class="scroll-to-top rounded" href="#page-top">
-      <i class="fas fa-angle-up"></i>
-    </a>
-
-    <!-- Logout Modal-->
-<div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">Zeker weten?</h5>
-        <button class="close" type="button" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">×</span>
-        </button>
+  <!-- Footer -->
+  <footer class="sticky-footer bg-white">
+    <div class="container my-auto">
+      <div class="copyright text-center my-auto">
+        <select name="" class="btn btn-light colorful-select dropdown-primary" id="searchBoardSelect" onchange="searchBoard();">
+          <option class="" value="" selected><?php echo $line; ?></option>
+          <?php if ($line == "Niet verbonden") {
+            echo "
+                <option id='searchingboard'>Zoeken naar bordje</option>";
+          }
+          ?>
+        </select>
+        <!-- <span>Copyright &copy; Your Website 2020</span> -->
       </div>
-      <div class="modal-body">Selecteer "Log uit" hieronder als je je huidige sessie wilt beëindigen.</div>
-      <div class="modal-footer">
-        <button class="btn btn-secondary" type="button" data-dismiss="modal">Annuleer</button>
-        <a class="btn btn-primary" href="login.php">Log uit</a>
+    </div>
+  </footer>
+  <!-- End of Footer -->
+
+  <!-- Scroll to Top Button-->
+  <a class="scroll-to-top rounded" href="#page-top">
+    <i class="fas fa-angle-up"></i>
+  </a>
+
+  <!-- Logout Modal-->
+  <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Zeker weten?</h5>
+          <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">×</span>
+          </button>
+        </div>
+        <div class="modal-body">Selecteer "Log uit" hieronder als je je huidige sessie wilt beëindigen.</div>
+        <div class="modal-footer">
+          <button class="btn btn-secondary" type="button" data-dismiss="modal">Annuleer</button>
+          <a class="btn btn-primary" href="login.php">Log uit</a>
+        </div>
       </div>
     </div>
   </div>
-</div>
 
-    <!-- Bootstrap core JavaScript-->
-    <script src="vendor/jquery/jquery.min.js"></script>
-    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <!-- Bootstrap core JavaScript-->
+  <script src="vendor/jquery/jquery.min.js"></script>
+  <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 
-    <!-- Core plugin JavaScript-->
-    <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
+  <!-- Core plugin JavaScript-->
+  <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
 
-    <!-- Custom scripts for all pages-->
-    <script src="js/sb-admin-2.min.js"></script>
+  <!-- Custom scripts for all pages-->
+  <script src="js/sb-admin-2.min.js"></script>
 
-    <!-- Page level plugins -->
-    <script src="vendor/chart.js/Chart.min.js"></script>
+  <!-- Page level plugins -->
+  <script src="vendor/chart.js/Chart.min.js"></script>
 
-    <!-- Page level custom scripts -->
-    <script src="js/demo/chart-area-demo.js"></script>
-    <script src="js/demo/chart-pie-demo.js"></script>
+  <!-- Page level custom scripts -->
+  <script src="js/demo/chart-area-demo.js"></script>
+  <script src="js/demo/chart-pie-demo.js"></script>
 
+  <script type="text/javascript">
+    $(".hBack").on("click", function(e) {
+      e.preventDefault();
+      window.history.back();
+    });
+  </script>
     <script type="text/javascript">
-      $(".hBack").on("click", function(e) {
-        e.preventDefault();
-        window.history.back();
-      });
-    </script>
+    function stopSearching() {
+      alert("stop searching");
+      document.getElementById("boardNotFound").style.display = "block";
+      document.getElementById("loading").style.display = "none";
+    }
+  </script>
 </body>
 
 </html>
