@@ -26,19 +26,23 @@ if (isset($_POST['submitSounds'])) {
 }
 
 if (isset($_POST['submitProject'])) {
-  echo "project:";
-  echo $json_project->id;
-  echo "afgerond!";
+  $sql1 = "SELECT vordering FROM users";
+  $result1 = mysqli_query($mysqli, $sql1);
+  $row = mysqli_fetch_array($result1);
 
-  $sql = "UPDATE users
-          SET vordering   = '" . $json_project->id . "'
-          WHERE username = " . $_SESSION['username'] . "";
-  
-  error_log(print_r($sql, TRUE));
+  //echo $result1;
+  $level = $json_project->id;
 
-  $result = mysqli_query($mysqli, $sql);  
-  //header("location: blocks.php");
+  if ($row > $json_project->id) {
+    $sql2 = "UPDATE users
+          SET vordering   = '" . $level . "'
+          WHERE username = '" . $_SESSION['username'] . "' ";
 
+    error_log(print_r($sql2, TRUE));
+
+    $result = mysqli_query($mysqli, $sql2);
+    //header("location: blocks.php");
+  }
 }
 
 ?>
