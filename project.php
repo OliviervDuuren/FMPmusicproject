@@ -74,7 +74,7 @@ fclose($f);
 
   <script type="text/javascript">
     function searchBoard() {
-      alert("Searching board");
+      //alert("Searching board");
       setTimeout("stopSearching()", 5000); // after 5 secs
       //var selectBox = document.getElementById("searchBoardSelect");
       // var selectedValue = selectBox.options[selectBox.selectedIndex].value;
@@ -192,7 +192,7 @@ fclose($f);
 
               <!-- Sound upload Button trigger modal -->
               <div class="row justify-content-center">
-                <button type="button" class="btn-lg btn-primary mb-4" data-toggle="modal" data-target="<?php if ($line == "Niet verbonden") {
+                <button type="button" class="btn-lg btn-primary mb-4" data-toggle="modal" data-target="<?php if ($line == "") {
                                                                                                           echo "#searchingBoardModal";
                                                                                                         } else {
                                                                                                           echo "#projectUploadModal";
@@ -222,7 +222,7 @@ fclose($f);
                     </div>
                     <div class="modal-footer justify-content-center">
                       <button type="button" name="" class="btn btn-warning" data-dismiss="modal"><i class="fas fa-stop suitcase"></i> Nee</button>
-                      <button <?php if ($_SESSION['role'] == "Child" || $_SESSION['role'] == "Teacher") { ?> disabled <?php } ?> type="button" name="" class="btn btn-primary" data-toggle="modal" data-target="#searchingBoardModal" onclick="searchBoard();"><i class="fas fa-redo suitcase"></i>Nog eens</button>
+                      <button <?php if ($_SESSION['role'] == "Child" || $_SESSION['role'] == "Teacher") { ?> disabled <?php } ?> type="button" name="" class="btn btn-primary" onclick="searchBoard()" ><i class="fas fa-redo suitcase"></i> Nog eens</button>
 
                     </div>
                   </div>
@@ -273,8 +273,8 @@ fclose($f);
     <div class="container my-auto">
       <div class="copyright text-center my-auto">
         <select name="" class="btn btn-light colorful-select dropdown-primary" id="searchBoardSelect" onchange="searchBoard();">
-          <option class="" value="" selected><?php echo $line; ?></option>
-          <?php if ($line == "Niet verbonden") {
+          <option class="" value="" selected><?php if($line == "") {echo "Niet verbonden";} else { echo $line; }?></option>
+          <?php if ($line == "") {
             echo "
                 <option id='searchingboard'>Zoeken naar bordje</option>";
           }
@@ -310,7 +310,7 @@ fclose($f);
 
   <script type="text/javascript">
     function stopSearching() {
-      alert("stop searching");
+      //alert("stop searching");
       document.getElementById("boardNotFound").style.display = "block";
       document.getElementById("loading").style.display = "none";
     }

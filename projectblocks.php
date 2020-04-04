@@ -43,7 +43,7 @@ fclose($f);
 
   <script type="text/javascript">
     function searchBoard() {
-      alert("Searching board");
+      //alert("Searching board");
       setTimeout("stopSearching()", 5000); // after 5 secs
       //var selectBox = document.getElementById("searchBoardSelect");
       // var selectedValue = selectBox.options[selectBox.selectedIndex].value;
@@ -78,31 +78,33 @@ fclose($f);
 
           <!-- Searching a board Modal -->
           <div class="modal fade" id="searchingBoardModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-            <div class="modal-dialog modal-dialog-centered" role="document">
-              <div class="modal-content">
-                <div class="modal-header d-block ">
-                  <!-- <h5 class="modal-title text-center " id="exampleModalLongTitle1">Geluiden uploaden</h5> -->
-                  <h5 class="modal-title text-center " id="exampleModalLongTitle2">Verbinden met bordje</h5>
-                  <!-- <button type="button" name="submitSounds" class="close " data-dismiss="modal" aria-label="Close">
+                <div class="modal-dialog modal-dialog-centered" role="document">
+                  <div class="modal-content">
+                    <div class="modal-header d-block ">
+                      <!-- <h5 class="modal-title text-center " id="exampleModalLongTitle1">Geluiden uploaden</h5> -->
+                      <h5 class="modal-title text-center " id="exampleModalLongTitle2">Verbinden met bordje</h5>
+                      <!-- <button type="button" name="submitSounds" class="close " data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
                       </button> -->
-                </div>
-                <div class="modal-body ">
-                  <div id="loading" class="lds-ellipsis" style="display:block;">
-                    <div></div>
-                    <div></div>
-                    <div></div>
-                    <div></div>
+                    </div>
+                    <div class="modal-body ">
+                      <div id="loading" class="lds-ellipsis" style="display:block;">
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                      </div>
+                      <div id='boardNotFound' style="display:none;">Er is geen bordje actief in de buurt waar de geluiden op kunnen worden gezet!</div>
+
+                    </div>
+                    <div class="modal-footer justify-content-center">
+                      <button type="button" name="" class="btn btn-warning" data-dismiss="modal"><i class="fas fa-stop suitcase"></i> Nee</button>
+                      <button <?php if ($_SESSION['role'] == "Child" || $_SESSION['role'] == "Teacher") { ?> disabled <?php } ?> type="button" name="" class="btn btn-primary" onclick="searchBoard()" ><i class="fas fa-redo suitcase"></i> Nog eens</button>
+
+                    </div>
                   </div>
-                  <div id='boardNotFound' style="display:none;">Er is geen bordje actief in de buurt waar de geluiden op kunnen worden gezet!</div>
-                </div>
-                <div class="modal-footer justify-content-center">
-                  <button type="button" name="" class="btn btn-warning" data-dismiss="modal"><i class="fas fa-stop suitcase"></i> Nee</button>
-                  <button <?php if ($_SESSION['role'] == "Child" || $_SESSION['role'] == "Teacher") { ?> disabled <?php } ?> type="button" name="" class="btn btn-primary" data-toggle="modal" data-target="#searchingBoardModal" onclick="searchBoard();"><i class="fas fa-redo suitcase"></i> Nog eens</button>
                 </div>
               </div>
-            </div>
-          </div>
 
           <!-- Titel van de pagina -->
           <div class="d-sm-flex align-items-center justify-content-center mb-4">
@@ -148,8 +150,8 @@ fclose($f);
     <div class="container my-auto">
       <div class="copyright text-center my-auto">
         <select name="" class="btn btn-light colorful-select dropdown-primary" id="searchBoardSelect" onchange="searchBoard();">
-          <option class="" value="" selected><?php echo $line; ?></option>
-          <?php if ($line == "Niet verbonden") {
+          <option class="" value="" selected><?php if($line == "") {echo "Niet verbonden";} else { echo $line; }?></option>
+          <?php if ($line == "") {
             echo "
                 <option id='searchingboard'>Zoeken naar bordje</option>";
           }
@@ -186,7 +188,7 @@ fclose($f);
 
 <script type="text/javascript">
     function stopSearching() {
-      alert("stop searching");
+      //alert("stop searching");
       document.getElementById("boardNotFound").style.display = "block";
       document.getElementById("loading").style.display = "none";
     }
@@ -194,9 +196,7 @@ fclose($f);
 
   <script type="text/javascript">
     <?php if($line == "Niet verbonden") {?>
-    $(window).on('load', function() {
-      $('#searchingBoardModal').modal('show');
-    });
+    $(window).on('load', searchBoard())
   <?php } ?>
   </script>
 </body>
