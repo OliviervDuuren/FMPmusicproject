@@ -13,6 +13,10 @@ if (!isset($_SESSION['level'])) {
   $level = $_GET['level'];
 }
 
+$sql = "SELECT vordering FROM users WHERE username = '" . $_SESSION['username'] . "'";
+$result = mysqli_query($mysqli, $sql);
+$vordering = mysqli_fetch_array($result);
+
 $json_data = json_decode(file_get_contents("manifest.json"));
 $json_blockdata = $json_data->$block;
 error_log(print_r($json_blockdata, TRUE));
@@ -90,10 +94,10 @@ fclose($f);
 
           <?php endif; ?>
 
-          <?php //if ($_SESSION['role'] == "Child") : 
+          <?php //if ($_SESSION['role'] == "Child") :
           ?>
           <!-- <button class="btn-lg btn-primary hBack" type="button"><i class="fas fa-arrow-circle-left suitcase"></i>Terug</button> -->
-          <?php //endif; 
+          <?php //endif;
           ?>
 
           <!-- Page Heading -->
@@ -106,14 +110,14 @@ fclose($f);
             <?php foreach ($json_blockdata as $key => $value) {
               if (is_object($value)) {
                 $href_link = "";
-                if (!$value->disabled) {
+                if ($value->id <= $vordering[0]) {
                   $href_link = "href='project.php?block=" . $block . "&project=" . $key . "'";
                 }
                 echo "<div class='disabled col-sm-2 text-center block-card '>
                   <a class='disabled' " . $href_link . ">
-                    <div class='card " . (($value->disabled) ? 'bg-secondary' : 'bg-primary') . " d-sm-flex justify-content-center align-items-center shadow mb-4'>
+                    <div class='card " . (($value->id > $vordering[0]) ? 'bg-secondary' : 'bg-primary') . " d-sm-flex justify-content-center align-items-center shadow mb-4'>
                       <div class='card-body'>
-                      " . (($value->disabled) ? "<i class='fas fa-lock'></i>" : "<i class='fas fa-suitcase suitcase'></i>") . "
+                      " . (($value->id > $vordering[0]) ? "<i class='fas fa-lock'></i>" : "<i class='fas fa-suitcase suitcase'></i>") . "
                       </div>
                     </div>
                     <p>" . $key . "</p>

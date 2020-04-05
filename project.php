@@ -61,6 +61,7 @@ fclose($f);
   <meta name="description" content="">
   <meta name="author" content="">
   <link rel="icon" href="img\Icon.png" type="image/x-icon">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css" integrity="sha256-h20CPZ0QyXlBuAw7A+KluUYx/3pK+c7lYEpqLTlxjYQ=" crossorigin="anonymous" />
 
   <title><?php echo $project ?></title>
 
@@ -146,14 +147,14 @@ fclose($f);
                 if ($json_project->open) {
                   for ($i = 0; $i < $json_project->availableSlots; $i++) {
                     echo "<div class='col-sm-2 text-center block-card mb-5'>
-                  <a data-toggle='modal' data-target=''>
-                    <div class='card bg-secondary d-sm-flex justify-content-center align-items-center shadow mb-4 dropdown show'>
+
+                    <div class='card bg-secondary d-sm-flex justify-content-center align-items-center shadow mb-4 dropdown show play-sound'>
                       <div class='card-body'>
                         <i class='fas fa-music suitcase'></i>
                       </div>
                     </div>
-                    </a>
-                    <select name='soundvalue[]' class='btn btn-secondary mdb-select md-form colorful-select dropdown-primary' onfocus='soundvalue'>
+
+                    <select name='soundvalue[]' class='btn btn-secondary soundclick mdb-select md-form colorful-select dropdown-primary' onfocus='soundvalue'>
                       <option value='' selected>Kies geluid</option>";
 
                     for ($j = 0; $j < count($json_project->fragments); $j++) { // loop through fragments
@@ -161,34 +162,26 @@ fclose($f);
                     }
 
                     echo "</select>
+                    <audio class='audio' src='mp3/" . $json_project->fragments[$i]->id . ".mp3'></audio>
                   </div>";
                   }
                 } else {
                   for ($i = 0; $i < $json_project->availableSlots; $i++) {
                     echo "<div class='col-sm-2 text-center block-card mb-5'>
-                    <a data-toggle='modal' data-target=''>
-                      <div class='card bg-secondary d-sm-flex justify-content-center align-items-center shadow mb-4 dropdown show'>
+                      <div class='card bg-secondary d-sm-flex justify-content-center align-items-center shadow mb-4 dropdown play-sound'>
                         <div class='card-body'>
                           <i class='fas fa-music suitcase'></i>
                         </div>
                       </div>
-                      </a>
                       <select name='soundvalue[]' class='btn btn-secondary soundclick md-form colorful-select dropdown-primary' onfocus='soundvalue'>
-                        <option class='soundclick' value='" . $json_project->fragments[$i]->id . "' selected>" . $json_project->fragments[$i]->name . "</option>
+                        <option value='" . $json_project->fragments[$i]->id . "' selected>" . $json_project->fragments[$i]->name . "</option>
                       </select>
-                      <audio src='mp3/" . $json_project->fragments[$i]->id . ".mp3'></audio>
+                      <audio class='audio' src='mp3/" . $json_project->fragments[$i]->id . ".mp3'></audio>
                     </div>";
                   }
                 }
                 ?>
               </div>
-
-              <script src="vendor/jquery/jquery.min.js">
-                $('.soundclick').on('click', function() {
-                  $(this).siblings('audio').play();
-                  console.log("playing");
-                });
-              </script>
 
               <!-- Sound upload Button trigger modal -->
               <div class="row justify-content-center">
@@ -309,11 +302,36 @@ fclose($f);
   </script>
 
   <script type="text/javascript">
+
     function stopSearching() {
       //alert("stop searching");
       document.getElementById("boardNotFound").style.display = "block";
       document.getElementById("loading").style.display = "none";
     }
+
+    $('.play-sound').on('click', function() {
+
+      var promise = $(this).siblings('.audio')[0].play();
+      // In browsers that don’t yet support this functionality,
+        // playPromise won’t be defined.
+        if (promise !== undefined) {
+          promise.then(function() {
+            // Automatic playback started!
+            console.log("success");
+          }).catch(function(error) {
+              console.log(error);
+          });
+        }
+
+    });
+
+    $(".soundclick").on("change" ,function(){
+      var src =   $(this).find("option:selected").val();
+      console.log(src);
+      $(this).siblings(".audio").find('source').attr('src',src);
+      src = "mp3/"+src+'.mp3';
+      console.log($(this).siblings(".audio").attr('src',src));
+    });
   </script>
 </body>
 
