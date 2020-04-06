@@ -138,7 +138,7 @@
 			"availableSlots": 8,
 			"background": "#858796",
 			"title": "Leg <b>melodie</b> op <b>melodie</b> 1",
-			"fragments": [{"id":"71", "name":"Melodie 1"}, {"id":"72", "name":"Melodie 2"}, {"id":"73", "name":"Melodie 3"}, {"id":"74", "name":"Melodie 4"},{"id":"71", "name":"Melodie 1"}, {"id":"72", "name":"Melodie 2"}, {"id":"73", "name":"Melodie 3"}, {"id":"74", "name":"Melodie 4"}],
+			"fragments": [{"id":"73", "name":"Melodie 1"}, {"id":"74", "name":"Melodie 2"}, {"id":"75", "name":"Melodie 3"}, {"id":"76", "name":"Melodie 4"},{"id":"73", "name":"Melodie 1"}, {"id":"74", "name":"Melodie 2"}, {"id":"75", "name":"Melodie 3"}, {"id":"76", "name":"Melodie 4"}],
 			"description": [{"Teacher":"In deze opdracht beginnen kinderen te leren wat <b>Melodie</b> inhoudt. Ze zullen dan ook vier verschillende korte melodieën op een dubbelganger melodie moeten leggen in het bordje. De melodieën die klinken zullen nog redelijke eenvoudig te onderscheiden zijn. Deze opdracht gaat dus met namen over het nauwkeurig luisteren, oftewel trainen van het gehoor. ", "Child":"Leg met 8 tegels de 8 geluiden die dezelfde melodie hebben onder elkaar. Luister goed!"}]
 		},
 		"Project 15": {
@@ -148,7 +148,7 @@
 			"availableSlots": 4,
 			"background": "#858796",
 			"title": "Maak <b>melodie</b> na 1 ",
-			"fragments": [{"id":"75", "name":"Melodie 1"}, {"id":"76", "name":"Melodie 2"}, {"id":"77", "name":"Melodie 3"}, {"id":"78", "name":"Melodie 4"}],
+			"fragments": [{"id":"77", "name":"Melodie 1"}, {"id":"78", "name":"Melodie 2"}, {"id":"79", "name":"Melodie 3"}, {"id":"80", "name":"Melodie 4"}],
 			"description": [{"Teacher":"In deze opdracht beginnen kinderen te leren wat <b>Melodie</b> inhoudt. Ze zullen in deze oefening een melodie na moeten maken van in het bordje. De melodie zal net iets minder eenvoudig zijn dan de vorige opdracht. Deze opdracht gaat dus met namen over het nauwkeurig luisteren, oftewel trainen van het gehoor. ", "Child":"Leg met 8 tegels de 8 geluiden op de juiste volgorde onder elkaar en maak de melodie na. Luister goed!"}]
 		},
 		"Project 16": {
@@ -158,7 +158,7 @@
 			"availableSlots": 8,
 			"background": "#858796",
 			"title": "Maak eigen <b>melodie</b> 1",
-			"fragments": [{"id":"79", "name":"klank 1"}, {"id":"80", "name":"Klank 2"}, {"id":"81", "name":"Klank 3"}, {"id":"82", "name":"Klank 4"},{"id":"83", "name":"Klank 5"}, {"id":"84", "name":"Klank 6"}, {"id":"85", "name":"Klank 7"}, {"id":"86", "name":"Klank 8"},{"id":"87", "name":"Klank 9"}, {"id":"88", "name":"Klank 10"}, {"id":"89", "name":"Klank 11"}, {"id":"90", "name":"Klank 12"},{"id":"91", "name":"Klank 13"}, {"id":"92", "name":"Klank 14"}, {"id":"93", "name":"Klank 15"}, {"id":"94", "name":"Klank 16"}],
+			"fragments": [{"id":"81", "name":"klank 1"}, {"id":"82", "name":"Klank 2"}, {"id":"83", "name":"Klank 3"}, {"id":"84", "name":"Klank 4"},{"id":"85", "name":"Klank 5"}, {"id":"86", "name":"Klank 6"}, {"id":"87", "name":"Klank 7"}, {"id":"88", "name":"Klank 8"},{"id":"89", "name":"Klank 9"}, {"id":"90", "name":"Klank 10"}, {"id":"91", "name":"Klank 11"}, {"id":"92", "name":"Klank 12"},{"id":"93", "name":"Klank 13"}, {"id":"94", "name":"Klank 14"}, {"id":"95", "name":"Klank 15"}, {"id":"96", "name":"Klank 16"}],
 			"description": [{"Teacher":"In deze opdracht beginnen kinderen te leren wat <b>Melodieën</b> zelf maken inhoudt. Ze zullen in deze oefening een melodie kunnen maken in het bordje. De geluiden zullen redelijk bekend zijn en nog niet ontzettend divers. Deze opdracht gaat dus met namen over het creatief vermogen naast het luisteren. ", "Child":"Maak een eigen melodie en kies de klanken die je zelf wilt! Succes!"}]
 		},
 		"Project 17": {
@@ -168,7 +168,7 @@
 			"availableSlots": 8,
 			"background": "#858796",
 			"title": "Leg <b>octaven</b> goed",
-			"fragments": [{"id":"95", "name":"Toon 1"}, {"id":"96", "name":"Toon 2"}, {"id":"97", "name":"Toon 3"}, {"id":"98", "name":"Toon 4"},{"id":"99", "name":"Toon 5"}, {"id":"100", "name":"Toon 6"}, {"id":"101", "name":"Toon 7"}, {"id":"102", "name":"Toon 8"}],
+			"fragments": [{"id":"97", "name":"Toon 1"}, {"id":"98", "name":"Toon 2"}, {"id":"99", "name":"Toon 3"}, {"id":"100", "name":"Toon 4"},{"id":"101", "name":"Toon 5"}, {"id":"102", "name":"Toon 6"}, {"id":"103", "name":"Toon 7"}, {"id":"104", "name":"Toon 8"}],
 			"description": [{"Teacher":"In deze opdracht beginnen kinderen te leren wat <b>Harmonie</b> inhoudt. Ze zullen dan ook vier verschillende octaven op elkaar moeten leggen in het bordje. De octaven die klinken zullen nog redelijke eenvoudig te onderscheiden zijn. Deze opdracht gaat dus met namen over het nauwkeurig luisteren, oftewel trainen van het gehoor. ", "Child":"Leg met 8 tegels de 8 geluiden die dezelfde klank hebben onder elkaar. Luister goed!"}]
 		},
 		"Project 18": {
@@ -178,7 +178,7 @@
 			"availableSlots": 8,
 			"background": "#858796",
 			"title": "Maak <b>melodie</b> met <b>octaven</b>",
-			"fragments": [{"id":"103", "name":"Toon 1"}, {"id":"104", "name":"Toon 2"}, {"id":"105", "name":"Toon 3"}, {"id":"106", "name":"Toon 4"},{"id":"107", "name":"Toon 5"}, {"id":"108", "name":"Toon 6"}, {"id":"109", "name":"Toon 7"}, {"id":"110", "name":"Toon 8"}],
+			"fragments": [{"id":"105", "name":"Toon 1"}, {"id":"106", "name":"Toon 2"}, {"id":"107", "name":"Toon 3"}, {"id":"108", "name":"Toon 4"},{"id":"109", "name":"Toon 5"}, {"id":"110", "name":"Toon 6"}, {"id":"111", "name":"Toon 7"}, {"id":"112", "name":"Toon 8"}],
 			"description": [{"Teacher":"In deze opdracht beginnen kinderen te leren wat <b>Harmonie</b> inhoudt. Ze zullen dan ook een melodie maken in octaven in het bordje. De melodie die klinkt zal nog redelijk eenvoudig zijn. Deze opdracht gaat dus met namen over het nauwkeurig luisteren, oftewel trainen van het gehoor. ", "Child":"Leg met 8 tegels de melodie twee keer hetzelfde neer in het bordje. Luister goed!"}]
 		},
 		"Project 19": {
@@ -188,7 +188,7 @@
 			"availableSlots": 8,
 			"background": "#858796",
 			"title": "Plaats twee <b>melodieën</b>",
-			"fragments": [{"id":"111", "name":"Klank 1"}, {"id":"112", "name":"Klank 2"}, {"id":"113", "name":"Klank 3"}, {"id":"114", "name":"Klank 4"},{"id":"115", "name":"Klank 5"}, {"id":"116", "name":"Klank 6"}, {"id":"117", "name":"Klank 7"}, {"id":"118", "name":"Klank 8"}],
+			"fragments": [{"id":"113", "name":"Klank 1"}, {"id":"114", "name":"Klank 2"}, {"id":"115", "name":"Klank 3"}, {"id":"116", "name":"Klank 4"},{"id":"117", "name":"Klank 5"}, {"id":"118", "name":"Klank 6"}, {"id":"119", "name":"Klank 7"}, {"id":"120", "name":"Klank 8"}],
 			"description": [{"Teacher":"In deze opdracht beginnen kinderen te leren wat <b>Harmonie</b> inhoudt. Ze zullen dan ook een melodie maken in octaven in het bordje. De melodie die klinkt zal nog redelijk eenvoudig zijn. Deze opdracht gaat dus met namen over het nauwkeurig luisteren, oftewel trainen van het gehoor. ", "Child":"Leg met 8 tegels de melodie twee keer hetzelfde neer in het bordje. Luister goed!"}]
 		}
 
