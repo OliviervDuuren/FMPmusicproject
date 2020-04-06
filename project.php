@@ -26,16 +26,19 @@ if (isset($_POST['submitSounds'])) {
 }
 
 if (isset($_POST['submitProject'])) {
-  $sql1 = "SELECT vordering FROM users";
+  $sql1 = "SELECT vordering FROM users WHERE username = '" . $_SESSION['username'] . "'  ";
   $result1 = mysqli_query($mysqli, $sql1);
   $row = mysqli_fetch_array($result1);
+  //echo $row[0];
 
   //echo $result1;
   $level = $json_project->id;
-
-  if ($row > $json_project->id) {
+  $newlevel = ++$level;
+  
+  if ($row[0] == $json_project->id) {
+   // echo $level;
     $sql2 = "UPDATE users
-          SET vordering   = '" . $level . "'
+          SET vordering   = '". $newlevel ."'
           WHERE username = '" . $_SESSION['username'] . "' ";
 
     error_log(print_r($sql2, TRUE));
@@ -71,7 +74,6 @@ fclose($f);
 
   <!-- Custom styles for this template-->
   <link href="css/sb-admin-2.min.css" rel="stylesheet">
-  <link href="css/my.css" rel="stylesheet">
 
   <script type="text/javascript">
     function searchBoard() {
@@ -137,7 +139,16 @@ fclose($f);
             <?php endif; ?>
             <?php if ($_SESSION['role'] == "Teacher") : ?>
               <div class="d-sm-flex justify-content-center align-items-center mb-4">
+                <h4>Uitleg voor leerkracht</h4>
+              </div>
+              <div class="d-sm-flex justify-content-center align-items-center mb-4">
                 <p class="text-primary"><?php echo $json_project->description[0]->Teacher ?> </p>
+              </div>
+              <div class="d-sm-flex justify-content-center align-items-center mb-4">
+                <h4>Uitleg voor kind </h4>
+              </div>
+              <div class="d-sm-flex justify-content-center align-items-center mb-4">
+                <p class="text-primary"><?php echo $json_project->description[0]->Child ?> </p>
               </div>
             <?php endif; ?>
 
@@ -215,8 +226,8 @@ fclose($f);
                     </div>
                     <div class="modal-footer justify-content-center">
                       <button type="button" name="" class="btn btn-warning" data-dismiss="modal"><i class="fas fa-stop suitcase"></i> Nee</button>
-                      <button <?php if ($_SESSION['role'] == "Child" || $_SESSION['role'] == "Teacher") { ?> disabled <?php } ?> type="button" name="" class="btn btn-primary" onclick="searchBoard()" ><i class="fas fa-redo suitcase"></i> Nog eens</button>
-
+                      <button type="button" name="" class="btn btn-primary" onclick="searchBoard()" ><i class="fas fa-redo suitcase"></i> Nog eens</button>
+                      <!-- Als je wil disablen <?php //if ($_SESSION['role'] == "Child" || $_SESSION['role'] == "Teacher") { ?> disabled <?php //} ?>  -->
                     </div>
                   </div>
                 </div>
@@ -238,10 +249,10 @@ fclose($f);
                       <div>Succes!</div>
                     </div>
                     <div class="modal-footer justify-content-center">
-                      <button type="button" name="stopbutton" class="btn btn-warning" data-dismiss="modal"><i class="fas fa-stop suitcase"></i>Nee</button>
-                      <button <?php if ($_SESSION['role'] == "Child" || $_SESSION['role'] == "Teacher") { ?> disabled <?php } ?> type="submit" name="submitSounds" class="btn btn-primary" data-toggle="modal" data-target="#projectUploadModal"><i class="fas fa-play"></i>Ja</button>
+                      <button type="button" name="stopbutton" class="btn btn-warning" data-dismiss="modal"><i class="fas fa-stop suitcase"></i> Stop</button>
+                      <button <?php if ($_SESSION['role'] == "Child" || $_SESSION['role'] == "Teacher") { ?> enabled <?php } ?> type="submit" name="submitSounds" class="btn btn-primary" data-toggle="modal" data-target="#projectUploadModal"><i class="fas fa-play"></i> Ga door</button>
                       <input id="vordering" type="hidden" value="<?php echo $json_project->id  ?>" name="vordering">
-                      <button disabled <?php if ($_SESSION['role'] == "Child" || $_SESSION['role'] == "Teacher") { ?> disabled style="display:none;" <?php } ?> type="submit" name="submitProject" class="btn btn-light" data-toggle="modal" data-target="#projectUploadModal"><i class="fas fa-check"></i>Afronden</button>
+                      <button <?php if ($_SESSION['role'] == "Developer" || $_SESSION['role'] == "Teacher") { ?> disabled style="display:block;" title="Kinderen kunnen projecten afronden en zo voortgang boeken en meerdere projecten vrijspelen." <?php } ?> type="submit" name="submitProject" class="btn btn-light" data-toggle="modal" data-target="#projectUploadModal"><i class="fas fa-check"></i>Afronden</button>
                     </div>
                   </div>
                 </div>
@@ -266,7 +277,7 @@ fclose($f);
     <div class="container my-auto">
       <div class="copyright text-center my-auto">
         <select name="" class="btn btn-light colorful-select dropdown-primary" id="searchBoardSelect" onchange="searchBoard();">
-          <option class="" value="" selected><?php if($line == "") {echo "Niet verbonden";} else { echo $line; }?></option>
+          <option class="" value="" selected><?php if($line == "") {echo "Niet verbonden";} else { echo "Bord " . $line; }?></option>
           <?php if ($line == "") {
             echo "
                 <option id='searchingboard'>Zoeken naar bordje</option>";

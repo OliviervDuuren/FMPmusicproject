@@ -119,12 +119,14 @@ green4: #155C2B
                 if (!empty($result) && $result->num_rows > 0) {
                   // output data of each row
                   $count = 1;
+                  
                   while ($row = $result->fetch_assoc()) {
+                    $progressChild = $row["vordering"] * (100/19); //percentage van huidige project ten opzichte van totaal aantal projecten
                     echo
                       "<tr data-id='" . $row["id"] . "'>" .
                         "<th scope='row'>" . $count . "</th>" .
                         "<td>" . $row["surname"] . "</td>" .
-                        "<td>" . "<div class='progress'><div class='progress-bar' role='progressbar' style='width: " . $row["vordering"] . "%' aria-valuenow='" . $row["vordering"] . "' aria-valuemin='0' aria-valuemax='10'></div>
+                        "<td>" . "<div class='progress'><div class='progress-bar' role='progressbar' style='width: " . $progressChild . "%' aria-valuenow='" . $row["vordering"] . "' aria-valuemin='0' aria-valuemax='10'></div>
                       </div>" . "</td>" .
                         "</tr>";
                     $count++;

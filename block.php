@@ -47,7 +47,6 @@ fclose($f);
 
   <!-- Custom styles for this template-->
   <link href="css/sb-admin-2.min.css" rel="stylesheet">
-  <link href="css/my.css" rel="stylesheet">
 
   <script type="text/javascript">
     function searchBoard() {
@@ -141,19 +140,19 @@ fclose($f);
                       </button> -->
                 </div>
                 <div class="modal-body ">
-                  <div id="loading" class="lds-ellipsis" style="display:block;">
-                    <div></div>
-                    <div></div>
-                    <div></div>
-                    <div></div>
-                  </div>
-                  <div id='boardNotFound' style="display:none;">Er is geen bordje actief in de buurt waar de geluiden op kunnen worden gezet!</div>
+                      <div id="loading" class="lds-ellipsis" style="display:block;">
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                      </div>
+                      <div id='boardNotFound' style="display:none;">Er is geen bordje actief in de buurt waar de geluiden op kunnen worden gezet!</div>
 
-                </div>
+                    </div>
                 <div class="modal-footer justify-content-center">
                   <button type="button" name="" class="btn btn-warning" data-dismiss="modal"><i class="fas fa-stop suitcase"></i> Nee</button>
-                  <button <?php if ($_SESSION['role'] == "Child" || $_SESSION['role'] == "Teacher") { ?> disabled <?php } ?> type="button" name="" class="btn btn-primary" onclick="searchBoard()"><i class="fas fa-redo suitcase"></i> Nog eens</button>
-
+                  <button type="button" name="" class="btn btn-primary" onclick="searchBoard()" ><i class="fas fa-redo suitcase"></i> Nog eens</button>
+                      <!-- Als je wil disablen <?php //if ($_SESSION['role'] == "Child" || $_SESSION['role'] == "Teacher") { ?> disabled <?php //} ?>  -->
                 </div>
               </div>
             </div>
@@ -174,7 +173,7 @@ fclose($f);
     <div class="container my-auto">
       <div class="copyright text-center my-auto">
         <select name="" class="btn btn-light colorful-select dropdown-primary" id="searchBoardSelect" onchange="searchBoard();">
-          <option class="" value="" selected><?php if($line == "") {echo "Niet verbonden";} else { echo $line; }?></option>
+          <option class="" value="" selected><?php if($line == "") {echo "Niet verbonden";} else { echo "Bord " . $line; }?></option>
           <?php if ($line == "") {
             echo "
                 <option id='searchingboard'>Zoeken naar bordje</option>";

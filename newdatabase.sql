@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Gegenereerd op: 31 mrt 2020 om 17:19
+-- Gegenereerd op: 06 apr 2020 om 13:23
 -- Serverversie: 10.4.11-MariaDB
 -- PHP-versie: 7.2.26
 
@@ -71,14 +71,35 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`id`, `surname`, `lastname`, `username`, `password`, `parent_id`, `role`, `level`, `vordering`) VALUES
-(1, 'Developer', '', 'developer', 'FMPmusicproject', 0, 'Developer', 3, 0),
-(2, 'Kind', '', 'kind', 'maestro', 2, 'Child', 2, 100),
+(1, 'Developer', '', 'developer', 'FMPmusicproject', 0, 'Developer', 3, 100),
+(2, 'Kind', '', 'kind', 'maestro', 2, 'Child', 2, 1),
 (3, 'Leerkracht', '', 'leerkracht', 'maestro', 0, 'Teacher', 3, 100),
-(5, 'Leerling', '1', 'Le1', 'root', 1, 'Child', 1, 60),
-(15, 'Leerling', '2', 'Le2', 'root', 1, 'Child', 2, 0),
-(20, 'Leerling', '3', 'Le3', 'root', 1, 'Child', 3, 20),
-(21, 'Leerling', '4', 'Le4', 'root', 1, 'Child', 2, 40),
-(22, 'Leerling', '5', 'Le5', 'root', 1, 'Child', 2, 60);
+(5, 'Aart', 'de Jong', 'kind1', 'root', 3, 'Child', 1, 1),
+(15, 'Babette', 'Jansen', 'kind2', 'root', 3, 'Child', 2, 1),
+(20, 'Camiel', 'de Vries', 'kind3', 'root', 3, 'Child', 3, 1),
+(21, 'Dagmar', 'van den Berg', 'kind4', 'root', 3, 'Child', 2, 18),
+(22, 'Ed', 'van Dijk', 'kind5', 'root', 3, 'Child', 2, 10),
+(25, 'Famke', 'Bakker', 'kind6', 'root', 3, 'Child', 1, 1),
+(26, 'Gabriël', 'Janssen', 'kind7', 'root', 3, 'Child', 1, 1),
+(27, 'Hadewig', 'Visser', 'kind8', 'root', 3, 'Child', 1, 1),
+(28, 'Ian', 'Smit', 'kind9', 'root', 3, 'Child', 1, 1),
+(29, 'Jacoba', 'Meijer', 'kind10', 'root', 3, 'Child', 1, 5),
+(30, 'Kaeso', 'de Boer', 'kind11', 'root', 3, 'Child', 1, 1),
+(31, 'Laetitia', 'Mulder', 'kind12', 'root', 3, 'Child', 1, 1),
+(32, 'Maarten', 'de Groot', 'kind13', 'root', 3, 'Child', 1, 1),
+(33, 'Nadia', 'Bos', 'kind14', 'root', 3, 'Child', 1, 1),
+(34, 'Octaaf', 'Vos', 'kind15', 'root', 3, 'Child', 1, 1),
+(35, 'Pamela', 'Peters', 'kind16', 'root', 3, 'Child', 1, 1),
+(36, 'Quentin', 'Hendriks', 'kind17', 'root', 3, 'Child', 1, 1),
+(37, 'Rachel', 'van Leeuwen', 'kin18', 'root', 3, 'Child', 1, 1),
+(38, 'Said', 'Dekker', 'kind19', 'root', 3, 'Child', 1, 1),
+(39, 'Tamira', 'Brouwer', 'kind20', 'root', 3, 'Child', 1, 1),
+(40, 'Ulrich', 'de Wit', 'kind21', 'root', 3, 'Child', 1, 1),
+(41, 'Valerie', 'Dijkstra', 'kind22', 'root', 3, 'Child', 1, 1),
+(42, 'Walt', 'Smits', 'kind23', 'root', 3, 'Child', 1, 1),
+(43, 'Xandra', 'de Graaf', 'kind24', 'root', 3, 'Child', 1, 1),
+(44, 'Yannick', 'van der Meer', 'kind25', 'root', 3, 'Child', 1, 1),
+(45, 'Ziva', 'van der Linden', 'kind26', 'root', 3, 'Child', 1, 1);
 
 --
 -- Indexen voor geëxporteerde tabellen
@@ -110,7 +131,7 @@ ALTER TABLE `blocks`
 -- AUTO_INCREMENT voor een tabel `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int(8) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=25;
+  MODIFY `id` int(8) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=46;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

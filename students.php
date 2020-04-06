@@ -13,8 +13,8 @@ if (strtolower($_SESSION['role']) != "teacher") {
 
 if (isset($_POST['add-student'])) {
 
-  $sql = "INSERT INTO users (surname, lastname, role, level, parent_id, username, password)
-      VALUES ('" . $_POST["surname"] . "','" . $_POST["lastname"] . "', 'child','" . $_POST["level"] . "','" . $_SESSION["user_id"] . "', '" . $_POST["username"] . "', '" . $_POST["password"] . "')";
+  $sql = "INSERT INTO users (surname, lastname, role, level, parent_id, username, password, vordering)
+      VALUES ('" . $_POST["surname"] . "','" . $_POST["lastname"] . "', 'Child','" . $_POST["level"] . "','" . $_SESSION["user_id"] . "', '" . $_POST["username"] . "', '" . $_POST["password"] . "', '1')";
   $result = mysqli_query($mysqli, $sql);
 }
 
@@ -103,7 +103,7 @@ $active_page = "leerlingen";
                 <th scope="col">Voornaam</th>
                 <th scope="col">Achternaam</th>
                 <th scope="col">Gebruikersnaam</th>
-                <th scope="col">Level</th>
+                <th scope="col" title="Het werk en denkniveau in muziekprojecten in het specifiek kan erg verschillen per leerling en hangt niet per se samen met het leerjaar waarin ze zitten. Normaalgesproken kan voor niveau 1 onderbouw gehanteerd worden, voor Niveau 2 middenbouw en voor Niveau 3 bovenbouw.">Niveau</th>
                 <th scope="col">Vordering</th>
                 <th scope="col">Acties</th>
               </tr>
@@ -121,7 +121,7 @@ $active_page = "leerlingen";
                       "<td>" . $row["lastname"] . "</td>" .
                       "<td>" . $row["username"] . "</td>" .
                       "<td>" . $row["level"] . "</td>" .
-                      "<td>(" . $row["vordering"] . "/100)</td>" .
+                      "<td>(" . $row["vordering"] . "/19)</td>" .
                       "<td>" .
                       "<a class='edit btn btn-primary btn-circle btn-sm' data-toggle='modal' data-target='#editStudentModal'><i class='fas fa-edit'></i></a>" .
                       "<a class='remove btn btn-danger btn-circle btn-sm ml-2' data-toggle='modal' data-target='#removeStudentModal'><i class='fas fa-trash'></i></a>" .
@@ -135,7 +135,7 @@ $active_page = "leerlingen";
           </table>
 
           <div class="row justify-content-center">
-            <button class="btn btn-primary" data-toggle="modal" data-target="#addStudentModal">
+            <button class="btn btn-primary mb-4" data-toggle="modal" data-target="#addStudentModal">
               <i class='fas fa-plus mr-2'></i>Voeg leerling toe
             </button>
 
