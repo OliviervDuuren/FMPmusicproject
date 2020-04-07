@@ -126,7 +126,7 @@ fclose($f);
 
           <!-- Titel van de pagina -->
           <div class="d-sm-flex align-items-center justify-content-center mb-4">
-            <h1 class="h3 text-gray-800"><?php echo $json_project->title; ?></h1>
+            <h1 class="h3 text-gray-800"><?php echo $json_project->id . ". "; echo $json_project->title; ?></h1>
           </div>
 
 
