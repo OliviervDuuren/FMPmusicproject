@@ -245,7 +245,7 @@ fclose($f);
                       </button> -->
                     </div>
                     <div class="modal-body ">
-                      <div>Je geluiden worden geüpload naar <b><?php echo $line; ?></b></div>
+                      <div>Je geluiden worden geüpload naar <b><?php echo "Bord " . $line; ?></b></div>
                       <div>Succes!</div>
                     </div>
                     <div class="modal-footer justify-content-center">
